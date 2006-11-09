@@ -1,0 +1,97 @@
+<strong>Introduction<div align="center"></div></strong>
+<p>This is model of legendary Russian Antonov AN-2. First flight was 1947 and some aircrafts in use up to nowadays.<br>
+     Original model for MS Flight Simulator was written 2005 by Anton Nikolaev. His model become bestseller of russian simmers community. This model for FlightGear published under GPL with author permission.
+    <br>
+Model for FGSF use 3D data, converted from MSFS by original technics, and textures and sounds, take "as is", without proceed. Port to FGFS, 2D panel, FDM, systems and over made by Yurik V. Nikiforoff, may - nov 2006.<br>
+There are 8 livreas for model. Model have not animated 3D cabin, there is 2D panel only.<br></p>
+You <strong>must</strong> use devel version of FlightGear with model. You can download precompiled Win32 devel version of FlightGear from <A href="ftp://ftp.megasignal.com/pub/FlightGear/devel" name="here" id="ftp.megasignal.com/pub/devel"  onclick="ftp.megasignal.com/pub/devel">ftp.megasignal.com/pub/devel</A>
+<p><IMG src="panel.jpg" width="768" height="573" border="0"></p>
+<div align="center"><strong>Switches and instruments:</strong><br></div>
+<p>1. Attitude indicator AGK-47 B.<br>
+2. Magnetic (gyroinduction) compass GIK-1 with ADF indication.<br>
+3. Gyrocompass GPK-48.<br>
+4. Airspeed indicator US-450.<br>
+5. Altimeter UVO.<br>
+6. Variometer VAR-10.<br>
+7. Radio altimeter RV-UM.<br>
+8. Warning altitude selector of RV-UM.<br>
+9. Fuel selector. Left, right, both tank or cutoff fuel.<br>
+10. Fuel level indicator SBESS-1447.<br>
+11. Intake air termometer. Heating of intake air not implemented yet, so gauge show outboard temperature.<br>
+12. Engine EMI-3K gauge. Fuel pressure meter, oil pressure and oil temperature indicator.<br>
+13. Cylinder head termometer TCT-2.<br>
+14. Tachometer TE-45.<br>
+15. Manifold pressure meter MV-16u<br>
+16. Ampermeter A-1. It measure main generator current.<br>
+17. Volt-ampermeter VA-3. It measure voltage and current of battery.<br>
+18. Position of oil cooler damper.<br>
+19. Position of engine air damper. This gauge absent on real plane, pilot ought to control air dampers position visually.<br>
+20. Flaps position gauge.<br>
+21. ACHS-2 air clock. Extended scale of flight timers not implemented cause small size of gauge.<br>
+22. Outboard termometer TUE-48.<br>
+23. Magneto switch PM-1.<br>
+24. Main starter switch.<br>
+25. Starter selector: spinup - start.<br>
+26. GIK-1 compass fast adjust button.<br>
+27. Pilot cabin window heat switch. Not implemented yet.<br>
+28. Fuel meter selector: left - both - right fuel tank level.<br>
+29. Audio alarm switch - min fuel level and min altitude. Not implemented yet.<br>
+30. Min altitude lamp - RV-UM altimeter.<br>
+31. Left and right fuel tank min level lamp. Work only if fuel meter SBESS-1447 is serviceable. Min level is 50 l of fuel.<br>
+32. Charge battery lamp. Off if generator charge battery.<br>
+33. PO-500 alternator failure lamp.<br>
+34. Marker beacon lamp.<br>
+35. Rudder trimmer neutral position lamp.<br>
+36. Elevator trimmer neutral position lamp.<br>
+37. Aileron trimmer neutral position lamp.<br>
+38. Elevator trimmer switch.<br>
+39. Flaps button.<br>
+40. Rudder trimmer switch.<br>
+41. Aileron trimmer switch.<br>
+42. Oil cooler damper switch.<br>
+43. Cylinder head damper switch.<br>
+44. Nav lights switch.<br>
+45. Taxi light switch. Work only on patched sim.<br>
+46. Landing light switch. Work only on patched sim.<br>
+47. Main generator switch.<br>
+48. Main battery switch.<br>
+49. GIK-1 alternator switch.<br>
+50. AGK-47B alternator switch.<br>
+51. Fuel meter SBESS-1447 switch.<br>
+52. EMI-3K gauge switch.<br>
+53. Flaps gauge switch.<br>
+54. Termometers TUE-48 switch.<br>
+55. Airspeed indicator heat switch.<br>
+56. Panel UV light switch.<br>
+57. COM radio switch.<br>
+58. ADF radio switch.<br>
+59. Marker beacon switch.<br>
+60. Radio altimeter RV-UM main switch.<br>
+61. Throttle handle.<br>
+62. Propeller pitch handle.<br>
+63. Standby/operate selector for ADF.<br></p>
+
+<strong><div align="center">An-2 keys:</div></strong><br>
+<ul>	a - aileron trimmer left.</ul>
+<ul>	d - aileron trimmer right.</ul>
+<ul>D - open/close door.</ul>
+<ul>y - change livreas.</ul>
+
+<strong><div align="center">Starter procedure</div></strong>
+
+<p>Real AN-2 equipped inertial starter. It allow to start engine even main 
+battery full discharged - there is handle for spinup flywheel of starter 
+manually, from cargo cabin. Usually, for start engine, flywheel of starter 
+spinned of electric engine.</p><p>Main procedure of use inertial starter this:</p><p>1. Turn on electrical circuit for supply electrical engine of starter: main battery switch and starter switch. Red "generator failure" lamp will on, like a 
+car; turn on fuel selector.</p><p>2. Spinup of flywheel of starter; for this, turn starter selector to left 
+position and hold it _until flywheel will spinned_. While wheel spinning, 
+consumable current will decreasing from max value (see VA-3 instrument) to 
+value around zero, when flywheel will spin enough. šIt take around 7 sec; you 
+will hear sound of spinned flywheel.</p><p>3. Apply spinned flywheel to engine crankshaft: set starter selector to right 
+position and hold it _until engine started_. It take several second; see on 
+tachometer instrument TE-48. When engine achieved above 550 rpm, release 
+selector and turn off starter switch.</p><p>There is one problem around it. Power of starter not enough for spin engine 
+shaft with big propeller - as I understand, this is JSBsim limitation. I read 
+about it in devel list, but fix not ready yet. Cause this limitation, 
+inertial starter may work unstable.</p><p>You may discard inertial started at all - go to an2-set.xml and comment 
+binding of key 32 (spacebar). It allow you crank engine by press spacebar, as default.</p>
