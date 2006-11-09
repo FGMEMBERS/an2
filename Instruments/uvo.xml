@@ -1,0 +1,247 @@
+<?xml version="1.0"?>
+
+<!--
+PT-154 gauge, from www.protu-154.com
+Modified for FG by Yurik V. Nikiforoff
+-->
+
+<PropertyList>
+
+ <name>Altimeter</name>
+ 
+   <w-base>256</w-base>
+   <h-base>256</h-base>
+   
+<layers>
+    <layer>
+     <name>face</name>
+     <texture>   
+     <path>Aircraft/an2/Instruments/Textures/uvo_eng_bck.rgb</path>
+     <x1>0.0</x1>
+     <y1>0.0</y1>
+     <x2>1.0</x2>
+     <y2>1.0</y2>
+     </texture>
+     <w>256</w>
+     <h>256</h>
+    </layer>
+  <layer>
+    	<name>face</name>
+	<condition>
+		<property>/an2/controls/switches/uv_light</property>
+	</condition> 
+	<emissive>true</emissive>
+	<texture>   
+		<path>Aircraft/an2/Instruments/Textures/uvo_eng_bck_uv.rgb</path>
+	  	<x1>0.0</x1>
+		<y1>0.0</y1>
+		<x2>1.0</x2>
+		<y2>1.0</y2>
+	</texture>
+	<w>256</w>
+	<h>256</h>
+	<emissive>true</emissive>
+   </layer>
+
+    
+    <layer>
+    <name>short_needle</name>
+    <texture>
+    <path>Aircraft/an2/Instruments/Textures/uvo_eng_n2.rgb</path>
+    <x1>0.0</x1>
+    <x2>1.0</x2>
+    <y1>0.0</y1>
+    <y2>1.0</y2>
+    </texture>
+    <w>70</w>
+    <h>70</h>
+   <transformations>
+    <transformation>
+     <type>rotation</type>
+     <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+     <scale>0.011</scale>
+    <offset>-90</offset>
+    </transformation>
+    <transformation>
+    <type>x-shift</type>
+    <offset>28</offset>
+    </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>-27</offset>
+    </transformation>
+   </transformations>
+    </layer> 
+    <layer>
+	    <name>short_needle with uv light</name>
+	    <condition>
+		    <property>/an2/controls/switches/uv_light</property>
+	    </condition> 
+	    <emissive>true</emissive>
+	    <texture>
+		    <path>Aircraft/an2/Instruments/Textures/uvo_eng_n2_uv.rgb</path>
+		    <x1>0.0</x1>
+		    <x2>1.0</x2>
+		    <y1>0.0</y1>
+		    <y2>1.0</y2>
+	    </texture>
+	    <w>70</w>
+	    <h>70</h>
+	    <transformations>
+		    <transformation>
+			    <type>rotation</type>
+			    <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+			    <scale>0.011</scale>
+			    <offset>-90</offset>
+		    </transformation>
+		    <transformation>
+			    <type>x-shift</type>
+			    <offset>28</offset>
+		    </transformation>
+		    <transformation>
+			    <type>y-shift</type>
+			    <offset>-27</offset>
+		    </transformation>
+	    </transformations>
+    </layer> 
+
+    <layer>
+    <name>long_needle</name>
+    <texture>
+    <path>Aircraft/an2/Instruments/Textures/uvo_eng_n1.rgb</path>
+    <x1>0.0</x1>
+    <x2>1.0</x2>
+    <y1>0.0</y1>
+    <y2>1.0</y2>
+    </texture>
+    <w>90</w>
+    <h>90</h>
+   <transformations>
+    <transformation>
+     <type>rotation</type>
+     <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+     <scale>0.11</scale>
+    <offset>-90</offset>
+    </transformation>
+    <transformation>
+    <type>x-shift</type>
+    <offset>39</offset>
+    </transformation>
+    <transformation>
+    <type>y-shift</type>
+    <offset>-40</offset>
+    </transformation>
+   </transformations>
+    </layer> 
+    <layer>
+	    <name>long_needle with uv light</name>
+	    <condition>
+		    <property>/an2/controls/switches/uv_light</property>
+	    </condition> 
+	    <emissive>true</emissive>
+	    <texture>
+		    <path>Aircraft/an2/Instruments/Textures/uvo_eng_n1_uv.rgb</path>
+		    <x1>0.0</x1>
+		    <x2>1.0</x2>
+		    <y1>0.0</y1>
+		    <y2>1.0</y2>
+	    </texture>
+	    <w>90</w>
+	    <h>90</h>
+	    <transformations>
+		    <transformation>
+			    <type>rotation</type>
+			    <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+			    <scale>0.11</scale>
+			    <offset>-90</offset>
+		    </transformation>
+		    <transformation>
+			    <type>x-shift</type>
+			    <offset>39</offset>
+		    </transformation>
+		    <transformation>
+			    <type>y-shift</type>
+			    <offset>-40</offset>
+		    </transformation>
+	    </transformations>
+    </layer> 
+</layers>
+
+<actions>
+<!-- Increment air pressure - fine -->
+<action>
+    <name>inc baro fine</name>
+    <button>0</button>
+    <x>-100</x>
+    <y>-125</y>
+    <w>16</w>
+    <h>40</h>
+    <binding>
+	<command>property-adjust</command>
+	<property>/instrumentation/altimeter/setting-inhg</property>
+        <step>0.01</step>
+	<min>26.0</min>
+	<max>33.0</max>
+	<wrap>false</wrap>
+    </binding>
+    </action>
+
+<!-- Decrement air pressure - fine -->
+<action>
+    <name>dec baro fine</name>    
+    <button>0</button>
+    <x>-120</x>
+    <y>-125</y>
+    <w>16</w>
+    <h>40</h>
+    <binding>
+	<command>property-adjust</command>
+	<property>/instrumentation/altimeter/setting-inhg</property>
+	<step>-0.01</step>
+	<min>26.0</min>
+	<max>33.0</max>
+	<wrap>1</wrap>
+    </binding>
+</action>
+
+<!-- Increment air pressure - coarse -->
+<action>
+    <name>inc baro coarse</name>
+    <button>1</button>
+    <x>-100</x>
+    <y>-125</y>
+    <w>16</w>
+    <h>40</h>
+    <binding>
+	<command>property-adjust</command>
+	<property>/instrumentation/altimeter/setting-inhg</property>
+        <step>0.1</step>
+	<min>26.0</min>
+	<max>33.0</max>
+	<wrap>false</wrap>
+    </binding>
+    </action>
+
+<!-- Decrement air pressure - coarse -->
+<action>
+    <name>dec baro coarse</name>    
+    <button>1</button>
+    <x>-120</x>
+    <y>-125</y>
+    <w>16</w>
+    <h>40</h>
+    <binding>
+	<command>property-adjust</command>
+	<property>/instrumentation/altimeter/setting-inhg</property>
+	<step>-0.1</step>
+	<min>26.0</min>
+	<max>33.0</max>
+	<wrap>1</wrap>
+    </binding>
+</action>
+
+
+</actions>
+
+
+</PropertyList>

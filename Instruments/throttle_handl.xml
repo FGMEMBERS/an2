@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+
+<!--
+Yurik V. Nikiforoff, aug 2006
+-->
+
+<PropertyList>
+
+ <name>Throttle handle</name>
+ 
+   <w-base>180</w-base>
+   <h-base>360</h-base>
+   
+<layers>
+
+    <layer>
+	<name>flaps button</name>
+	<texture>                           
+    	    <path>Aircraft/an2/Instruments/Textures/throttle_handl.rgb</path>
+	    <x1>0.0</x1>
+	    <y1>0.0</y1>
+	    <x2>1.0</x2>
+	    <y2>0.5</y2>
+	</texture>
+	<w>128</w>
+	<h>128</h>
+	<transformations>
+
+		<transformation>
+			<condition>
+			 <and>
+				<not-equals>
+				<property>/surface-positions/flap-pos-norm</property>
+					<value>0</value>
+				</not-equals>
+				<not-equals>
+				<property>/surface-positions/flap-pos-norm</property>
+					<value>0.25</value>
+				</not-equals>
+				<not-equals>
+				<property>/surface-positions/flap-pos-norm</property>
+					<value>0.5</value>
+				</not-equals>
+				<not-equals>
+				<property>/surface-positions/flap-pos-norm</property>
+					<value>0.75</value>
+				</not-equals>
+				<not-equals>
+				<property>/surface-positions/flap-pos-norm</property>
+					<value>1</value>
+				</not-equals>
+			</and>
+			</condition>
+			<type>x-shift</type>
+			<offset>5</offset>
+		</transformation>
+		<transformation>
+			<type>y-shift</type>
+			<offset>2</offset>
+		</transformation>
+
+	    <transformation>
+		<type>x-shift</type>
+		<offset>-75</offset>
+	    </transformation>
+	    <transformation>
+		<type>y-shift</type>
+		<scale>150</scale>
+		<property>/controls/engines/engine/throttle</property>
+		<offset>-50</offset>		
+	    </transformation>
+	    
+	</transformations>
+    </layer>
+
+    <layer>
+	<name>throttle handle</name>
+	<texture>                           
+    	    <path>Aircraft/an2/Instruments/Textures/throttle_handl.rgb</path>
+	    <x1>0.0</x1>
+	    <y1>0.6</y1>
+	    <x2>1.0</x2>
+	    <y2>1.0</y2>
+	</texture>
+	<w>128</w>
+	<h>110</h>
+	<transformations>
+	    <transformation>
+		<type>y-shift</type>
+		<scale>150</scale>
+		<property>/controls/engines/engine/throttle</property>
+		<offset>-20</offset>
+	    </transformation>
+	</transformations>
+    </layer>
+
+
+</layers>
+</PropertyList>

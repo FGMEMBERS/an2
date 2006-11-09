@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+
+<!--
+Gauge for AN-2 model
+Magneto switch
+Yurik V. Nikiforoff, aug 2006
+-->
+
+<PropertyList>
+
+ <name>Magneto switch PM-1</name>
+ 
+   <w-base>256</w-base>
+   <h-base>256</h-base>
+   
+<layers>
+    <layer>
+         <name>face</name>
+	 <texture>   
+    	    <path>Aircraft/an2/Instruments/Textures/pm1_1.rgb</path>
+            <x1>0.0</x1>
+	    <y1>0.0</y1>
+    	    <x2>1.0</x2>
+    	    <y2>1.0</y2>
+        </texture>
+	<w>256</w>
+        <h>256</h>
+    </layer>
+    <layer>
+	    <name>face with uv light</name>
+	    <condition>
+		    <property>/an2/controls/switches/uv_light</property>
+	    </condition> 
+	    <emissive>true</emissive>
+	    <texture>   
+		    <path>Aircraft/an2/Instruments/Textures/pm1_1_uv.rgb</path>
+		    <x1>0.0</x1>
+		    <y1>0.0</y1>
+		    <x2>1.0</x2>
+		    <y2>1.0</y2>
+	    </texture>
+	    <w>155</w>
+	    <h>155</h>
+    </layer>
+
+    <layer>
+	<name>needle</name>
+	<texture>
+    	    <path>Aircraft/an2/Instruments/Textures/pm1_2.rgb</path>
+	    <x1>0.0</x1>
+	    <y1>1.0</y1>
+	    <x2>1.0</x2>
+	    <y2>0.0</y2>
+	</texture>
+        <w>64</w>
+	<h>128</h>
+	<transformations>
+
+	    <transformation>
+		<type>rotation</type>
+		<scale>-30</scale>
+		<property>/controls/engines/engine/magnetos</property>
+		<offset>-140</offset>	
+	    </transformation>
+
+
+<!--	    <transformation>
+    		<type>rotation</type>
+    		<property>/systems/electrical/amps</property>
+    		<scale>0.6</scale>
+		<offset>-103</offset>
+	    </transformation>-->
+
+	    <transformation>
+		<type>x-shift</type>
+		<offset>3</offset>
+	    </transformation>
+	    <transformation>
+		<type>y-shift</type>
+		<offset>14</offset>
+	    </transformation>
+	</transformations>
+    </layer> 
+</layers>
+<actions>
+	<!-- Magneto inc -->
+	<action>
+		<name>inc magnetos</name>
+		<button>0</button>
+		<x>-50</x>
+		<y>-50</y>
+		<w>100</w>
+		<h>100</h>
+		<binding>
+			<command>property-adjust</command>
+			<property>/controls/engines/engine/magnetos</property>
+			<step>1</step>
+			<max>3</max>
+			<min>0</min>
+		</binding>
+	</action>
+	<action>
+		<name>dec magnetos</name>
+		<button>1</button>
+		<x>-50</x>
+		<y>-50</y>
+		<w>100</w>
+		<h>100</h>
+		<binding>
+			<command>property-adjust</command>
+			<property>/controls/engines/engine/magnetos</property>
+			<step>-1</step>
+			<max>3</max>
+			<min>0</min>
+		</binding>
+	</action>
+	
+</actions>
+
+</PropertyList>

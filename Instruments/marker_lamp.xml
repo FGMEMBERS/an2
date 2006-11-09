@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+
+<!--
+Yurik V. Nikiforoff, aug 2006
+Lamp
+-->
+
+<PropertyList>
+
+ <name>White lamp</name>
+ 
+   <w-base>64</w-base>
+   <h-base>64</h-base>
+   
+<layers>
+    <layer>
+	<name>white lamp on</name>
+        <condition>
+		<or>
+		<property>/instrumentation/marker-beacon/inner</property>
+		<property>/instrumentation/marker-beacon/middle</property>
+		<property>/instrumentation/marker-beacon/outer</property>
+		</or>
+	</condition>                        
+	<texture>                           
+    	    <path>Aircraft/an2/Instruments/Textures/white_lamp_on.rgb</path>
+	    <x1>0.0</x1>
+	    <y1>0.0</y1>
+	    <x2>1.0</x2>
+	    <y2>1.0</y2>
+	</texture>
+	<emissive>true</emissive>
+	<w>64</w>
+	<h>64</h>
+    </layer>
+
+    <layer>
+	<name>white lamp off</name>
+        <condition>
+		<not>
+			<or>
+				<property>/instrumentation/marker-beacon/inner</property>
+				<property>/instrumentation/marker-beacon/middle</property>
+				<property>/instrumentation/marker-beacon/outer</property>
+			</or>
+		</not>
+	</condition>                        
+	<texture>                           
+    	    <path>Aircraft/an2/Instruments/Textures/white_lamp_off.rgb</path>
+	    <x1>0.0</x1>
+	    <y1>0.0</y1>
+	    <x2>1.0</x2>
+	    <y2>1.0</y2>
+	</texture>
+	<w>64</w>
+	<h>64</h>
+    </layer>
+</layers>
+</PropertyList>

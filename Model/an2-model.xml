@@ -1,0 +1,621 @@
+<?xml version="1.0"?>
+<!--
+############################################################################
+#    Copyright 								   #
+#									   #
+#    (C) 2005 by Anton Nikolaev aka Xomer - original model for 		   #
+#	MS Flight Simulator, sounds, visual model and textures.		   #
+#     	xomer@yandex.ru							   #
+#									   #
+#	Model published under GPL with his permission. 			   #
+#									   #
+#	Original model you can get there: 				   #
+#	http://www.avsim.ru/files.phtml?action=download&id=3333		   #
+#									   #
+#    (C) 2006 by Yurik V. Nikiforoff - port for FGFS, 2d-panel, FDM, 	   #
+#	instruments, animations, systems and over.		 	   #
+#    	yurik@megasignal.com						   #
+#                                                                          #
+#    This program is free software; you can redistribute it and#or modify  #
+#    it under the terms of the GNU General Public License as published by  #
+#    the Free Software Foundation; either version 2 of the License, or     #
+#    (at your option) any later version.                                   #
+#                                                                          #
+#    This program is distributed in the hope that it will be useful,       #
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of        #
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         #
+#    GNU General Public License for more details.                          #
+#                                                                          #
+#    You should have received a copy of the GNU General Public License     #
+#    along with this program; if not, write to the                         #
+#    Free Software Foundation, Inc.,                                       #
+#    59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             #
+############################################################################		  
+-->
+<PropertyList>
+
+ <path>an2_r.ac</path>
+
+ <offsets>
+  <z-m>0.8</z-m>
+  <x-m>6.2</x-m>
+  <pitch-deg>0</pitch-deg>
+ </offsets>
+
+ <!-- Save fps - exclude complicate objects from shadowing -->
+<animation>
+  <type>noshadow</type>
+    <object-name>noshadow_plane</object-name>
+</animation>
+
+<!-- Make shadow from spescial (simply) object-->
+<animation>
+  <type>material</type>
+    <object-name>shadow_plane</object-name>
+    <transparency>
+	<alpha-prop>transparency/alpha</alpha-prop>
+    <offset>0.0</offset>
+    </transparency>
+</animation>
+
+<!--Propeller-->
+<animation>
+	<type>select</type>
+	<object-name>obj71</object-name>
+	<condition>
+		<less-than>
+			<property>/engines/engine/rpm</property>
+			<value>600</value>
+		</less-than>
+	</condition>
+</animation>
+
+<animation>
+	<type>select</type>
+	<object-name>obj83</object-name>
+	<condition>
+		<greater-than>
+			<property>/engines/engine/rpm</property>
+			<value>600</value>
+		</greater-than>
+	</condition>
+</animation>
+
+
+
+<animation>
+	
+	<type>spin</type>
+	<object-name>obj71</object-name>
+	<property>/engines/engine/rpm</property>
+	
+	<center>
+		<x-m>0</x-m>
+		<y-m>0</y-m>
+		<z-m>-0.65</z-m>
+	</center>
+	<axis>
+		<x>1.0</x>
+		<y>0.0</y>
+		<z>0.0</z>
+ 	</axis>	    
+</animation>
+
+<animation>
+	
+	<type>spin</type>
+	<object-name>obj70</object-name>
+	<property>/engines/engine/rpm</property>
+	
+	<center>
+		<x-m>0</x-m>
+		<y-m>0</y-m>
+		<z-m>-0.65</z-m>
+	</center>
+	<axis>
+		<x>1.0</x>
+		<y>0.0</y>
+		<z>0.0</z>
+	</axis>	    
+</animation>
+
+<animation>
+	
+	<type>spin</type>
+	<object-name>obj83</object-name>
+	<property>/engines/engine/rpm</property>
+	<factor>0.005</factor>
+	<center>
+		<x-m>0</x-m>
+		<y-m>0</y-m>
+		<z-m>-0.65</z-m>
+	</center>
+	<axis>
+		<x>1.0</x>
+		<y>0.0</y>
+		<z>0.0</z>
+	</axis>	    
+</animation>
+
+<animation>
+	<type>material</type>
+	<object-name>obj83</object-name>
+	<transparency>
+		<alpha-prop>transparency/alpha</alpha-prop>
+		<offset>0.1</offset>
+	</transparency>
+</animation>
+
+<!--Surface-->
+<animation>
+	<type>rotate</type>
+	<object-name>rudder</object-name>
+	<property>/controls/flight/rudder</property>
+	<factor>-28</factor>
+	<axis>
+		<x1-m>5.52</x1-m>
+		<y1-m>0</y1-m>
+		<z1-m>3.16</z1-m>
+		
+		
+		<x2-m>5.90</x2-m>
+		<y2-m>0</y2-m>
+		<z2-m>-0.39</z2-m>
+	</axis>
+</animation>
+
+<!-- tail wheel -->
+<animation>
+	<type>rotate</type>
+	<object-name>rear_wheel</object-name>
+	<property>/controls/flight/rudder</property>
+	<factor>-28</factor>
+	<axis>
+		<x1-m>4.60</x1-m>
+		<y1-m>0</y1-m>
+		<z1-m>-0.99</z1-m>
+		
+		
+		<x2-m>4.72</x2-m>
+		<y2-m>0</y2-m>
+		<z2-m>-1.28</z2-m>
+	</axis>
+</animation>
+
+<!-- elevator -->
+<animation>
+	<type>rotate</type>
+	<object-name>obj75</object-name>
+	<object-name>elev_trim_left</object-name>
+	<object-name>elev_trim_right</object-name>
+	<property>/controls/flight/elevator</property>
+	<interpolation>
+		<entry><ind>	-1</ind><dep>	-42</dep></entry>
+		<entry><ind>	0</ind><dep>	0</dep></entry>
+		<entry><ind>	1</ind><dep>	22</dep></entry>
+	</interpolation>
+	
+	<axis>
+		<x1-m>5.34</x1-m>
+		<y1-m>-3.52</y1-m>
+		<z1-m>1.12</z1-m>
+		
+		
+		<x2-m>5.34</x2-m>
+		<y2-m>3.52</y2-m>
+		<z2-m>1.12</z2-m>
+	</axis>
+</animation>
+
+<!-- left aileron -->
+<animation>
+	<type>rotate</type>
+	<object-name>obj79</object-name>
+	<property>/controls/flight/aileron</property>
+	<interpolation>
+		<entry><ind>	-1</ind><dep>	-14</dep></entry>
+		<entry><ind>	0</ind><dep>	0</dep></entry>
+		<entry><ind>	1</ind><dep>	30</dep></entry>
+	</interpolation>
+	<axis>
+		<x1-m>-1.33</x1-m>
+		<y1-m>9.30</y1-m>
+		<z1-m>1.26</z1-m>
+		
+		
+		<x2-m>-1.33</x2-m>
+		<y2-m>4.50</y2-m>
+		<z2-m>1.26</z2-m>
+	</axis>
+</animation>
+
+<!-- right aileron -->
+<animation>
+	<type>rotate</type>
+	<object-name>obj76</object-name>
+	<property>/controls/flight/aileron</property>
+	<interpolation>
+		<entry><ind>	-1</ind><dep>	-30</dep></entry>
+		<entry><ind>	0</ind><dep>	0</dep></entry>
+		<entry><ind>	1</ind><dep>	14</dep></entry>
+	</interpolation>
+	<axis>
+		<x1-m>-1.33</x1-m>
+		<y1-m>-9.30</y1-m>
+		<z1-m>1.26</z1-m>
+		
+		
+		<x2-m>-1.33</x2-m>
+		<y2-m>-4.50</y2-m>
+		<z2-m>1.26</z2-m>
+	</axis>
+</animation>
+
+<!-- FLAPS -->
+<!-- Left flap up -->
+<!-- rotation -->
+<animation>
+	<type>rotate</type>
+	<object-name>obj81</object-name>
+	<property>/surface-positions/flap-pos-norm</property>
+	<factor>39</factor>
+	<center>
+		<x-m>-1.35</x-m>
+		<y-m>-2.50</y-m>
+		<z-m>1.0</z-m>
+	</center>
+	<axis>
+		<x>0</x>
+		<y>1</y>
+		<z>-0.05</z>
+	</axis>
+</animation>
+<!-- moving -->
+<animation>
+	<type>translate</type>
+	<object-name>obj81</object-name>
+	<property>/surface-positions/flap-pos-norm</property>
+	<factor>0.3</factor>
+	<axis>
+		<x>1</x>
+		<y>0</y>
+		<z>0.3</z>
+	</axis>
+</animation>
+
+
+<!-- Right flap up -->
+<!-- rotation -->
+<animation>
+	<type>rotate</type>
+	<object-name>obj77</object-name>
+	<property>/surface-positions/flap-pos-norm</property>
+	<factor>39</factor>
+	<center>
+		<x-m>-1.35</x-m>
+		<y-m>2.50</y-m>
+		<z-m>1.0</z-m>
+	</center>
+	<axis>
+		<x>0</x>
+		<y>1</y>
+		<z>0.05</z>
+	</axis>
+</animation>
+<!-- moving -->
+<animation>
+	<type>translate</type>
+	<object-name>obj77</object-name>
+	<property>/surface-positions/flap-pos-norm</property>
+	<factor>0.2</factor>
+	<axis>
+		<x>1</x>
+		<y>0</y>
+		<z>0.3</z>
+	</axis>
+</animation>
+<!-- Left flap down  -->
+<!-- rotation -->
+<animation>
+	<type>rotate</type>
+	<object-name>obj80</object-name>
+	<property>/surface-positions/flap-pos-norm</property>
+	<factor>39</factor>
+	<center>
+		<x-m>-1.55</x-m>
+		<y-m>-4.80</y-m>
+		<z-m>-1.27</z-m>
+	</center>
+	<axis>
+		<x>0.0</x>
+		<y>1</y>
+		<z>-0.08</z>
+	</axis>
+</animation>
+<!-- moving -->
+<animation>
+	<type>translate</type>
+	<object-name>obj80</object-name>
+	<property>/surface-positions/flap-pos-norm</property>
+	<factor>0.1</factor>
+	<axis>
+		<x>1</x>
+		<y>0</y>
+		<z>0</z>
+	</axis>
+</animation>
+
+<!-- Right flap down  -->
+<!-- rotation -->
+<animation>
+	<type>rotate</type>
+	<object-name>obj78</object-name>
+	<property>/surface-positions/flap-pos-norm</property>
+	<factor>39</factor>
+	<center>
+		<x-m>-1.55</x-m>
+		<y-m>4.80</y-m>
+		<z-m>-1.27</z-m>
+	</center>
+	<axis>
+		<x>0.0</x>
+		<y>1</y>
+		<z>0.08</z>
+	</axis>
+</animation>
+<!-- moving -->
+<animation>
+	<type>translate</type>
+	<object-name>obj78</object-name>
+	<property>/surface-positions/flap-pos-norm</property>
+	<factor>0.1</factor>
+	<axis>
+		<x>1</x>
+		<y>0</y>
+		<z>0</z>
+	</axis>
+</animation>
+
+<!--Slats-->
+<!-- Left -->
+<animation>
+	<type>rotate</type>
+	<object-name>obj57</object-name>
+	<property>/surface-positions/flap-pos-norm</property>
+	<interpolation>
+		<entry><ind>	0</ind><dep>	0</dep></entry>
+		<entry><ind>	0.25</ind><dep>	-13</dep></entry>
+	</interpolation>
+
+	<center>
+		<x-m>-2.80</x-m>
+		<y-m>-3.70</y-m>
+		<z-m>0.9</z-m>
+	</center>
+	<axis>
+		<x>0.0</x>
+		<y>1</y>
+		<z>0</z>
+	</axis>
+</animation>
+<!-- Right -->
+<animation>
+	<type>rotate</type>
+	<object-name>obj58</object-name>
+	<property>/surface-positions/flap-pos-norm</property>
+	<interpolation>
+		<entry><ind>	0</ind><dep>	0</dep></entry>
+		<entry><ind>	0.25</ind><dep>	-13</dep></entry>
+	</interpolation>
+	
+	<center>
+		<x-m>-2.80</x-m>
+		<y-m>3.70</y-m>
+		<z-m>0.9</z-m>
+	</center>
+	<axis>
+		<x>0.0</x>
+		<y>1</y>
+		<z>0</z>
+	</axis>
+</animation>
+
+
+
+<!-- Gear  -->
+<!-- Left gear -->
+<animation>
+	<type>translate</type>
+	<object-name>left_gear</object-name>
+	<property>/gear/gear/compression-norm</property>
+	<interpolation>
+		<entry><ind>	0</ind><dep>	0</dep></entry>
+		<entry><ind>	0.2</ind><dep>	0.1</dep></entry>
+		<entry><ind>	0.5</ind><dep>	0.4</dep></entry>
+	</interpolation>
+	<axis>
+		<x>0</x>
+		<y>0.25</y>
+		<z>1</z>
+	</axis>
+</animation>
+<!-- 
+     Wheel diameter about 0.9 m
+     factor(rpm) = (V(kt)*60)/(d*Pi) = V(kt)*21.22
+-->
+<!-- left wheel -->
+<animation>
+	<type>spin</type>
+	<object-name>obj73</object-name>
+	<property>/velocities/airspeed-kt</property>
+	<factor>-21.22</factor>
+	<condition>
+		<property>/gear/gear/compression-norm</property>
+	</condition>
+	<center>
+		<x-m>-3.43</x-m>
+		<y-m>-1.96</y-m>
+		<z-m>-2.76</z-m>
+	</center>
+	<axis>
+		<x>0</x>
+		<y>1</y>
+		<z>-0.09</z>
+	</axis>
+</animation>
+<!-- Right gear -->
+<animation>
+	<type>translate</type>
+	<object-name>right_gear</object-name>
+	<property>/gear/gear[1]/compression-norm</property>
+	<interpolation>
+		<entry><ind>	0</ind><dep>	0</dep></entry>
+		<entry><ind>	0.2</ind><dep>	0.1</dep></entry>
+		<entry><ind>	0.5</ind><dep>	0.4</dep></entry>
+	</interpolation>
+	
+	<axis>
+		<x>0</x>
+		<y>-0.25</y>
+		<z>1</z>
+	</axis>
+</animation>
+<!-- right wheel -->
+<animation>
+	<type>spin</type>
+	<object-name>obj72</object-name>	
+	<property>/velocities/airspeed-kt</property>
+	<factor>-21.22</factor>
+	<condition>
+		<property>/gear/gear[1]/compression-norm</property>
+	</condition>
+	<center>
+		<x-m>-3.43</x-m>
+		<y-m>1.96</y-m>
+		<z-m>-2.76</z-m>
+	</center>
+	<axis>
+		<x>0</x>
+		<y>1</y>
+		<z>0.09</z>
+	</axis>
+</animation>
+
+
+<!-- rear wheel -->
+<animation>
+	<type>spin</type>
+	<object-name>obj66</object-name>
+	<!--<object-name>rear-rect</object-name>-->
+	<property>/velocities/airspeed-kt</property>
+	<factor>-12.5</factor>
+	<condition>
+		<property>/gear/gear/compression-norm</property>
+	</condition>
+	<center>
+		<x-m>5.01</x-m>
+		<y-m>0.0</y-m>
+		<z-m>-1.26</z-m>
+	</center>
+	<axis>
+		<x>0</x>
+		<y>1</y>
+		<z>0</z>
+	</axis>
+</animation>
+
+
+<!--Door-->
+<animation>
+	<type>rotate</type>
+	<object-name>obj38</object-name>
+	<object-name>obj39</object-name>
+	<object-name>obj64</object-name>
+	<property>/an2/controls/door-pos-norm</property>
+	<factor>-170</factor>
+	<center>
+		<x-m>0.69</x-m>
+		<y-m>-0.7</y-m>
+		<z-m>-0.5</z-m>
+	</center>
+	<axis>
+		<x>0.0</x>
+		<y>0</y>
+		<z>1</z>
+	</axis>
+</animation>
+
+<animation>
+	<type>material</type>
+	<object-name>obj10</object-name>
+	<emission>
+		<red>1.0</red>
+		<green>0.2</green>
+		<blue>0.0</blue>
+		<factor-prop>/controls/switches/nav-light</factor-prop>
+	</emission>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>obj2</object-name>
+	<emission>
+		<red>0.0</red>
+		<green>1.0</green>
+		<blue>0.0</blue>
+		<factor-prop>/controls/switches/nav-light</factor-prop>
+	</emission>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>rear-light</object-name>
+	<emission>
+		<red>1.0</red>
+		<green>1.0</green>
+		<blue>0.8</blue>
+		<factor-prop>/controls/switches/nav-light</factor-prop>
+	</emission>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>obj22</object-name>
+	<emission>
+		<red>1.0</red>
+		<green>1.0</green>
+		<blue>0.8</blue>
+		<factor-prop>/controls/switches/landing-light</factor-prop>
+	</emission>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>obj22</object-name>
+	<emission>
+		<red>1.0</red>
+		<green>1.0</green>
+		<blue>0.8</blue>
+		<factor-prop>/controls/switches/taxi-light</factor-prop>
+	</emission>
+</animation>
+
+<!--Runtime selective livreas-->
+
+<animation>
+	<type>material</type>
+	<object-name>obj25</object-name>
+	<texture-prop>/an2/livreas/fuselage</texture-prop>
+	<global type="bool">true</global>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>obj37</object-name>
+	<texture-prop>/an2/livreas/fuselage</texture-prop>
+	<global type="bool">true</global>
+</animation>
+<animation>
+	<type>material</type>
+	<object-name>obj26</object-name>
+	<texture-prop>/an2/livreas/wings</texture-prop>
+	<global type="bool">true</global>
+</animation>
+
+
+</PropertyList>

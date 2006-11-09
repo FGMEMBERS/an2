@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+
+<!--
+Gauge for AN-2 model
+Volt-ampermeter VA-3
+Yurik V. Nikiforoff, sep 2006
+-->
+
+<PropertyList>
+
+ <name>Volt-ampermeter VA-3</name>
+ 
+   <w-base>256</w-base>
+   <h-base>256</h-base>
+   
+<layers>
+    <layer>
+         <name>face</name>
+	 <texture>   
+    	    <path>Aircraft/an2/Instruments/Textures/va-3_1.rgb</path>
+            <x1>0.0</x1>
+	    <y1>0.0</y1>
+    	    <x2>1.0</x2>
+    	    <y2>1.0</y2>
+        </texture>
+	<w>256</w>
+        <h>256</h>
+    </layer>
+    <layer>
+	    <name>face with uv light</name>
+	    <condition>
+		    <property>/an2/controls/switches/uv_light</property>
+	    </condition> 
+	    <emissive>true</emissive>
+	    <texture>   
+		    <path>Aircraft/an2/Instruments/Textures/va-3_1_uv.rgb</path>
+		    <x1>0.0</x1>
+		    <y1>0.0</y1>
+		    <x2>1.0</x2>
+		    <y2>1.0</y2>
+	    </texture>
+	    <w>205</w>
+	    <h>205</h>
+    	<transformations>    
+	    <transformation>
+		    <type>x-shift</type>
+		    <offset>-2</offset>
+	    </transformation>
+	    <transformation>
+		    <type>y-shift</type>
+		    <offset>24</offset>
+	    </transformation>
+	</transformations>
+    </layer>
+
+    <layer>
+	<name>needle</name>
+	<texture>
+    	    <path>Aircraft/an2/Instruments/Textures/va-3_2.rgb</path>
+	    <x1>0.0</x1>
+	    <y1>0.0</y1>
+	    <x2>1.0</x2>
+	    <y2>1.0</y2>
+	</texture>
+        <w>28</w>
+	<h>160</h>
+	<transformations>
+	    <transformation>
+    		<type>rotation</type>
+		<property>/an2/instrumentation/va-3/indicated-value</property>
+		<max>360</max>
+		<min>-60</min>
+		<wrap>true</wrap>
+    		<scale>0.6</scale>
+		<offset>-60</offset>
+	    </transformation>
+	    <transformation>
+		<type>x-shift</type>
+		<offset>7</offset>
+	    </transformation>
+	    <transformation>
+		<type>y-shift</type>
+		<offset>25</offset>
+	    </transformation>
+	</transformations>
+    </layer> 
+    
+    <layer>
+	    <name>needle with uv light</name>
+	    <condition>
+		    <property>/an2/controls/switches/uv_light</property>
+	    </condition> 
+	    <emissive>true</emissive>
+	    <texture>
+		    <path>Aircraft/an2/Instruments/Textures/va-3_2_uv.rgb</path>
+		    <x1>0.0</x1>
+		    <y1>0.0</y1>
+		    <x2>1.0</x2>
+		    <y2>1.0</y2>
+	    </texture>
+	    <w>28</w>
+	    <h>160</h>
+	    <transformations>
+		    <transformation>
+			    <type>rotation</type>
+			    <property>/an2/instrumentation/va-3/indicated-value</property>
+			    <max>360</max>
+			    <min>-60</min>
+			    <wrap>true</wrap>
+			    <scale>0.6</scale>
+			    <offset>-60</offset>
+		    </transformation>
+		    <transformation>
+			    <type>x-shift</type>
+			    <offset>7</offset>
+		    </transformation>
+		    <transformation>
+			    <type>y-shift</type>
+			    <offset>25</offset>
+		    </transformation>
+	    </transformations>
+    </layer> 
+</layers>
+<actions>
+	<!-- press button "Volts" -->
+	<action>
+		<name>Volts button</name>
+		<button>0</button>
+		<x>-56</x>
+		<y>-108</y>
+		<w>40</w>
+		<h>40</h>
+		<binding>
+			<command>nasal</command>
+			<script>an2.va_volts()</script>
+		</binding>
+		<mod-up>
+			<binding>
+				<command>nasal</command>
+				<script>an2.va_ampers()</script>
+			</binding>
+		</mod-up>
+
+	</action>
+</actions>
+
+</PropertyList>

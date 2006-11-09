@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+
+<!--
+    Gauge for AN-2 model
+    Variometer VAR-10
+    Yurik V. Nikiforoff, aug 2006
+
+-->
+
+<PropertyList>
+
+	<name>Variometer VAR-10</name>
+ 
+   <w-base>256</w-base>
+   <h-base>256</h-base>
+   
+<layers>
+    <layer>
+     <name>face</name>
+     <texture>   
+     <path>Aircraft/an2/Instruments/Textures/var-10_1.rgb</path>
+     <x1>0.0</x1>
+     <y1>0.0</y1>
+     <x2>1.0</x2>
+     <y2>1.0</y2>
+     </texture>
+     <w>256</w>
+     <h>256</h>
+    </layer>
+    <layer>
+	    <name>face with uv light</name>
+	    <condition>
+		    <property>/an2/controls/switches/uv_light</property>
+	    </condition> 
+	    <emissive>true</emissive>
+	    <texture>   
+		    <path>Aircraft/an2/Instruments/Textures/vr-10_1_uv.rgb</path>
+		    <x1>0.0</x1>
+		    <y1>0.0</y1>
+		    <x2>1.0</x2>
+		    <y2>1.0</y2>
+	    </texture>
+	    <w>200</w>
+	    <h>200</h>
+	    <emissive>true</emissive>
+	    <transformations>
+		    <transformation>
+			    <type>x-shift</type>
+			    <offset>-12</offset>
+		    </transformation>
+		    <transformation>
+			    <type>y-shift</type>
+			    <offset>10</offset>
+		    </transformation>
+	    </transformations>
+	    
+    </layer>
+
+    <layer>
+    <name>needle</name>
+    <texture>
+    <path>Aircraft/an2/Instruments/Textures/var-10_2.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.0</y1>
+    <x2>1.0</x2>
+    <y2>1.0</y2>
+    </texture>
+    <w>110</w>
+    <h>16</h>
+<transformations>
+	<transformation>
+		<type>x-shift</type>
+		<offset>-15</offset>
+	</transformation>
+	<transformation>
+		<type>y-shift</type>
+		<offset>10</offset>
+	</transformation>
+	<transformation>
+	<property>/instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
+		<scale>0.093</scale>
+		<min>-1933</min>
+		<max>1933</max>
+		<wrap>true</wrap>
+	</transformation>	
+
+	<transformation>
+		<type>x-shift</type>
+		<offset>-43</offset>
+	</transformation>
+	</transformations>
+    </layer> 
+    <layer>
+	    <name>needle with uv light</name>
+	    <condition>
+		    <property>/an2/controls/switches/uv_light</property>
+	    </condition> 
+	    <emissive>true</emissive>
+	    <texture>
+		    <path>Aircraft/an2/Instruments/Textures/var-10_2_uv.rgb</path>
+		    <x1>0.0</x1>
+		    <y1>0.0</y1>
+		    <x2>1.0</x2>
+		    <y2>1.0</y2>
+	    </texture>
+	    <w>110</w>
+	    <h>16</h>
+	    <transformations>
+		    <transformation>
+			    <type>x-shift</type>
+			    <offset>-15</offset>
+		    </transformation>
+		    <transformation>
+			    <type>y-shift</type>
+			    <offset>10</offset>
+		    </transformation>
+		    <transformation>
+			    <property>/instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
+			    <scale>0.093</scale>
+			    <min>-1933</min>
+			    <max>1933</max>
+			    <wrap>true</wrap>
+		    </transformation>	
+		    
+		    <transformation>
+			    <type>x-shift</type>
+			    <offset>-43</offset>
+		    </transformation>
+	    </transformations>
+    </layer> 
+
+</layers>
+</PropertyList>

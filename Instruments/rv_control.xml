@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+
+<!--
+Gauge for AN-2 model
+Radio altimeter RV-UM control gauge
+Yurik V. Nikiforoff, sep 2006
+-->
+
+<PropertyList>
+
+	<name>RV-UM control gauge</name>
+ 
+   <w-base>256</w-base>
+   <h-base>256</h-base>
+   
+<layers>
+    <layer>
+         <name>face</name>
+	 <texture>   
+    	    <path>Aircraft/an2/Instruments/Textures/rv_control_1.rgb</path>
+            <x1>0.0</x1>
+	    <y1>0.0</y1>
+    	    <x2>1.0</x2>
+    	    <y2>1.0</y2>
+        </texture>
+	<w>256</w>
+        <h>256</h>
+    </layer>
+    <layer>
+	    <name>face with uv light</name>
+	    <condition>
+		    <property>/an2/controls/switches/uv_light</property>
+	    </condition> 
+	    <emissive>true</emissive>
+	    <texture>   
+		    <path>Aircraft/an2/Instruments/Textures/rv_select_1_uv.rgb</path>
+		    <x1>0.0</x1>
+		    <y1>0.0</y1>
+		    <x2>1.0</x2>
+		    <y2>1.0</y2>
+	    </texture>
+	    <w>220</w>
+	    <h>220</h>
+    </layer>
+
+    <layer>
+	<name>handle</name>
+	<texture>
+		<path>Aircraft/an2/Instruments/Textures/rv_control_2.rgb</path>
+	    <x1>0.0</x1>
+	    <y1>0.0</y1>
+	    <x2>1.0</x2>
+	    <y2>1.0</y2>
+	</texture>
+        <w>100</w>
+	<h>200</h>
+	<transformations>
+
+	    <transformation>
+		<type>rotation</type>
+		<scale>30</scale>
+		<property>/an2/instrumentation/rv-um/control</property>
+		<offset>-120</offset>	
+	    </transformation>
+	    <transformation>
+		    <type>x-shift</type>
+		    <offset>-3</offset>
+	    </transformation>
+	    <transformation>
+		    <type>y-shift</type>
+		    <offset>-4</offset>
+	    </transformation>
+
+    </transformations>
+    </layer> 
+    <layer>
+	    <name>handle uv mark</name>
+	    <condition>
+		    <property>/an2/controls/switches/uv_light</property>
+	    </condition> 
+	    <emissive>true</emissive>
+	    <texture>
+		    <path>Aircraft/an2/Instruments/Textures/rv_select_2_uv.rgb</path>
+		    <x1>0.0</x1>
+		    <y1>0.0</y1>
+		    <x2>1.0</x2>
+		    <y2>1.0</y2>
+	    </texture>
+	    <w>40</w>
+	    <h>40</h>
+	    <transformations>
+		    
+		    <transformation>
+			    <type>rotation</type>
+			    <scale>30</scale>
+			    <property>/an2/instrumentation/rv-um/control</property>
+			    <offset>0</offset>	
+		    </transformation>
+		    <transformation>
+			    <type>x-shift</type>
+			    <offset>-58</offset>
+		    </transformation>
+		    <transformation>
+			    <type>y-shift</type>
+			    <offset>-31</offset>
+		    </transformation>
+		    
+	    </transformations>
+    </layer> 
+
+</layers>
+
+<actions>
+	<action>
+		<name>RV-UM handle clockwise</name>
+		<button>0</button>
+		<x>-60</x>
+		<y>-60</y>
+		<w>120</w>
+		<h>120</h>
+		<binding>
+			<command>property-adjust</command>
+			<property>/an2/instrumentation/rv-um/control</property>
+			<step>1</step>
+			<min>0</min>
+			<max>9</max>
+			<wrap>true</wrap>
+		</binding>
+	</action>
+	<action>
+		<name>RV-UM handle counter clockwise</name>
+		<button>1</button>
+		<x>-60</x>
+		<y>-60</y>
+		<w>120</w>
+		<h>120</h>
+		<binding>
+			<command>property-adjust</command>
+			<property>/an2/instrumentation/rv-um/control</property>
+			<step>-1</step>
+			<min>0</min>
+			<max>9</max>
+			<wrap>true</wrap>
+		</binding>
+	</action>
+</actions>
+</PropertyList>

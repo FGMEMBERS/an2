@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+
+<!--
+Yurik V. Nikiforoff, sep 2006
+-->
+
+<PropertyList>
+
+ <name>Termometer switch</name>
+ 
+   <w-base>64</w-base>
+   <h-base>64</h-base>
+   
+<layers>
+    <layer>
+	<name>switch pos 1</name>
+        <condition>
+	    <not>
+		<property>/an2/controls/switches/temp_switch</property>
+    	    </not>
+	</condition>                        
+	<texture>                           
+    	    <path>Aircraft/an2/Instruments/Textures/switch_2_1.rgb</path>
+	    <x1>0.0</x1>
+	    <y1>0.0</y1>
+	    <x2>1.0</x2>
+	    <y2>1.0</y2>
+	</texture>
+	<w>32</w>
+	<h>32</h>
+	<transformations>
+	    <transformation>
+		<type>x-shift</type>
+		<offset>19</offset>
+    	    </transformation>
+    	    <transformation>
+		<type>y-shift</type>
+		<offset>-6</offset>
+	    </transformation>
+	</transformations>
+    </layer>
+    <layer>
+	    <name>switch pos 1 with uv light</name>
+	    <condition>
+		    <property>/an2/controls/switches/uv_light</property>
+		    <not>
+			   <property>/an2/controls/switches/temp_switch</property>
+		    </not>
+	    </condition>
+	    <emissive>true</emissive>
+	    <texture>                           
+		    <path>Aircraft/an2/Instruments/Textures/uv_spot.rgb</path>
+		    <x1>0.0</x1>
+		    <y1>0.0</y1>
+		    <x2>1.0</x2>
+		    <y2>1.0</y2>
+	    </texture>
+	    <w>5</w>
+	    <h>5</h>
+	    <transformations>
+		    <transformation>
+			    <type>x-shift</type>
+			    <offset>13</offset>
+		    </transformation>
+		    <transformation>
+			    <type>y-shift</type>
+			    <offset>-18</offset>
+		    </transformation>
+	    </transformations>
+    </layer>
+   <layer>
+	    <name>switch pos 3</name>
+	    <condition>
+		   <property>/an2/controls/switches/temp_switch</property>
+	    </condition> 
+	    <texture>                           
+		    <path>Aircraft/an2/Instruments/Textures/switch_2_3.rgb</path>
+		    <x1>0.0</x1>
+		    <y1>0.0</y1>
+		    <x2>1.0</x2>
+		    <y2>1.0</y2>
+	    </texture>
+	    <w>32</w>
+	    <h>32</h>
+	    <transformations>
+		    <transformation>
+			    <type>x-shift</type>
+			    <offset>19</offset>
+		    </transformation>
+		    <transformation>
+			    <type>y-shift</type>
+			    <offset>6</offset>
+		    </transformation>
+	    </transformations>
+    </layer>
+    
+
+
+    <layer>
+	    <name>switch pos 3 with uv light</name>
+	    <condition>
+		    <property>/an2/controls/switches/uv_light</property>
+		   <property>/an2/controls/switches/temp_switch</property>
+	    </condition> 
+	    <emissive>true</emissive>
+	    <texture>                           
+		    <path>Aircraft/an2/Instruments/Textures/uv_spot.rgb</path>
+		    <x1>0.0</x1>
+		    <y1>0.0</y1>
+		    <x2>1.0</x2>
+		    <y2>1.0</y2>
+	    </texture>
+	    <w>5</w>
+	    <h>5</h>
+	    <transformations>
+		    <transformation>
+			    <type>x-shift</type>
+			    <offset>13</offset>
+		    </transformation>
+		    <transformation>
+			    <type>y-shift</type>
+			    <offset>18</offset>
+		    </transformation>
+	    </transformations>
+    </layer>
+    
+
+
+
+
+
+
+
+</layers>
+
+<!--Set switch-->
+<actions>
+	<action>
+		<name>switch on</name>
+		<button>0</button>
+		<x>0</x>
+		<y>0</y>
+		<w>26</w>
+		<h>30</h>
+		<binding>
+			<command>property-assign</command>
+	<property>/an2/controls/switches/temp_switch</property>
+			<value>1</value>
+		</binding>
+		<binding>
+			<command>nasal</command>
+			<script>electrical.update_electric()</script>
+		</binding>
+	</action>
+<!--Reset switch-->
+	<action>
+		<name>switch off</name>
+		<button>0</button>
+		<x>0</x>
+		<y>-30</y>
+		<w>26</w>
+		<h>30</h>
+		<binding>
+			<command>property-assign</command>
+	<property>/an2/controls/switches/temp_switch</property>
+			<value>0</value>
+		</binding>
+		<binding>
+			<command>nasal</command>
+			<script>electrical.update_electric()</script>
+		</binding>
+
+	</action>
+</actions>
+</PropertyList>
