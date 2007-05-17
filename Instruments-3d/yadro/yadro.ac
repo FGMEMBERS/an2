@@ -1,0 +1,23 @@
+AC3Db
+MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+OBJECT world
+kids 1
+OBJECT poly
+name "rect"
+loc 0.00041756 0.000180386 -7.45058e-09
+texture "yadro.rgb"
+crease 100.000000
+numvert 4
+3.66708e-09 -0.0606782 0.0841438
+-3.66708e-09 -0.0606782 -0.0841438
+-3.66708e-09 0.0606782 -0.0841438
+3.66708e-09 0.0606782 0.0841438
+numsurf 1
+SURF 0x20
+mat 0
+refs 4
+2 0.886719 0.882812
+3 0.0625 0.882812
+0 0.0625 0.148438
+1 0.886719 0.148438
+kids 0

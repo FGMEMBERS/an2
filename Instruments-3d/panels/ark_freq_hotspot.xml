@@ -1,0 +1,221 @@
+<?xml version="1.0" ?>
+
+<PropertyList>
+    <name>HotspotArkFreqPanel</name>
+<background>Aircraft/an2/Panels/Textures/transparent-bg.rgb</background>
+<!--    <background>Aircraft/an2/Instruments-3d/adf-control/ark-control_1.rgb</background>-->
+    <w>512</w>
+    <h>512</h>
+    <instruments>
+        <instrument>
+            <name>panel hotspots 1</name>
+            <x>132</x>
+            <y>190</y>
+            <w>200</w>
+            <h>200</h>
+            <w-base>200</w-base>
+            <h-base>200</h-base>
+            <actions>
+<!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+                    <action>
+                      <name>hund inc</name>
+                      <button>0</button>
+                      <x>0</x>
+                      <y>0</y>
+                      <w>10</w>
+                      <h>30</h>
+                      <binding>
+                        <command>property-adjust</command>
+                        <property>/an2/instrumentation/adf/selected-khz</property>
+                        <step>100.0</step>
+                        <min>150.0</min>
+                        <max>1290</max>
+                      </binding>
+                    </action>
+                    <action>
+                      <name>hund dec</name>
+                      <button>0</button>
+                      <x>0</x>
+                      <y>-40</y>
+                      <w>10</w>
+                      <h>30</h>
+                      <binding>
+                        <command>property-adjust</command>
+                        <property>/an2/instrumentation/adf/selected-khz</property>
+                        <step>-100.0</step>
+                        <min>150.0</min>
+                        <max>1290</max>
+                      </binding>
+              </action>  
+              <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+              <action>
+                <name>dec inc</name>
+                <button>0</button>
+                <x>11</x>
+                <y>0</y>
+                <w>10</w>
+                <h>30</h>
+                <binding>
+                  <command>property-adjust</command>
+                  <property>/an2/instrumentation/adf/selected-khz</property>
+                  <step>10.0</step>
+                  <min>150.0</min>
+                  <max>1290</max>
+                </binding>
+              </action>
+              <action>
+                <name>dec dec</name>
+                <button>0</button>
+                <x>11</x>
+                <y>-40</y>
+                <w>10</w>
+                <h>30</h>
+                <binding>
+                  <command>property-adjust</command>
+                  <property>/an2/instrumentation/adf/selected-khz</property>
+                  <step>-10.0</step>
+                  <min>150.0</min>
+                  <max>1290</max>
+                </binding>
+              </action>  
+              <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+              <action>
+                <name>ones inc</name>
+                <button>0</button>
+                <x>22</x>
+                <y>0</y>
+                <w>10</w>
+                <h>30</h>
+                <binding>
+                  <command>property-adjust</command>
+                  <property>/an2/instrumentation/adf/selected-khz</property>
+                  <step>1.0</step>
+                  <min>150.0</min>
+                  <max>1290</max>
+                </binding>
+              </action>
+              <action>
+                <name>ones dec</name>
+                <button>0</button>
+                <x>22</x>
+                <y>-40</y>
+                <w>10</w>
+                <h>30</h>
+                <binding>
+                  <command>property-adjust</command>
+                  <property>/an2/instrumentation/adf/selected-khz</property>
+                  <step>-1.0</step>
+                  <min>150.0</min>
+                  <max>1290</max>
+                </binding>
+              </action>  
+            </actions>
+	 </instrument>
+<!--*******************************************************************-->
+<instrument>
+  <name>panel hotspots 2</name>
+  <x>353</x>
+  <y>190</y>
+  <w>200</w>
+  <h>200</h>
+  <w-base>200</w-base>
+  <h-base>200</h-base>
+  <actions>
+    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <action>
+      <name>hund inc</name>
+      <button>0</button>
+      <x>0</x>
+      <y>0</y>
+      <w>10</w>
+      <h>30</h>
+      <binding>
+        <command>property-adjust</command>
+        <property>/an2/instrumentation/adf/standby-khz</property>
+        <step>100.0</step>
+        <min>150.0</min>
+        <max>1290</max>
+      </binding>
+    </action>
+    <action>
+      <name>hund dec</name>
+      <button>0</button>
+      <x>0</x>
+      <y>-40</y>
+      <w>10</w>
+      <h>30</h>
+      <binding>
+        <command>property-adjust</command>
+        <property>/an2/instrumentation/adf/standby-khz</property>
+        <step>-100.0</step>
+        <min>150.0</min>
+        <max>1290</max>
+      </binding>
+    </action>  
+    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <action>
+      <name>dec inc</name>
+      <button>0</button>
+      <x>11</x>
+      <y>0</y>
+      <w>10</w>
+      <h>30</h>
+      <binding>
+        <command>property-adjust</command>
+        <property>/an2/instrumentation/adf/standby-khz</property>
+        <step>10.0</step>
+        <min>150.0</min>
+        <max>1290</max>
+      </binding>
+    </action>
+    <action>
+      <name>dec dec</name>
+      <button>0</button>
+      <x>11</x>
+      <y>-40</y>
+      <w>10</w>
+      <h>30</h>
+      <binding>
+        <command>property-adjust</command>
+        <property>/an2/instrumentation/adf/standby-khz</property>
+        <step>-10.0</step>
+        <min>150.0</min>
+        <max>1290</max>
+      </binding>
+    </action>  
+    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <action>
+      <name>ones inc</name>
+      <button>0</button>
+      <x>22</x>
+      <y>0</y>
+      <w>10</w>
+      <h>30</h>
+      <binding>
+        <command>property-adjust</command>
+        <property>/an2/instrumentation/adf/standby-khz</property>
+        <step>1.0</step>
+        <min>150.0</min>
+        <max>1290</max>
+      </binding>
+    </action>
+    <action>
+      <name>ones dec</name>
+      <button>0</button>
+      <x>22</x>
+      <y>-40</y>
+      <w>10</w>
+      <h>30</h>
+      <binding>
+        <command>property-adjust</command>
+        <property>/an2/instrumentation/adf/standby-khz</property>
+        <step>-1.0</step>
+        <min>150.0</min>
+        <max>1290</max>
+      </binding>
+    </action>  
+  </actions>
+</instrument>
+
+      </instruments>
+</PropertyList>

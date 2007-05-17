@@ -1,0 +1,549 @@
+<?xml version="1.0"?>
+<!--
+    ############################################################################
+    #    Copyright 								   #
+    #									   #
+    #    (C) 2005 by Anton Nikolaev aka Xomer - original model for 		   #
+    #	MS Flight Simulator, sounds, visual model and textures.		   #
+    #     	xomer@yandex.ru							   #
+    #									   #
+    #	Model published under GPL with his permission. 			   #
+    #									   #
+    #	Original model you can get there: 				   #
+    #	http://www.avsim.ru/files.phtml?action=download&id=3333		   #
+    #									   #
+    #    (C) 2007 by Yurik V. Nikiforoff - port for FGFS, 2d & 3d panels, FDM, #
+    #	instruments, animations, systems and over.		 	   #
+    #    	yurik@megasignal.com						   #
+    #                                                                          #
+    #    This program is free software; you can redistribute it and#or modify  #
+    #    it under the terms of the GNU General Public License as published by  #
+    #    the Free Software Foundation; either version 2 of the License, or     #
+    #    (at your option) any later version.                                   #
+    #                                                                          #
+    #    This program is distributed in the hope that it will be useful,       #
+    #    but WITHOUT ANY WARRANTY; without even the implied warranty of        #
+    #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         #
+    #    GNU General Public License for more details.                          #
+    #                                                                          #
+    #    You should have received a copy of the GNU General Public License     #
+    #    along with this program; if not, write to the                         #
+    #    Free Software Foundation, Inc.,                                       #
+    #    59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             #
+    ############################################################################		  
+    -->
+
+<!-- Central console for An-2-->
+<PropertyList>
+ <path>console.ac</path>
+<!-- External instruments lighting -->
+<animation>
+  <type>material</type>
+  <object-name>lamp_base_1</object-name>
+  <object-name>lamp_base_2</object-name>
+  <object-name>lamp_base_3</object-name>
+  <emission>
+    <red-prop>/an2/controls/light/ext-red</red-prop>
+    <green-prop>/an2/controls/light/ext-green</green-prop>
+    <blue-prop>/an2/controls/light/ext-blue</blue-prop>
+  </emission>
+</animation>
+ <animation>
+   <type>material</type>
+   <object-name>main_base</object-name>
+   <object-name>main_box</object-name>
+   <emission>
+     <red-prop>/an2/controls/light/ext-red</red-prop>
+     <green-prop>/an2/controls/light/ext-green</green-prop>
+     <blue-prop>/an2/controls/light/ext-blue</blue-prop>
+   </emission>
+ </animation>
+ 
+ <animation>
+   <type>material</type>
+   <object-name>hand_1</object-name>
+   <emission>
+     <red-prop>/an2/controls/light/ext-red</red-prop>
+     <green-prop>/an2/controls/light/ext-green</green-prop>
+     <blue-prop>/an2/controls/light/ext-blue</blue-prop>
+   </emission>
+ </animation>
+ <animation>
+   <type>material</type>
+   <object-name>hand_2</object-name>
+   <emission>
+     <red-prop>/an2/controls/light/ext-red</red-prop>
+     <green-prop>/an2/controls/light/ext-green</green-prop>
+     <blue-prop>/an2/controls/light/ext-blue</blue-prop>
+   </emission>
+ </animation>
+ <animation>
+   <type>material</type>
+   <object-name>hand_3</object-name>
+   <emission>
+     <red-prop>/an2/controls/light/ext-red</red-prop>
+     <green-prop>/an2/controls/light/ext-green</green-prop>
+     <blue-prop>/an2/controls/light/ext-blue</blue-prop>
+   </emission>
+ </animation>
+ <animation>
+   <type>material</type>
+   <object-name>hand_4</object-name>
+   <emission>
+     <red-prop>/an2/controls/light/ext-red</red-prop>
+     <green-prop>/an2/controls/light/ext-green</green-prop>
+     <blue-prop>/an2/controls/light/ext-blue</blue-prop>
+   </emission>
+ </animation>
+ <animation>
+   <type>material</type>
+   <object-name>hand_5</object-name>
+   <emission>
+     <red-prop>/an2/controls/light/ext-red</red-prop>
+     <green-prop>/an2/controls/light/ext-green</green-prop>
+     <blue-prop>/an2/controls/light/ext-blue</blue-prop>
+   </emission>
+ </animation>
+ <animation>
+   <type>material</type>
+   <object-name>hand_6</object-name>
+   <emission>
+     <red-prop>/an2/controls/light/ext-red</red-prop>
+     <green-prop>/an2/controls/light/ext-green</green-prop>
+     <blue-prop>/an2/controls/light/ext-blue</blue-prop>
+   </emission>
+ </animation>
+
+ <!--UV staff-->
+ <animation>
+   <type>material</type>
+   <object-name>spot_1</object-name>
+   <condition>
+     <property>/an2/controls/switches/uv_light</property>
+   </condition>
+   <emission>
+     <red>1.0</red>
+     <green>1.0</green>
+     <blue>1.0</blue>
+     <factor-prop>/an2/controls/light/uv-bright</factor-prop>
+   </emission>
+ </animation>
+ <animation>
+   <type>material</type>
+   <object-name>spot_1</object-name>
+   <condition>
+     <not>
+       <property>/an2/controls/switches/uv_light</property>
+     </not>
+   </condition>
+   <emission>
+     <red>1.0</red>
+     <green>1.0</green>
+     <blue>1.0</blue>
+     <factor>0.0</factor>
+   </emission>
+ </animation>
+ <animation>
+   <type>material</type>
+   <object-name>spot_2</object-name>
+   <condition>
+     <property>/an2/controls/switches/uv_light</property>
+   </condition>
+   <emission>
+     <red>1.0</red>
+     <green>1.0</green>
+     <blue>1.0</blue>
+     <factor-prop>/an2/controls/light/uv-bright</factor-prop>
+   </emission>
+ </animation>
+ <animation>
+   <type>material</type>
+   <object-name>spot_2</object-name>
+   <condition>
+     <not>
+       <property>/an2/controls/switches/uv_light</property>
+     </not>
+   </condition>
+   <emission>
+     <red>1.0</red>
+     <green>1.0</green>
+     <blue>1.0</blue>
+     <factor>0.0</factor>
+   </emission>
+ </animation>
+ <animation>
+   <type>material</type>
+   <object-name>spot_3</object-name>
+   <condition>
+     <property>/an2/controls/switches/uv_light</property>
+   </condition>
+   <emission>
+     <red>1.0</red>
+     <green>1.0</green>
+     <blue>1.0</blue>
+     <factor-prop>/an2/controls/light/uv-bright</factor-prop>
+   </emission>
+ </animation>
+ <animation>
+   <type>material</type>
+   <object-name>spot_3</object-name>
+   <condition>
+     <not>
+       <property>/an2/controls/switches/uv_light</property>
+     </not>
+   </condition>
+   <emission>
+     <red>1.0</red>
+     <green>1.0</green>
+     <blue>1.0</blue>
+     <factor>0.0</factor>
+   </emission>
+ </animation>
+ <animation>
+   <type>material</type>
+   <object-name>spot_4</object-name>
+   <condition>
+     <property>/an2/controls/switches/uv_light</property>
+   </condition>
+   <emission>
+     <red>1.0</red>
+     <green>1.0</green>
+     <blue>1.0</blue>
+     <factor-prop>/an2/controls/light/uv-bright</factor-prop>
+   </emission>
+ </animation>
+ <animation>
+   <type>material</type>
+   <object-name>spot_4</object-name>
+   <condition>
+     <not>
+       <property>/an2/controls/switches/uv_light</property>
+     </not>
+   </condition>
+   <emission>
+     <red>1.0</red>
+     <green>1.0</green>
+     <blue>1.0</blue>
+     <factor>0.0</factor>
+   </emission>
+ </animation>
+ <animation>
+   <type>material</type>
+   <object-name>spot_5</object-name>
+   <condition>
+     <property>/an2/controls/switches/uv_light</property>
+   </condition>
+   <emission>
+     <red>1.0</red>
+     <green>1.0</green>
+     <blue>1.0</blue>
+     <factor-prop>/an2/controls/light/uv-bright</factor-prop>
+   </emission>
+ </animation>
+ <animation>
+   <type>material</type>
+   <object-name>spot_5</object-name>
+   <condition>
+     <not>
+       <property>/an2/controls/switches/uv_light</property>
+     </not>
+   </condition>
+   <emission>
+     <red>1.0</red>
+     <green>1.0</green>
+     <blue>1.0</blue>
+     <factor>0.0</factor>
+   </emission>
+ </animation>
+ <animation>
+   <type>material</type>
+   <object-name>spot_6</object-name>
+   <condition>
+     <property>/an2/controls/switches/uv_light</property>
+   </condition>
+   <emission>
+     <red>1.0</red>
+     <green>1.0</green>
+     <blue>1.0</blue>
+     <factor-prop>/an2/controls/light/uv-bright</factor-prop>
+   </emission>
+ </animation>
+ <animation>
+   <type>material</type>
+   <object-name>spot_6</object-name>
+   <condition>
+     <not>
+       <property>/an2/controls/switches/uv_light</property>
+     </not>
+   </condition>
+   <emission>
+     <red>1.0</red>
+     <green>1.0</green>
+     <blue>1.0</blue>
+     <factor>0.0</factor>
+   </emission>
+ </animation>
+
+ 
+<!-- Switches -->
+<animation>
+  <type>rotate</type>
+  <object-name>handle_1</object-name>
+  <property>/an2/controls/switches/air_3d</property>
+  <center>
+    <x-m>-0.3118</x-m>
+    <y-m>0.0</y-m>
+    <z-m>0.012</z-m>
+  </center>
+  <axis>
+    <x>0.0</x>
+    <y>1.0</y>
+    <z>0.0</z>
+  </axis>
+</animation>
+<animation>
+  <type>rotate</type>
+  <object-name>handle_2</object-name>
+  <property>/an2/controls/switches/oil_3d</property>
+  <center>
+    <x-m>-0.3118</x-m>
+    <y-m>0.0</y-m>
+    <z-m>0.012</z-m>
+  </center>
+  <axis>
+    <x>0.0</x>
+    <y>1.0</y>
+    <z>0.0</z>
+  </axis>
+</animation>
+<animation>
+  <type>rotate</type>
+  <object-name>handle_3</object-name>
+  <property>/an2/controls/switches/rudder-trim_3d</property>
+  <center>
+    <x-m>-0.3341</x-m>
+    <y-m>0.0</y-m>
+    <z-m>0.012</z-m>
+  </center>
+  <axis>
+    <x>0.0</x>
+    <y>1.0</y>
+    <z>0.0</z>
+  </axis>
+</animation>
+<animation>
+  <type>rotate</type>
+  <object-name>handle_4</object-name>
+  <property>/an2/controls/switches/aileron-trim_3d</property>
+  <center>
+    <x-m>-0.2921</x-m>
+    <y-m>0.0</y-m>
+    <z-m>0.012</z-m>
+  </center>
+  <axis>
+    <x>0.0</x>
+    <y>1.0</y>
+    <z>0.0</z>
+  </axis>
+</animation>
+<animation>
+  <type>rotate</type>
+  <object-name>handle_5</object-name>
+  <property>/an2/controls/switches/elevator-trim_3d</property>
+  <center>
+    <x-m>-0.3118</x-m>
+    <y-m>0.0</y-m>
+    <z-m>0.012</z-m>
+  </center>
+  <axis>
+    <x>0.0</x>
+    <y>1.0</y>
+    <z>0.0</z>
+  </axis>
+</animation>
+<animation>
+  <type>rotate</type>
+  <object-name>handle_6</object-name>
+  <property>/an2/controls/switches/flaps_3d</property>
+  <center>
+    <x-m>-0.3118</x-m>
+    <y-m>0.0</y-m>
+    <z-m>0.012</z-m>
+  </center>
+  <axis>
+    <x>0.0</x>
+    <y>1.0</y>
+    <z>0.0</z>
+  </axis>
+</animation>
+
+<!--Lamps-->
+
+<animation>
+  <type>material</type>
+  <object-name>lamp_1</object-name>
+  <condition>
+    <property>/an2/systems/electrical/bus-27</property>
+    <not>
+      <property>/controls/flight/rudder-trim</property>
+    </not>
+  </condition>                        
+  <emission>
+    <red>0.3</red>
+    <green>0.9</green>
+    <blue>0.2</blue>
+  </emission>
+</animation>
+<animation>
+  <type>material</type>
+  <object-name>lamp_1</object-name>
+  <condition>
+    <or>
+      <not>
+        <property>/an2/systems/electrical/bus-27</property>
+      </not>
+      <property>/controls/flight/rudder-trim</property>
+    </or>
+  </condition>                        
+  <emission>
+    <red>0.0</red>
+    <green>0.0</green>
+    <blue>0.0</blue>
+  </emission>
+</animation>
+
+<animation>
+  <type>material</type>
+  <object-name>lamp_2</object-name>
+  <condition>
+    <property>/an2/systems/electrical/bus-27</property>
+    <not>
+      <property>/controls/flight/elevator-trim</property>
+    </not>
+  </condition>                        
+  <emission>
+    <red>0.3</red>
+    <green>0.9</green>
+    <blue>0.2</blue>
+  </emission>
+</animation>
+<animation>
+  <type>material</type>
+  <object-name>lamp_2</object-name>
+  <condition>
+    <or>
+      <not>
+        <property>/an2/systems/electrical/bus-27</property>
+      </not>
+      <property>/controls/flight/elevator-trim</property>
+    </or>
+  </condition>                        
+  <emission>
+    <red>0.0</red>
+    <green>0.0</green>
+    <blue>0.0</blue>
+  </emission>
+</animation>
+
+<animation>
+  <type>material</type>
+  <object-name>lamp_3</object-name>
+  <condition>
+    <property>/an2/systems/electrical/bus-27</property>
+    <not>
+      <property>/controls/flight/aileron-trim</property>
+    </not>
+  </condition>                        
+  <emission>
+    <red>0.3</red>
+    <green>0.9</green>
+    <blue>0.2</blue>
+  </emission>
+</animation>
+<animation>
+  <type>material</type>
+  <object-name>lamp_3</object-name>
+  <condition>
+    <or>
+      <not>
+        <property>/an2/systems/electrical/bus-27</property>
+      </not>
+      <property>/controls/flight/aileron-trim</property>
+    </or>
+  </condition>                        
+  <emission>
+    <red>0.0</red>
+    <green>0.0</green>
+    <blue>0.0</blue>
+  </emission>
+</animation>
+<!--Handles-->
+<!--Throttle-->
+<animation>
+  <type>rotate</type>
+  <object-name>throttle_handle</object-name>
+  <property>/controls/engines/engine/throttle</property>
+  <factor>-100.0</factor>
+  <offset-deg>45.0</offset-deg>
+  <axis>
+    <x>0.0</x>
+    <y>1.0</y>
+    <z>0.0</z>
+  </axis>
+</animation>
+<!--Propeller pitch-->
+<animation>
+  <type>rotate</type>
+  <object-name>prop_handle</object-name>
+  <property>/an2/controls/switches/prop_handle</property>
+  <!--<property>/controls/engines/engine/propeller-pitch</property>-->
+  <factor>-40.0</factor>
+  <offset-deg>30.0</offset-deg>
+  <axis>
+    <x>0.0</x>
+    <y>1.0</y>
+    <z>0.0</z>
+  </axis>
+</animation>
+<!--Automatic mixture corrector-->
+<animation>
+  <type>rotate</type>
+  <object-name>blue_handle</object-name>
+  <property>/an2/controls/switches/mixture</property>
+  <factor>70.0</factor>
+  <offset-deg>-45.0</offset-deg>
+  <axis>
+    <x>0.0</x>
+    <y>1.0</y>
+    <z>0.0</z>
+  </axis>
+</animation>
+
+<!--Carb warming-->
+<animation>
+  <type>rotate</type>
+  <object-name>green_handle</object-name>
+  <property>/an2/controls/switches/carb_heat</property>
+  <factor>-70.0</factor>
+  <offset-deg>45.0</offset-deg>
+  <axis>
+    <x>0.0</x>
+    <y>1.0</y>
+    <z>0.0</z>
+  </axis>
+</animation>
+
+<!--Engine stop-->
+<animation>
+  <type>rotate</type>
+  <object-name>red_handle</object-name>
+  <offset-deg>-45.0</offset-deg>
+  <axis>
+    <x>0.0</x>
+    <y>1.0</y>
+    <z>0.0</z>
+  </axis>
+</animation>
+
+
+</PropertyList>
