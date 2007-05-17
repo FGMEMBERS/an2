@@ -12,7 +12,7 @@
 #	Original model you can get there: 				   #
 #	http://www.avsim.ru/files.phtml?action=download&id=3333		   #
 #									   #
-#    (C) 2006 by Yurik V. Nikiforoff - port for FGFS, 2d-panel, FDM, 	   #
+#    (C) 2007 by Yurik V. Nikiforoff - port for FGFS, 2d & 3d panels, FDM, #
 #	instruments, animations, systems and over.		 	   #
 #    	yurik@megasignal.com						   #
 #                                                                          #
@@ -33,20 +33,962 @@
 ############################################################################		  
 -->
 <PropertyList>
+  
+<path>an2_r.ac</path>
+  
+  <offsets>
+    <z-m>0.0</z-m>
+    <x-m>2.0</x-m>
+    <pitch-deg>0.0</pitch-deg>
+  </offsets>
 
- <path>an2_r.ac</path>
+<!-- ************************ 3D panel section ************************* -->
+<model>
+  <name>left_panel</name>
+  <path>Aircraft/an2/Instruments-3d/panels/left_panel.xml</path>
+  <offsets>
+    <x-m>-4.51</x-m>
+    <y-m>-0.43</y-m>
+    <z-m>-0.12</z-m>
+  </offsets>
+</model>
+<model>
+  <name>middle_panel</name>
+  <path>Aircraft/an2/Instruments-3d/panels/middle_panel.xml</path>
+  <offsets>
+    <x-m>-4.51</x-m>
+    <y-m>0.0</y-m>
+    <z-m>0.07</z-m>
+  </offsets>
+</model>
+<model>
+  <name>right_panel</name>
+  <path>Aircraft/an2/Instruments-3d/panels/right_panel.xml</path>
+  <offsets>
+    <x-m>-4.506</x-m>
+    <y-m>0.47</y-m>
+    <z-m>-0.2</z-m>
+  </offsets>
+</model>
+<model>
+  <name>light_panel</name>
+  <path>Aircraft/an2/Instruments-3d/panels/light_panel.xml</path>
+  <offsets>
+    <x-m>-4.48</x-m>
+    <y-m>-0.15</y-m>
+    <z-m>-0.25</z-m>
+    <pitch-deg>-15.0</pitch-deg>
+  </offsets>
+</model>
 
- <offsets>
-  <z-m>0.8</z-m>
-  <x-m>6.2</x-m>
-  <pitch-deg>0</pitch-deg>
- </offsets>
 
- <!-- Save fps - exclude complicate objects from shadowing -->
+
+
+<!-- Left panel gauges -->
+<!-- Gyro compass GPK-48 -->
+<model>
+  <name>gpk</name>
+  <path>Aircraft/an2/Instruments-3d/gpk-48/gpk-48_3d.xml</path>
+  <offsets>
+    <x-m>-4.503</x-m>
+    <y-m>-0.355</y-m>
+    <z-m>-0.005</z-m>
+  </offsets>
+</model>
+<!-- Air speed indicator -->
+<model>
+  <name>us</name>
+  <path>Aircraft/an2/Instruments-3d/us-350/us-350_3d.xml</path>
+  <offsets>
+    <x-m>-4.5</x-m>
+    <y-m>-0.603</y-m>
+    <z-m>-0.065</z-m>
+  </offsets>
+</model>
+<!-- Manifold pressure meter -->
+<model>
+  <name>mv</name>
+  <path>Aircraft/an2/Instruments-3d/mv-16u/mv-16u_3d.xml</path>
+  <offsets>
+    <x-m>-4.5</x-m>
+    <y-m>-0.239</y-m>
+    <z-m>-0.065</z-m>
+  </offsets>
+</model>
+<!-- Ampermeter A-1 -->
+<model>
+  <name>a1</name>
+  <path>Aircraft/an2/Instruments-3d/a1/a1_3d.xml</path>
+  <offsets>
+    <x-m>-4.506</x-m>
+    <y-m>-0.271</y-m>
+    <z-m>0.012</z-m>
+  </offsets>
+</model>
+<!--          low panel (-11.5 deg pitch)       -->
+<!-- Tachometer TE-45 -->
+<model>
+  <name>te</name>
+  <path>Aircraft/an2/Instruments-3d/te-45/te-45_3d.xml</path>
+  <offsets>
+    <x-m>-4.499</x-m>
+    <y-m>-0.231</y-m>
+    <z-m>-0.165</z-m>
+    <pitch-deg>-11.5</pitch-deg>
+  </offsets>
+</model>
+<!-- Engine gauge EMI-3K -->
+<model>
+  <name>emi</name>
+  <path>Aircraft/an2/Instruments-3d/emi-3k/emi-3k_3d.xml</path>
+  <offsets>
+    <x-m>-4.47</x-m>
+    <y-m>-0.338</y-m>
+    <z-m>-0.309</z-m>
+    <pitch-deg>-11.5</pitch-deg>
+  </offsets>
+</model>
+<!-- Termometer TCT-2 -->
+<model>
+  <name>tct</name>
+  <path>Aircraft/an2/Instruments-3d/tct-2/tct-2_3d.xml</path>
+  <offsets>
+    <x-m>-4.475</x-m>
+    <y-m>-0.236</y-m>
+    <z-m>-0.264</z-m>
+    <pitch-deg>-11.5</pitch-deg>
+  </offsets>
+</model>
+<!-- Termometer TUE-48 -->
+<model>
+  <name>tue</name>
+  <path>Aircraft/an2/Instruments-3d/tue-48/tue-48_3d.xml</path>
+  <offsets>
+    <x-m>-4.467</x-m>
+    <y-m>-0.429</y-m>
+    <z-m>-0.33</z-m>
+    <pitch-deg>-11.5</pitch-deg>
+  </offsets>
+</model>
+<!-- Gyro Induction compass with ADF indication -->
+<model>
+  <name>gik</name>
+  <path>Aircraft/an2/Instruments-3d/gik/gik-1_3d.xml</path>
+  <offsets>
+    <x-m>-4.49</x-m>
+    <y-m>-0.362</y-m>
+    <z-m>-0.175</z-m>
+    <pitch-deg>-11.5</pitch-deg>
+  </offsets>
+</model>
+<!-- Attitude indicator AGK47-B -->
+<model>
+  <name>agk</name>
+  <path>Aircraft/an2/Instruments-3d/agk/agk47-b_3d.xml</path>
+  <offsets>
+    <x-m>-4.49</x-m>
+    <y-m>-0.477</y-m>
+    <z-m>-0.045</z-m>
+  </offsets>
+</model>
+<!-- Fuel meter SBESS-1477 -->
+<model>
+  <name>sbess</name>
+	<path>Aircraft/an2/Instruments-3d/sbess/sbess_3d.xml</path>
+          <offsets>
+            <x-m>-4.47</x-m>
+            <y-m>-0.52</y-m>
+            <z-m>-0.3</z-m>
+            <pitch-deg>-11.5</pitch-deg>
+          </offsets>
+</model>
+<!-- Radio altimeter RV-UM -->
+<model>
+  <name>rv</name>
+  <path>Aircraft/an2/Instruments-3d/rv-um/rv-um_3d.xml</path>
+  <offsets>
+    <x-m>-4.463</x-m>
+    <y-m>-0.618</y-m>
+    <z-m>-0.285</z-m>
+    <pitch-deg>-11.5</pitch-deg>
+  </offsets>
+</model>
+<!-- Variometer -->
+<model>
+  <name>var</name>
+  <path>Aircraft/an2/Instruments-3d/var-10/var-10_3d.xml</path>
+  <offsets>
+    <x-m>-4.49</x-m>
+    <y-m>-0.55</y-m>
+    <z-m>-0.18</z-m>
+    <pitch-deg>-11.5</pitch-deg>
+  </offsets>
+</model>
+
+<!-- Altimeter -->
+<model>
+  <name>uvo</name>
+  <path>Aircraft/an2/Instruments-3d/uvo/uvo_3d.xml</path>
+  <offsets>
+    <x-m>-4.49</x-m>
+    <y-m>-0.66</y-m>
+    <z-m>-0.18</z-m>
+    <pitch-deg>-11.5</pitch-deg>
+  </offsets>
+</model>
+
+<!--Right panel gauges-->
+
+<!--  Clock ACHS-2 -->
+<model>
+  <name>achs</name>
+  <path>Aircraft/an2/Instruments-3d/achs-2/achs-2_3d.xml</path>
+    <offsets>
+    <x-m>-4.495</x-m>
+    <y-m>0.27</y-m>
+    <z-m>0.08</z-m>
+    </offsets>
+</model>
+
+<!-- Attitude indicator AGK47-B -->
+<model>
+  <name>agk_r</name>
+  <path>Aircraft/an2/Instruments-3d/agk/agk47-b_3d.xml</path>
+  <offsets>
+    <x-m>-4.495</x-m>
+    <y-m>0.415</y-m>
+    <z-m>-0.01</z-m>
+  </offsets>
+</model>
+
+<!-- Gyro Induction compass with ADF indication -->
+<model>
+  <name>gik_r</name>
+  <path>Aircraft/an2/Instruments-3d/gik/gik-1_3d.xml</path>
+  <offsets>
+    <x-m>-4.5</x-m>
+    <y-m>0.58</y-m>
+    <z-m>-0.1</z-m>
+  </offsets>
+</model>
+<!-- Termometer TUE-48 -->
+<model>
+  <name>tue_r</name>
+  <path>Aircraft/an2/Instruments-3d/tue-48/tue-48_3d.xml</path>
+  <offsets>
+    <x-m>-4.507</x-m>
+    <y-m>0.455</y-m>
+    <z-m>-0.139</z-m>
+  </offsets>
+</model>
+<!-- Air speed indicator -->
+<model>
+  <name>us_r</name>
+  <path>Aircraft/an2/Instruments-3d/us-350/us-350_3d.xml</path>
+  <offsets>
+    <x-m>-4.5</x-m>
+    <y-m>0.276</y-m>
+    <z-m>-0.1</z-m>
+  </offsets>
+</model>
+
+<!--Pitch 11.5 '-->
+
+<!-- Variometer -->
+<model>
+  <name>var_r</name>
+  <path>Aircraft/an2/Instruments-3d/var-10/var-10_3d.xml</path>
+  <offsets>
+    <x-m>-4.49</x-m>
+    <y-m>0.56</y-m>
+    <z-m>-0.261</z-m>
+    <pitch-deg>-11.5</pitch-deg>
+  </offsets>
+</model>
+
+<!-- Altimeter -->
+<model>
+  <name>uvo_r</name>
+  <path>Aircraft/an2/Instruments-3d/uvo/uvo_3d.xml</path>
+  <offsets>
+    <x-m>-4.49</x-m>
+    <y-m>0.675</y-m>
+    <z-m>-0.257</z-m>
+    <pitch-deg>-11.5</pitch-deg>
+  </offsets>
+</model>
+
+<!--Middle panel-->
+
+<!-- Volt-ampermeter VA-3 -->
+<model>
+  <name>va</name>
+  <path>Aircraft/an2/Instruments-3d/va-3/va-3_3d.xml</path>
+  <offsets>
+    <x-m>-4.505</x-m>
+    <y-m>-0.11</y-m>
+    <z-m>-0.053</z-m>
+  </offsets>
+</model>
+
+
+<!--ADF control gauge-->
+<model>
+  <name>adf</name>
+  <path>Aircraft/an2/Instruments-3d/adf-control/adf-control_3d.xml</path>
+  <offsets>
+    <x-m>-4.49</x-m>
+    <y-m>0.01</y-m>
+    <z-m>0.09</z-m>
+  </offsets>
+</model>
+
+
+<!-- Switches -->
+<!--Line 1-->
+<model>
+  <name>s_pvd</name>
+  <path>Aircraft/an2/Instruments-3d/switch/pvd_azs_3d.xml</path>
+  <offsets>
+    <x-m>-4.512</x-m>
+    <y-m>-0.123</y-m>
+    <z-m>0.142</z-m>
+  </offsets>
+</model>
+<model>
+  <name>s_uvo</name>
+  <path>Aircraft/an2/Instruments-3d/switch/uvo_azs_3d.xml</path>
+  <offsets>
+    <x-m>-4.512</x-m>
+    <y-m>-0.10266</y-m>
+    <z-m>0.142</z-m>
+  </offsets>
+</model>
+<model>
+  <name>s_ukv</name>
+  <path>Aircraft/an2/Instruments-3d/switch/ukv_azs_3d.xml</path>
+  <offsets>
+    <x-m>-4.512</x-m>
+    <y-m>-0.08233</y-m>
+    <z-m>0.142</z-m>
+  </offsets>
+</model>
+<model>
+  <name>s_arp</name>
+  <path>Aircraft/an2/Instruments-3d/switch/arp_azs_3d.xml</path>
+  <offsets>
+    <x-m>-4.512</x-m>
+    <y-m>-0.063</y-m>
+    <z-m>0.142</z-m>
+  </offsets>
+</model>
+<model>
+  <name>s_mrv</name>
+  <path>Aircraft/an2/Instruments-3d/switch/mrv_azs_3d.xml</path>
+  <offsets>
+    <x-m>-4.512</x-m>
+    <y-m>-0.042</y-m>
+    <z-m>0.142</z-m>
+  </offsets>
+</model>
+<model>
+  <name>s_rv</name>
+  <path>Aircraft/an2/Instruments-3d/switch/rv_azs_3d.xml</path>
+  <offsets>
+    <x-m>-4.512</x-m>
+    <y-m>-0.0205</y-m>
+    <z-m>0.142</z-m>
+  </offsets>
+</model>
+
+<!--Line 2-->
+<model>
+  <name>s_alarm</name>
+  <path>Aircraft/an2/Instruments-3d/switch/alarm_azs_3d.xml</path>
+  <offsets>
+    <x-m>-4.512</x-m>
+    <y-m>0.006</y-m>
+    <z-m>0.142</z-m>
+  </offsets>
+</model>
+<model>
+  <name>s_gik</name>
+  <path>Aircraft/an2/Instruments-3d/switch/gik_azs_3d.xml</path>
+  <offsets>
+    <x-m>-4.512</x-m>
+    <y-m>0.0265</y-m>
+    <z-m>0.142</z-m>
+  </offsets>
+</model>
+<model>
+  <name>s_agk</name>
+  <path>Aircraft/an2/Instruments-3d/switch/agk_azs_3d.xml</path>
+  <offsets>
+    <x-m>-4.512</x-m>
+    <y-m>0.047</y-m>
+    <z-m>0.142</z-m>
+  </offsets>
+</model>
+<model>
+  <name>s_sbess</name>
+  <path>Aircraft/an2/Instruments-3d/switch/sbess_azs_3d.xml</path>
+  <offsets>
+    <x-m>-4.512</x-m>
+    <y-m>0.0675</y-m>
+    <z-m>0.142</z-m>
+  </offsets>
+</model>
+<model>
+  <name>s_emi</name>
+  <path>Aircraft/an2/Instruments-3d/switch/emi_azs_3d.xml</path>
+  <offsets>
+    <x-m>-4.512</x-m>
+    <y-m>0.088</y-m>
+    <z-m>0.142</z-m>
+  </offsets>
+</model>
+<model>
+  <name>s_flaps</name>
+  <path>Aircraft/an2/Instruments-3d/switch/flaps_azs_3d.xml</path>
+  <offsets>
+    <x-m>-4.512</x-m>
+    <y-m>0.1085</y-m>
+    <z-m>0.142</z-m>
+  </offsets>
+</model>
+<model>
+  <name>s_temp</name>
+  <path>Aircraft/an2/Instruments-3d/switch/temp_azs_3d.xml</path>
+  <offsets>
+    <x-m>-4.512</x-m>
+    <y-m>0.129</y-m>
+    <z-m>0.142</z-m>
+  </offsets>
+</model>
+
+
+<!--Line 3-->
+<model>
+  <name>s_gener</name>
+  <path>Aircraft/an2/Instruments-3d/switch/gener_azs_3d.xml</path>
+  <offsets>
+    <x-m>-4.512</x-m>
+    <y-m>-0.147</y-m>
+    <z-m>0.08</z-m>
+  </offsets>
+</model>
+<model>
+  <name>s_batt</name>
+  <path>Aircraft/an2/Instruments-3d/switch/batt_azs_3d.xml</path>
+  <offsets>
+    <x-m>-4.512</x-m>
+    <y-m>-0.126</y-m>
+    <z-m>0.08</z-m>
+  </offsets>
+</model>
+<model>
+  <name>s_air</name>
+  <path>Aircraft/an2/Instruments-3d/switch/air_switch_3d.xml</path>
+  <offsets>
+    <x-m>-4.512</x-m>
+    <y-m>-0.104</y-m>
+    <z-m>0.08</z-m>
+  </offsets>
+</model>
+<model>
+  <name>s_oil</name>
+  <path>Aircraft/an2/Instruments-3d/switch/oil_switch_3d.xml</path>
+  <offsets>
+    <x-m>-4.512</x-m>
+    <y-m>-0.083</y-m>
+    <z-m>0.08</z-m>
+  </offsets>
+</model>
+
+
+<!--Line 4-->
+<model>
+  <name>s_yadro</name>
+  <path>Aircraft/an2/Instruments-3d/switch/yadro_azs_3d.xml</path>
+  <offsets>
+    <x-m>-4.512</x-m>
+    <y-m>-0.149</y-m>
+    <z-m>0.02</z-m>
+  </offsets>
+</model>
+<model>
+  <name>s_heat</name>
+  <path>Aircraft/an2/Instruments-3d/switch/heat_azs_3d.xml</path>
+  <offsets>
+    <x-m>-4.512</x-m>
+    <y-m>-0.126</y-m>
+    <z-m>0.02</z-m>
+  </offsets>
+</model>
+<model>
+  <name>s_lp_1</name>
+  <path>Aircraft/an2/Instruments-3d/switch/lp1_azs_3d.xml</path>
+  <offsets>
+    <x-m>-4.512</x-m>
+    <y-m>-0.103</y-m>
+    <z-m>0.02</z-m>
+  </offsets>
+</model>
+
+<model>
+  <name>s_lp_2</name>
+  <path>Aircraft/an2/Instruments-3d/switch/lp2_azs_3d.xml</path>
+  <offsets>
+    <x-m>-4.512</x-m>
+    <y-m>-0.08</y-m>
+    <z-m>0.02</z-m>
+  </offsets>
+</model>
+
+<!-- Po-500 -->
+<model>
+  <name>s_po500</name>
+  <path>Aircraft/an2/Instruments-3d/switch/po-500_azs_3d.xml</path>
+  <offsets>
+    <x-m>-4.512</x-m>
+    <y-m>-0.042</y-m>
+    <z-m>-0.069</z-m>
+  </offsets>
+</model>
+
+<!--ADF operate/standby-->
+<model>
+  <name>s_adf_sel</name>
+  <path>Aircraft/an2/Instruments-3d/switch/adf-selector_3d.xml</path>
+  <offsets>
+    <x-m>-4.512</x-m>
+    <y-m>0.11</y-m>
+    <z-m>-0.073</z-m>
+    <roll-deg>-90.0</roll-deg>
+  </offsets>
+</model>
+
+<!--Console gauge-->
+<model>
+  <name>console</name>
+  <path>Aircraft/an2/Instruments-3d/console/console_3d.xml</path>
+  <offsets>
+    <x-m>-4.2</x-m>
+    <y-m>0.0</y-m>
+    <z-m>-0.259</z-m>
+    <pitch-deg>19.2</pitch-deg>
+  </offsets>
+</model>
+
+<!--Flaps-->
+<model>
+  <name>flaps</name>
+  <path>Aircraft/an2/Instruments-3d/flaps/flaps_3d.xml</path>
+  <offsets>
+    <x-m>-4.42</x-m>
+    <y-m>0.07</y-m>
+    <z-m>-0.171</z-m>
+    <pitch-deg>-70.8</pitch-deg>
+  </offsets>
+</model>
+<!--Dampers-->
+<model>
+  <name>oil_damper</name>
+  <path>Aircraft/an2/Instruments-3d/flaps/oil_damper_3d.xml</path>
+  <offsets>
+    <x-m>-4.42</x-m>
+    <y-m>-0.005</y-m>
+    <z-m>-0.17</z-m>
+    <pitch-deg>-70.8</pitch-deg>
+  </offsets>
+</model>
+<model>
+  <name>air_damper</name>
+  <path>Aircraft/an2/Instruments-3d/flaps/air_damper_3d.xml</path>
+  <offsets>
+    <x-m>-4.42</x-m>
+    <y-m>-0.08</y-m>
+    <z-m>-0.17</z-m>
+    <pitch-deg>-70.8</pitch-deg>
+  </offsets>
+</model>
+<!--RV-UM control -->
+<model>
+  <name>rv_control</name>
+  <path>Aircraft/an2/Instruments-3d/rv-um/rv_control_3d.xml</path>
+  <offsets>
+    <x-m>-4.34</x-m>
+    <y-m>-0.07</y-m>
+    <z-m>-0.198</z-m>
+    <pitch-deg>-70.8</pitch-deg>
+  </offsets>
+</model>
+<!-- fuel tank selector -->
+<model>
+  <name>fuel_sel</name>
+  <path>Aircraft/an2/Instruments-3d/fuel/fuel_selector_3d.xml</path>
+  <offsets>
+    <x-m>-4.34</x-m>
+    <y-m>0.07</y-m>
+    <z-m>-0.198</z-m>
+    <pitch-deg>-70.8</pitch-deg>
+  </offsets>
+</model>
+
+
+<!--Non-panel gauges-->
+
+<model>
+  <name>yadro_model</name>
+  <path>Aircraft/an2/Instruments-3d/yadro/yadro_3d.xml</path>
+  <offsets>
+    <x-m>-4.49</x-m>
+    <y-m>0.404</y-m>
+    <z-m>-0.28</z-m>
+    <pitch-deg>-11.5</pitch-deg>
+  </offsets>
+</model>
+<model>
+  <name>adf_model</name>
+  <path>Aircraft/an2/Instruments-3d/adf/adf_3d.xml</path>
+  <offsets>
+    <x-m>-4.48</x-m>
+    <y-m>0.215</y-m>
+    <z-m>-0.3</z-m>
+    <pitch-deg>-12</pitch-deg>
+  </offsets>
+</model>
+<model>
+  <name>pm_model</name>
+  <path>Aircraft/an2/Instruments-3d/pm/pm-1_3d.xml</path>
+  <offsets>
+    <x-m>-4.52</x-m>
+    <y-m>-0.305</y-m>
+    <z-m>0.1</z-m>
+  </offsets>
+</model>
+<model>
+  <name>starter_switch</name>
+  <path>Aircraft/an2/Instruments-3d/switch/starter_azs_3d.xml</path>
+  <offsets>
+    <x-m>-4.526</x-m>
+    <y-m>-0.369</y-m>
+    <z-m>0.10</z-m>
+  </offsets>
+</model>
+<model>
+  <name>starter_selector</name>
+  <path>Aircraft/an2/Instruments-3d/switch/starter_selector_3d.xml</path>
+  <offsets>
+    <x-m>-4.526</x-m>
+    <y-m>-0.208</y-m>
+    <z-m>0.10</z-m>
+    <roll-deg>90.0</roll-deg>
+  </offsets>
+</model>
+<model>
+  <name>fuel_selector</name>
+  <path>Aircraft/an2/Instruments-3d/switch/fuel_selector_3d.xml</path>
+  <offsets>
+    <x-m>-4.476</x-m>
+    <y-m>-0.4108</y-m>
+    <z-m>-0.38</z-m>
+    <roll-deg>90.0</roll-deg>
+  </offsets>
+</model>
+
+
+
+<!-- +++++++++++++++++++++ Hot spot panels +++++++++++++++++++++++++++ -->
+<!--Middle panel-->
+<panel>
+  <name>middle_spot_panel</name>
+  <path>Aircraft/an2/Instruments-3d/panels/middle_panel_hotspot.xml</path>
+  <bottom-left>
+    <x-m>-4.51</x-m>
+    <y-m>-0.17</y-m>
+    <z-m>-0.14</z-m>
+  </bottom-left>
+  <bottom-right>
+    <x-m>-4.51</x-m>
+    <y-m>0.171</y-m>
+    <z-m>-0.14</z-m>
+  </bottom-right>
+  <top-left>
+    <x-m>-4.51</x-m>
+    <y-m>-0.17</y-m>
+    <z-m>0.228</z-m>
+  </top-left>
+</panel>
+<!--ARK base panel-->
+<panel>
+  <name>ark_spot_panel</name>
+  <path>Aircraft/an2/Instruments-3d/panels/ark_panel_hotspot.xml</path>
+  <bottom-left>
+    <x-m>-4.49</x-m>
+    <y-m>-0.075</y-m>
+    <z-m>-0.08</z-m>
+  </bottom-left>
+  <bottom-right>
+    <x-m>-4.49</x-m>
+    <y-m>0.17</y-m>
+    <z-m>-0.08</z-m>
+  </bottom-right>
+  <top-left>
+    <x-m>-4.49</x-m>
+    <y-m>-0.075</y-m>
+    <z-m>0.17</z-m>
+  </top-left>
+</panel>
+<!--ARK frequency panel-->
+<panel>
+  <name>ark_freq_spot_panel</name>
+  <path>Aircraft/an2/Instruments-3d/panels/ark_freq_hotspot.xml</path>
+  <bottom-left>
+    <x-m>-4.48</x-m>
+    <y-m>-0.075</y-m>
+    <z-m>-0.08</z-m>
+  </bottom-left>
+  <bottom-right>
+    <x-m>-4.48</x-m>
+    <y-m>0.17</y-m>
+    <z-m>-0.08</z-m>
+  </bottom-right>
+  <top-left>
+    <x-m>-4.48</x-m>
+    <y-m>-0.075</y-m>
+    <z-m>0.17</z-m>
+  </top-left>
+</panel>
+<!--Upper left panel-->
+<panel>
+  <name>left_up_panel</name>
+  <path>Aircraft/an2/Instruments-3d/panels/left_up_panel_hotspot.xml</path>
+  <bottom-left>
+    <x-m>-4.5</x-m>
+    <y-m>-0.5</y-m>
+    <z-m>-0.16</z-m>
+  </bottom-left>
+  <bottom-right>
+    <x-m>-4.5</x-m>
+    <y-m>-0.2</y-m>
+    <z-m>-0.16</z-m>
+  </bottom-right>
+  <top-left>
+    <x-m>-4.5</x-m>
+    <y-m>-0.5</y-m>
+    <z-m>0.18</z-m>
+  </top-left>
+</panel>
+
+<!--Down left panel-->
+<panel>
+  <name>left_dn_panel</name>
+  <path>Aircraft/an2/Instruments-3d/panels/left_dn_panel_hotspot.xml</path>
+  <bottom-left>
+    <x-m>-4.45</x-m>
+    <y-m>-0.75</y-m>
+    <z-m>-0.41</z-m>
+  </bottom-left>
+  <bottom-right>
+    <x-m>-4.45</x-m>
+    <y-m>-0.4</y-m>
+    <z-m>-0.41</z-m>
+  </bottom-right>
+  <top-left>
+    <x-m>-4.5</x-m>
+    <y-m>-0.75</y-m>
+    <z-m>-0.16</z-m>
+  </top-left>
+</panel>
+
+<!--Console panel-->
+<panel>
+  <name>console_panel</name>
+  <path>Aircraft/an2/Instruments-3d/panels/console_hotspot.xml</path>
+  <bottom-left>
+    <x-m>-4.07</x-m>
+    <y-m>-0.12</y-m>
+    <z-m>-0.288</z-m>
+  </bottom-left>
+  <bottom-right>
+    <x-m>-4.07</x-m>
+    <y-m>0.12</y-m>
+    <z-m>-0.288</z-m>
+  </bottom-right>
+  <top-left>
+    <x-m>-4.27</x-m>
+    <y-m>-0.12</y-m>
+    <z-m>-0.22</z-m>
+  </top-left>
+</panel>
+
+<!--Light panel-->
+<panel>
+  <name>light_panel</name>
+  <path>Aircraft/an2/Instruments-3d/panels/light_panel_hotspot.xml</path>
+  <bottom-left>
+    <x-m>-4.45</x-m>
+    <y-m>-0.18</y-m>
+    <z-m>-0.36</z-m>
+  </bottom-left>
+  <bottom-right>
+    <x-m>-4.45</x-m>
+    <y-m>-0.11</y-m>
+    <z-m>-0.36</z-m>
+  </bottom-right>
+  <top-left>
+    <x-m>-4.5</x-m>
+    <y-m>-0.18</y-m>
+    <z-m>-0.14</z-m>
+  </top-left>
+</panel>
+
+<!--Groups-->
+
+<animation>
+  <name>3dpanel</name>
+  <object-name>left_panel</object-name>
+  <object-name>middle_panel</object-name>
+  <object-name>right_panel</object-name>
+  <object-name>gpk</object-name>
+  <object-name>us</object-name>
+  <object-name>mv</object-name>
+  <object-name>a1</object-name>
+  <object-name>te</object-name>
+  <object-name>emi</object-name>
+  <object-name>tct</object-name>
+  <object-name>tue</object-name>
+  <object-name>gik</object-name>
+  <object-name>agk</object-name>
+  <object-name>sbess</object-name>
+  <object-name>rv</object-name>
+  <object-name>var</object-name>
+  <object-name>uvo</object-name>
+  <object-name>achs</object-name>
+  <object-name>agk_r</object-name>
+  <object-name>gik_r</object-name>
+  <object-name>tue_r</object-name>
+  <object-name>us_r</object-name>
+  <object-name>var_r</object-name>
+  <object-name>uvo_r</object-name>
+  <object-name>va</object-name>
+  <object-name>adf</object-name>
+  <object-name>s_pvd</object-name>
+  <object-name>s_uvo</object-name>
+  <object-name>s_ukv</object-name>
+  <object-name>s_arp</object-name>
+  <object-name>s_mrv</object-name>
+  <object-name>s_rv</object-name>
+  <object-name>s_alarm</object-name>
+  <object-name>s_gik</object-name>
+  <object-name>s_agk</object-name>
+  <object-name>s_sbess</object-name>
+  <object-name>s_emi</object-name>
+  <object-name>s_flaps</object-name>
+  <object-name>s_temp</object-name>
+  <object-name>s_gener</object-name>
+  <object-name>s_batt</object-name>
+  <object-name>s_air</object-name>
+  <object-name>s_oil</object-name>
+  <object-name>s_yadro</object-name>
+  <object-name>s_heat</object-name>
+  <object-name>s_lp_1</object-name>
+  <object-name>s_lp_2</object-name>
+  <object-name>s_po500</object-name>
+  <object-name>s_adf_sel</object-name>
+  <object-name>flaps</object-name>
+  <object-name>console</object-name>
+  <object-name>oil_damper</object-name>
+  <object-name>air_damper</object-name>
+  <object-name>rv_control</object-name>
+  <object-name>fuel_sel</object-name>
+  <object-name>yadro_model</object-name>
+  <object-name>adf_model</object-name>
+  <object-name>pm_model</object-name>
+  <object-name>starter_switch</object-name>
+  <object-name>starter_selector</object-name>
+  <object-name>fuel_selector</object-name>
+</animation>
+
+<animation>
+  <name>gear</name>
+  <object-name>obj33</object-name>
+  <object-name>obj34</object-name>
+  <object-name>obj35</object-name>
+  <object-name>obj55</object-name>
+  <object-name>obj56</object-name>
+  <object-name>obj73</object-name>
+  <object-name>obj29</object-name>
+  <object-name>obj30</object-name>
+  <object-name>obj31</object-name>
+  <object-name>obj40</object-name>
+  <object-name>obj41</object-name>
+  <object-name>obj72</object-name>
+</animation>
+
+<animation>
+  <name>engine</name>
+  <object-name>obj0</object-name>
+  <object-name>obj5</object-name>
+  <object-name>obj6</object-name>
+  <object-name>obj18</object-name>	
+  <object-name>obj13</object-name>
+  <object-name>obj67</object-name>
+</animation>
+
+<!-- Save fps - exclude complicate objects from shadowing -->
 <animation>
   <type>noshadow</type>
-    <object-name>noshadow_plane</object-name>
+  <object-name>noshadow_plane</object-name>
 </animation>
+<animation>
+  <type>noshadow</type>
+  <object-name>engine</object-name>
+</animation>
+
+<!--panel LOD-->
+<animation>
+  <object-name>3dpanel</object-name>
+  <type>range</type>
+  <min-m>0.0</min-m>
+  <max-m>5.0</max-m>
+</animation>
+
+<!--Internal view-->
+<animation>
+  <type>range</type>
+  <object-name>engine</object-name>
+  <min-m>5.0</min-m>
+  <max-m>500.0</max-m>
+</animation>
+<animation>
+  <type>range</type>
+  <object-name>shadow_plane</object-name>
+  <min-m>5.0</min-m>
+  <max-m>500.0</max-m>
+</animation>
+
+<animation>
+  <type>range</type>
+  <object-name>gear</object-name>
+  <min-m>5.0</min-m>
+  <max-m>1000.0</max-m>
+</animation>
+
+<animation>
+  <type>material</type>
+  <object-name>panel</object-name>
+  <emission>
+    <red-prop>/an2/controls/light/ext-red</red-prop>
+    <green-prop>/an2/controls/light/ext-green</green-prop>
+    <blue-prop>/an2/controls/light/ext-blue</blue-prop>
+  </emission>
+</animation>
+<!-- ********************** End 3D panel section *********************** -->
+
+
+
 
 <!-- Make shadow from spescial (simply) object-->
 <animation>
@@ -213,9 +1155,9 @@
 	<object-name>obj79</object-name>
 	<property>/controls/flight/aileron</property>
 	<interpolation>
-		<entry><ind>	-1</ind><dep>	-14</dep></entry>
+		<entry><ind>	-1</ind><dep>	30</dep></entry>
 		<entry><ind>	0</ind><dep>	0</dep></entry>
-		<entry><ind>	1</ind><dep>	30</dep></entry>
+		<entry><ind>	1</ind><dep>	-14</dep></entry>
 	</interpolation>
 	<axis>
 		<x1-m>-1.33</x1-m>
@@ -235,9 +1177,9 @@
 	<object-name>obj76</object-name>
 	<property>/controls/flight/aileron</property>
 	<interpolation>
-		<entry><ind>	-1</ind><dep>	-30</dep></entry>
+		<entry><ind>	-1</ind><dep>	14</dep></entry>
 		<entry><ind>	0</ind><dep>	0</dep></entry>
-		<entry><ind>	1</ind><dep>	14</dep></entry>
+		<entry><ind>	1</ind><dep>	-30</dep></entry>
 	</interpolation>
 	<axis>
 		<x1-m>-1.33</x1-m>
@@ -377,68 +1319,76 @@
 </animation>
 
 <!--Slats-->
-<!-- Left -->
 <animation>
-	<type>rotate</type>
+	<type>translate</type>
 	<object-name>obj57</object-name>
-	<property>/surface-positions/flap-pos-norm</property>
-	<interpolation>
-		<entry><ind>	0</ind><dep>	0</dep></entry>
-		<entry><ind>	0.25</ind><dep>	-13</dep></entry>
-	</interpolation>
-
-	<center>
-		<x-m>-2.80</x-m>
-		<y-m>-3.70</y-m>
-		<z-m>0.9</z-m>
-	</center>
+        <object-name>obj58</object-name>
+        <property>/surface-positions/speedbrake-pos-norm</property>
+        <factor>0.1</factor>
 	<axis>
 		<x>0.0</x>
-		<y>1</y>
-		<z>0</z>
+		<y>0.0</y>
+		<z>1.0</z>
 	</axis>
 </animation>
-<!-- Right -->
-<animation>
-	<type>rotate</type>
-	<object-name>obj58</object-name>
-	<property>/surface-positions/flap-pos-norm</property>
-	<interpolation>
-		<entry><ind>	0</ind><dep>	0</dep></entry>
-		<entry><ind>	0.25</ind><dep>	-13</dep></entry>
-	</interpolation>
-	
-	<center>
-		<x-m>-2.80</x-m>
-		<y-m>3.70</y-m>
-		<z-m>0.9</z-m>
-	</center>
-	<axis>
-		<x>0.0</x>
-		<y>1</y>
-		<z>0</z>
-	</axis>
-</animation>
-
-
 
 <!-- Gear  -->
 <!-- Left gear -->
 <animation>
-	<type>translate</type>
-	<object-name>left_gear</object-name>
-	<property>/gear/gear/compression-norm</property>
-	<interpolation>
-		<entry><ind>	0</ind><dep>	0</dep></entry>
-		<entry><ind>	0.2</ind><dep>	0.1</dep></entry>
-		<entry><ind>	0.5</ind><dep>	0.4</dep></entry>
-	</interpolation>
-	<axis>
-		<x>0</x>
-		<y>0.25</y>
-		<z>1</z>
-	</axis>
+  <type>rotate</type>
+  <object-name>obj33</object-name>
+  <object-name>obj34</object-name>
+  <object-name>obj35</object-name>
+  <object-name>obj55</object-name>
+  <object-name>obj56</object-name>
+  <object-name>obj73</object-name>
+  <property>/an2/gear/left</property>
+  <factor>-30.0</factor>
+  <center>
+    <x-m>-3.4</x-m>
+    <y-m>0.0</y-m>
+    <z-m>-1.647</z-m>
+  </center>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
 </animation>
+<animation>
+  <type>rotate</type>
+  <object-name>obj28</object-name>
+  <property>/an2/gear/left</property>
+  <factor>-45.0</factor>
+  <center>
+    <x-m>-3.1677</x-m>
+    <y-m>-1.3944</y-m>
+    <z-m>-1.6833</z-m>
+  </center>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+<animation>
+  <type>rotate</type>
+  <object-name>obj35</object-name>
+  <property>/an2/gear/left</property>
+  <factor>-23.0</factor>
+  <center>
+    <x-m>-3.4335</x-m>
+    <y-m>-1.7346</y-m>
+    <z-m>-2.806</z-m>
+  </center>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+
 <!-- 
      Wheel diameter about 0.9 m
      factor(rpm) = (V(kt)*60)/(d*Pi) = V(kt)*21.22
@@ -465,21 +1415,60 @@
 </animation>
 <!-- Right gear -->
 <animation>
-	<type>translate</type>
-	<object-name>right_gear</object-name>
-	<property>/gear/gear[1]/compression-norm</property>
-	<interpolation>
-		<entry><ind>	0</ind><dep>	0</dep></entry>
-		<entry><ind>	0.2</ind><dep>	0.1</dep></entry>
-		<entry><ind>	0.5</ind><dep>	0.4</dep></entry>
-	</interpolation>
-	
-	<axis>
-		<x>0</x>
-		<y>-0.25</y>
-		<z>1</z>
-	</axis>
+  <type>rotate</type>
+  <object-name>obj29</object-name>
+  <object-name>obj30</object-name>
+  <object-name>obj31</object-name>
+  <object-name>obj40</object-name>
+  <object-name>obj41</object-name>
+  <object-name>obj72</object-name>
+  <property>/an2/gear/right</property>
+  <factor>30.0</factor>
+  <center>
+    <x-m>-3.4</x-m>
+    <y-m>0.0</y-m>
+    <z-m>-1.647</z-m>
+  </center>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
 </animation>
+<animation>
+  <type>rotate</type>
+  <object-name>obj32</object-name>
+  <property>/an2/gear/right</property>
+  <factor>45.0</factor>
+  <center>
+    <x-m>-3.1677</x-m>
+    <y-m>1.3944</y-m>
+    <z-m>-1.6833</z-m>
+  </center>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+<animation>
+  <type>rotate</type>
+  <object-name>obj31</object-name>
+  <property>/an2/gear/right</property>
+  <factor>20.0</factor>
+  <center>
+    <x-m>-3.4335</x-m>
+    <y-m>1.7346</y-m>
+    <z-m>-2.806</z-m>
+  </center>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+
 <!-- right wheel -->
 <animation>
 	<type>spin</type>
@@ -510,7 +1499,7 @@
 	<property>/velocities/airspeed-kt</property>
 	<factor>-12.5</factor>
 	<condition>
-		<property>/gear/gear/compression-norm</property>
+		<property>/gear/gear[2]/compression-norm</property>
 	</condition>
 	<center>
 		<x-m>5.01</x-m>
@@ -596,13 +1585,13 @@
 	</emission>
 </animation>
 
-<!--Runtime selective livreas-->
+<!--Runtime selective livereas-->
 
 <animation>
-	<type>material</type>
-	<object-name>obj25</object-name>
-	<texture-prop>/an2/livreas/fuselage</texture-prop>
-	<global type="bool">true</global>
+  <type>material</type>
+  <object-name>obj25</object-name>
+  <texture-prop>/an2/livreas/fuselage</texture-prop>
+  <global type="bool">true</global>
 </animation>
 <animation>
 	<type>material</type>
@@ -616,6 +1605,134 @@
 	<texture-prop>/an2/livreas/wings</texture-prop>
 	<global type="bool">true</global>
 </animation>
+<!--Panel low-res texture-->
+<animation>
+  <type>material</type>
+  <object-name>panel</object-name>
+  <condition>
+    <property>/an2/textures/low-res</property>
+  </condition>
+  <ambient>
+    <red>1.0</red>
+    <green>1.0</green>
+    <blue>1.0</blue>
+  </ambient>
+  <specular>
+    <red>1.0</red>
+    <green>1.0</green>
+    <blue>1.0</blue>
+  </specular>
+  <diffuse>
+    <red>1.0</red>
+    <green>1.0</green>
+    <blue>1.0</blue>
+  </diffuse>
+  <texture>main_panel_low.rgb</texture>
+</animation>
+
+<!--3D cockpit objects-->
+<!--Captain-->
+<animation>
+  <type>rotate</type>
+  <object-name>kolonka_l</object-name>
+  <object-name>sht_l</object-name>
+  <object-name>handl_sht_l</object-name>
+  <object-name>lock_l</object-name>
+  <property>/controls/flight/elevator</property>
+  <factor>-16</factor>
+  <center>
+    <x-m>-4.0</x-m>
+    <y-m>-0.543</y-m>
+    <z-m>-0.72</z-m>
+  </center>
+  <axis>
+    <x>0.0</x>
+    <y>1.0</y>
+    <z>0.0</z>
+  </axis>
+</animation>
+<animation>
+  <type>rotate</type>
+  <object-name>sht_l</object-name>
+  <object-name>handl_sht_l</object-name>
+  <property>/controls/flight/aileron</property>
+  <factor>-50</factor>
+  <center>
+    <x-m>-3.96</x-m>
+    <y-m>-0.543</y-m>
+    <z-m>-0.04</z-m>
+  </center>
+  <axis>
+    <x>1.0</x>
+    <y>0.0</y>
+    <z>0.0</z>
+  </axis>
+</animation>
+<!-- Second pilot (first officer) -->
+<animation>
+  <type>rotate</type>
+  <object-name>kolonka_r</object-name>
+  <object-name>sht_r</object-name>
+  <object-name>handl_sht_r</object-name>
+  <object-name>lock_r</object-name>
+  <property>/controls/flight/elevator</property>
+  <factor>-16</factor>
+  <center>
+    <x-m>-4.0</x-m>
+    <y-m>0.543</y-m>
+    <z-m>-0.72</z-m>
+  </center>
+  <axis>
+    <x>0.0</x>
+    <y>1.0</y>
+    <z>0.0</z>
+  </axis>
+</animation>
+<animation>
+  <type>rotate</type>
+  <object-name>sht_r</object-name>
+  <object-name>handl_sht_r</object-name>
+  <property>/controls/flight/aileron</property>
+  <factor>-50</factor>
+  <center>
+    <x-m>-3.96</x-m>
+    <y-m>0.5</y-m>
+    <z-m>-0.04</z-m>
+  </center>
+  <axis>
+    <x>1.0</x>
+    <y>0.0</y>
+    <z>0.0</z>
+  </axis>
+</animation>
+
+<!-- Pilot -->
+<animation>
+  <type>range</type>
+  <object-name>obj4</object-name>
+  <min-m>4.0</min-m>
+  <max-m>50.0</max-m>
+</animation>
+<animation>
+  <type>range</type>
+  <object-name>obj9</object-name>
+  <min-m>4.0</min-m>
+  <max-m>50.0</max-m>
+</animation>
+
+<animation>
+  <type>range</type>
+  <object-name>obj17</object-name>
+  <min-m>4.0</min-m>
+  <max-m>50.0</max-m>
+</animation>
+<animation>
+  <type>range</type>
+  <object-name>obj19</object-name>
+  <min-m>4.0</min-m>
+  <max-m>50.0</max-m>
+</animation>
+
 
 
 </PropertyList>

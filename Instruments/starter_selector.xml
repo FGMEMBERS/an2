@@ -204,6 +204,7 @@ Yurik V. Nikiforoff, sep 2006
 			<command>nasal</command>
 			<script>electrical.starter_on()</script>
 		</binding>
+
 		<mod-up>
 			<binding>
 				<command>nasal</command>
@@ -223,6 +224,11 @@ Yurik V. Nikiforoff, sep 2006
 			<command>nasal</command>
 			<script>electrical.spinup()</script>
 		</binding>
+                <binding>
+                  <command>nasal</command>
+                  <script>electrical.update_electric()</script>
+                </binding>
+
 		<mod-up>
 			<binding>
 				<command>nasal</command>

@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <!--
   File:     ASH-62IR.xml
-  Author:   Aero-Matic v 0.8
+  Author:   Aero-Matic v 0.8 & Yurik V. Nikiforoff
 
   Inputs:
     name:           ASH-62IR
     type:           piston
-    power:          1000.0 hp
+    power:          1000.0 hp 
     augmented?      no
     injected?       no
 -->
@@ -14,10 +14,10 @@
 <piston_engine name="ASH-62IR">
   <minmp unit="INHG">          6.0 </minmp>
   <maxmp unit="INHG">         41.4 </maxmp>
-  <displacement unit="IN3"> 250.00 </displacement>
-  <maxhp>        1300.00 </maxhp>
+  <displacement unit="IN3"> 1600.00 </displacement>
+  <maxhp>        1000.00 </maxhp>
   <cycles>         2.0 </cycles>
-  <idlerpm>     400.0 </idlerpm>
+  <idlerpm>     500.0 </idlerpm>
   <maxthrottle>    1.0 </maxthrottle>
   <minthrottle>    0.1 </minthrottle>
 </piston_engine>

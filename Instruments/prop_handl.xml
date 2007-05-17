@@ -40,34 +40,34 @@ Yurik V. Nikiforoff, aug 2006
 
 <actions>
 
-<!-- Set full propeller pitch -->
+<!-- Low pitch -->
     <action>
-        <name>full prop pitch </name>
+        <name>low pitch </name>
 	<button>0</button>
         <x>-60</x>
 	<y>50</y>
 	<w>120</w>
 	<h>60</h>
 	<binding>
-	    <command>property-assign</command>
+	    <command>property-adjust</command>
 	    <property>/controls/engines/engine/propeller-pitch</property>
-    	    <value>0.1</value>
+    	    <step>-0.025</step>
 	</binding>
     </action>
 
 
-<!-- half pitch -->
+<!-- Hi pitch -->
     <action>
-        <name>half prop pitch </name>
+        <name>hi pitch </name>
 	<button>0</button>
         <x>-60</x>
 	<y>-20</y>
 	<w>120</w>
 	<h>60</h>
 	<binding>
-	    <command>property-assign</command>
-	    <property>/controls/engines/engine/propeller-pitch</property>
-    	    <value>1.0</value>
+          <command>property-adjust</command>
+          <property>/controls/engines/engine/propeller-pitch</property>
+          <step>0.025</step>
 	</binding>
     </action>
 

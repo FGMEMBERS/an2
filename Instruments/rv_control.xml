@@ -124,7 +124,6 @@ Yurik V. Nikiforoff, sep 2006
 			<step>1</step>
 			<min>0</min>
 			<max>9</max>
-			<wrap>true</wrap>
 		</binding>
 	</action>
 	<action>
@@ -140,7 +139,6 @@ Yurik V. Nikiforoff, sep 2006
 			<step>-1</step>
 			<min>0</min>
 			<max>9</max>
-			<wrap>true</wrap>
 		</binding>
 	</action>
 </actions>

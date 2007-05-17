@@ -6,9 +6,9 @@
 
 # Fuel handler
 
-min_cap = 0.01;
+min_cap = 0.02;
 delta = 0.05;
-fcc = 6.65; #fuel consumption coefficient
+fcc = 1.6; #fuel consumption coefficient
 
 fuel_handler = func {
 tank_selector = getprop("/an2/instrumentation/fuel-select/position");

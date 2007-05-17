@@ -71,7 +71,7 @@ Yurik V. Nikiforoff, sep 2006
 		<max>360</max>
 		<min>-60</min>
 		<wrap>true</wrap>
-    		<scale>0.6</scale>
+    		<scale>1.47</scale>
 		<offset>-60</offset>
 	    </transformation>
 	    <transformation>
@@ -107,7 +107,7 @@ Yurik V. Nikiforoff, sep 2006
 			    <max>360</max>
 			    <min>-60</min>
 			    <wrap>true</wrap>
-			    <scale>0.6</scale>
+			    <scale>1.47</scale>
 			    <offset>-60</offset>
 		    </transformation>
 		    <transformation>

@@ -62,7 +62,7 @@ After fix bug, tachometer will returned to normal scale.-->
 		    <transformation>
 			    <type>rotation</type>
 			    <!--<scale>0.036</scale>-->
-			    <scale>0.0325</scale>
+			    <scale>0.036</scale>
 			    <property>/engines/engine/rpm</property>
 			    <offset>0</offset>	
 		    </transformation>
@@ -97,7 +97,7 @@ After fix bug, tachometer will returned to normal scale.-->
 		    <transformation>
 			    <type>rotation</type>
 			    <!--<scale>0.036</scale>-->
-			    <scale>0.0325</scale>
+			    <scale>0.036</scale>
 			    <property>/engines/engine/rpm</property>
 			    <offset>0</offset>	
 		    </transformation>
@@ -128,7 +128,7 @@ After fix bug, tachometer will returned to normal scale.-->
 		    <transformation>
 			    <type>rotation</type>
 			    <!--<scale>0.36</scale>-->
-			    <scale>0.325</scale>
+			    <scale>0.36</scale>
 			    <property>/engines/engine/rpm</property>
 			    <offset>0</offset>	
 		    </transformation>
@@ -163,7 +163,7 @@ After fix bug, tachometer will returned to normal scale.-->
 		    <transformation>
 			    <type>rotation</type>
 			    <!--<scale>0.36</scale>-->
-			    <scale>0.325</scale>
+			    <scale>0.36</scale>
 			    <property>/engines/engine/rpm</property>
 			    <offset>0</offset>	
 		    </transformation>

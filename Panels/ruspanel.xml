@@ -99,7 +99,7 @@ aug 2006
   
   <!--Down switch line-->
   <instrument include="../Instruments/gener_azs.xml">
-	  <name>APU switch</name>
+	  <name>Main generator switch</name>
 	  <x>777</x>
 	  <y>256</y>
 	  <w>64</w>
@@ -344,6 +344,16 @@ aug 2006
   </instrument>
 
   
+  <instrument include="../Instruments/mixt_handl.xml">
+    <name>Mixture control</name>
+    <x>805</x>
+    <y>130</y>
+    <w>128</w>
+    <h>128</h>
+  </instrument>
+  
+  
+  
   <instrument include="../Instruments/prop_handl.xml">
    <name>Propeller pitch</name>
    <x>908</x>
@@ -351,7 +361,7 @@ aug 2006
    <w>120</w>
    <h>120</h>
   </instrument>
-
+  
   <instrument include="../Instruments/throttle_handl.xml">
    <name>Throttle</name>
    <x>830</x>
@@ -476,15 +486,16 @@ aug 2006
 	  <h>180</h> 
   </instrument>
 
-  
-  <instrument include="../Instruments/gpk-48.xml">
+<!--Uncomment it if you have devel version of FlightGear-->
+ 
+<!-- <instrument include="../Instruments/gpk-48.xml">
 	  <name>GPK-48</name>
 	  <x>508</x>
 	  <y>300</y>
 	  <w>140</w>
 	  <h>140</h> 
   </instrument>
-  
+ --> 
   <instrument include="../Instruments/a1.xml">
 	  <name>Ampermeter</name>
 	  <x>600</x>

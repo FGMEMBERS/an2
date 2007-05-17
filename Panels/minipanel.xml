@@ -141,12 +141,13 @@ override those by providing <w>Aircraft</w> and <h>..</h> properties with the
 
 <!-- end sacred six -->
 
-
+<!--
   <instrument include="../../Instruments/magcompass.xml">
    <name>Magnetic Compass</name>
    <x>768</x>
    <y>170</y>
   </instrument>
+  -->
  </instruments>
 
 </PropertyList>

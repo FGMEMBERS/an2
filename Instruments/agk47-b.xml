@@ -223,7 +223,7 @@ Yurik V. Nikiforoff, aug 2006
 	<transformations>	    
 	    <transformation>
 		<type>y-shift</type>
-		<property>/instrumentation/attitude-indicator/horizon-offset-deg</property>
+	<property>/instrumentation/attitude-indicator/horizon-offset-deg</property>
 		<offset>3</offset>	
 	    </transformation>
 	    <transformation>
@@ -250,7 +250,7 @@ Yurik V. Nikiforoff, aug 2006
 	    <transformations>	    
 		    <transformation>
 			    <type>y-shift</type>
-			    <property>/instrumentation/attitude-indicator/horizon-offset-deg</property>
+	    <property>/instrumentation/attitude-indicator/horizon-offset-deg</property>
 			    <offset>3</offset>	
 		    </transformation>
 		    <transformation>

@@ -68,14 +68,13 @@ Yurik V. Nikiforoff, aug 2006
 	<transformations>
 	    <transformation>
     		<type>rotation</type>
-		<property>/an2/instrumentation/electrical/amps</property>
+                <property>/an2/instrumentation/a-1/indicated-amps</property>
     		<scale>0.6</scale>
-		<offset>-103</offset>
 	    </transformation>
 
 	    <transformation>
-		<type>x-shift</type>
-		<offset>0</offset>
+              <type>rotation</type>
+              <offset>-103</offset>
 	    </transformation>
 	    <transformation>
 		<type>y-shift</type>
@@ -99,21 +98,20 @@ Yurik V. Nikiforoff, aug 2006
 	    <w>16</w>
 	    <h>128</h>
 	    <transformations>
-		    <transformation>
-			    <type>rotation</type>
-			    <property>/an2/instrumentation/electrical/amps</property>
-			    <scale>0.6</scale>
-			    <offset>-103</offset>
-		    </transformation>
-		    
-		    <transformation>
-			    <type>x-shift</type>
-			    <offset>0</offset>
-		    </transformation>
-		    <transformation>
-			    <type>y-shift</type>
-			    <offset>25</offset>
-		    </transformation>
+              <transformation>
+                <type>rotation</type>
+                <property>/an2/instrumentation/a-1/indicated-amps</property>
+                <scale>0.6</scale>
+              </transformation>
+              
+              <transformation>
+                <type>rotation</type>
+                <offset>-103</offset>
+              </transformation>
+              <transformation>
+                <type>y-shift</type>
+                <offset>25</offset>
+              </transformation>
 	    </transformations>
     </layer> 
 

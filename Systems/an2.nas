@@ -30,6 +30,10 @@
 #    59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             #
 ############################################################################		  
 # Instrumentation for AN-2 
+left_pos = 0;
+right_pos = 0;
+STRUT_LIMIT = 0.35;
+STRUT_COEFT = 0.26;
 # Gyro with cage
 gpk_helper = func{
 caged = getprop("/an2/instrumentation/gpk-48/caged-flag");
@@ -172,6 +176,7 @@ left_tank = func{
 	interpolate("/an2/instrumentation/sbess/indicated-fuel-l", gallons*3.785, 1 );
 	}}
 setprop("/an2/controls/switches/fuel_selector", 1 );
+setprop("/an2/controls/switches/fuel_selector_3d", -30 );
 }
 
 # show fuel level of right tank
@@ -182,6 +187,7 @@ right_tank = func{
 	interpolate("/an2/instrumentation/sbess/indicated-fuel-l", gallons*3.785, 1 );
 	}}
 setprop("/an2/controls/switches/fuel_selector", 2 );
+setprop("/an2/controls/switches/fuel_selector_3d", 30 );
 }
 
 # show left + right
@@ -194,16 +200,18 @@ total_fuel = func{
 	settimer(sbess_handler, 1); # rewind timer
 	}}
 setprop("/an2/controls/switches/fuel_selector", 0 );
+setprop("/an2/controls/switches/fuel_selector_3d", 0 );
 }
 #    End fuel meter stuff
 
 
-# Air speed indicator US-450
+# Air speed indicator US-450 (US-350)
 # 1 knots = 1.852 km/h
 us = func {
     knots=getprop("/instrumentation/airspeed-indicator/indicated-speed-kt");
     if( knots != nil ){
     setprop("/an2/instrumentation/us-450/indicated-speed-kmh", knots*1.852 );
+    setprop("/an2/instrumentation/us-350/indicated-speed-kmh", knots*1.852 );
     }
     settimer(us, 0);	# count speed every frame
    }
@@ -214,7 +222,10 @@ va_handler = func {
 mode = getprop("/an2/instrumentation/va-3/volts");
 ampers = getprop("/an2/instrumentation/electrical/amps");
 # battery charge current
-if("/an2/systems/electrical/generator_lamp" == 0 ) {ampers = 1;}
+if(getprop("/an2/systems/electrical/generator_lamp") == 0.0 ) 
+	{
+	ampers = -getprop("/engines/engine/rpm")/200.0;
+	}
     	if( mode == 0 ){
     		if( ampers != nil ){
 		interpolate("/an2/instrumentation/va-3/indicated-value", ampers, 1 );
@@ -225,14 +236,16 @@ if("/an2/systems/electrical/generator_lamp" == 0 ) {ampers = 1;}
 va_handler ();
 
 va_volts = func {
+
     volts = getprop("/systems/electrical/volts");
 	if( volts != nil ){
-	interpolate("/an2/instrumentation/va-3/indicated-value", volts*12, 1 );
+	interpolate("/an2/instrumentation/va-3/indicated-value", volts*4.2, 1 );
 	}
 	setprop("/an2/instrumentation/va-3/volts", 1);
 }
 
 va_ampers = func {
+
     	ampers = getprop("/an2/instrumentation/electrical/amps");
     	if("/an2/systems/electrical/generator_lamp" == 0 ) {ampers = 1;}
 	if( ampers != nil ){
@@ -242,6 +255,143 @@ va_ampers = func {
 	settimer(va_handler, 2);	
 }
 
+# ADF control
+
+adf_selected = func {
+    	freq = getprop("/an2/instrumentation/adf/selected-khz");
+    	if( freq == nil ) {return }
+    	if( freq < 150 ) {return }
+    	if( freq > 1290 ) {return }
+	setprop("/an2/instrumentation/adf/indicated-sel-ones", freq );
+	setprop("/an2/instrumentation/adf/indicated-sel-dec", int(freq/10) );
+	setprop("/an2/instrumentation/adf/indicated-sel-hund", int(freq/100) );
+	pos = getprop("/an2/instrumentation/adf/selected_handle");
+	pos = pos + 0.25;
+       	interpolate("/an2/instrumentation/adf/selected_handle", pos, 0.1 );
+	if (getprop("/an2/controls/switches/adf-selector") == 1){
+	setprop("/instrumentation/adf/frequencies/selected-khz", freq );
+	}
+	else{
+	setprop("/instrumentation/adf/frequencies/standby-khz", freq );
+	}
+#settimer(rev_sel_handle, 2.0);
+}
+
+adf_standby = func {
+	freq = getprop("/an2/instrumentation/adf/standby-khz");
+    	if( freq == nil ) {return }
+    	if( freq < 150 ) {return }
+    	if( freq > 1290 ) {return }    	
+        setprop("/an2/instrumentation/adf/indicated-rez-ones", freq );
+        setprop("/an2/instrumentation/adf/indicated-rez-dec", int(freq/10) );
+        setprop("/an2/instrumentation/adf/indicated-rez-hund", int(freq/100) );
+# vario position
+	pos = getprop("/an2/instrumentation/adf/standby_handle");
+	pos = pos + 0.25;
+       	interpolate("/an2/instrumentation/adf/standby_handle", pos, 0.1 );
+	if (getprop("/an2/controls/switches/adf-selector") == 2){
+	setprop("/instrumentation/adf/frequencies/selected-khz", freq );
+	}
+	else{
+	setprop("/instrumentation/adf/frequencies/standby-khz", freq );
+	}
+#settimer(rev_stand_handle, 2.0);
+
+}
+
+# S-meter for ADF with noise
+# ADF signal level indicator not implemented (yet?), so it's simulation only.
+adf_s_meter = func {
+settimer(adf_s_meter, 1.0);
+
+ena = getprop("/instrumentation/adf/serviceable");
+if( ena != 1 ) {
+	interpolate("/an2/instrumentation/adf/s_meter", 0.0, 1.0 ); 
+	return; 
+	}
+ena = getprop("/instrumentation/adf/ident");
+if( ena == "" ) {
+       	interpolate("/an2/instrumentation/adf/s_meter", 0.0, 1.0 );
+	}
+else {	
+	interpolate("/an2/instrumentation/adf/s_meter", 0.8 + 0.1 * rand(), 1.0 );
+	}
+}
+# ADF lamps
+adf_lamps = func {
+lamps = getprop("/an2/controls/switches/adf-selector");
+ena = getprop("/instrumentation/adf/serviceable");
+if( ena != 1 )	{
+	interpolate("/an2/instrumentation/adf/lamp_osn", 0.0, 0.1 );
+	interpolate("/an2/instrumentation/adf/lamp_rez", 0.0, 0.1 );
+	return;
+	}
+if( lamps == 2 ){ 
+	interpolate("/an2/instrumentation/adf/lamp_osn", 0.0, 0.1 );
+	interpolate("/an2/instrumentation/adf/lamp_rez", 1.0, 0.1 );
+	}
+if( lamps == 1 ){ 
+	interpolate("/an2/instrumentation/adf/lamp_osn", 1.0, 0.1 );
+	interpolate("/an2/instrumentation/adf/lamp_rez", 0.0, 0.1 );
+	}
+}
+
+# init ADF on startup
+
+adf_start = func {
+freq = getprop("/instrumentation/adf/frequencies/selected-khz" );
+if( freq == nil ) { settimer(adf_start, 1);  return; }
+setprop("/an2/instrumentation/adf/selected-khz", freq );
+freq = getprop("/instrumentation/adf/frequencies/standby-khz" );
+if( freq == nil ) { settimer(adf_start, 1);  return; }
+setprop("/an2/instrumentation/adf/standby-khz", freq );
+
+setprop("/an2/instrumentation/adf/standby_handle", 0.0);
+setprop("/an2/instrumentation/adf/selected_handle", 0.0);
+
+setlistener("/an2/instrumentation/adf/selected-khz", adf_selected  );
+setlistener("/an2/instrumentation/adf/standby-khz", adf_standby );
+setlistener("/an2/controls/switches/adf-selector", adf_lamps );
+
+settimer(adf_s_meter, 1.0);
+
+#one times - for animate digit wheels on adf control instrument
+settimer(adf_selected, 2);
+settimer(adf_standby, 2);	
+
+}
+
+adf_start();
+
+# Gear
+left_gear = func
+{
+ left_pos = getprop("/gear/gear/compression-norm");
+ if( left_pos > 0.0  ) {
+ 	left_pos = left_pos * STRUT_COEFT;
+ 	if( left_pos > STRUT_LIMIT ) { 
+#print("Left strut overload");
+	left_pos = STRUT_LIMIT; # strut damaged;
+	} 
+	setprop("/an2/gear/left", left_pos );
+	}
+}
+
+right_gear = func
+{
+ right_pos = getprop("/gear/gear[1]/compression-norm");
+ if( right_pos > 0  ) {
+ 	right_pos = right_pos * STRUT_COEFT;
+ 	if( right_pos > STRUT_LIMIT ) { 
+	right_pos = STRUT_LIMIT;
+#print("Right strut overload");
+	} # strut damaged;
+	setprop("/an2/gear/right", right_pos );
+	}
+}
+
+setlistener("/gear/gear/compression-norm", left_gear  );
+setlistener("/gear/gear[1]/compression-norm", right_gear  );
 
 # Door
 # Thanks to BF109 autors :)
@@ -287,26 +437,8 @@ else 	{
 
 }
 
-# TCT-2 cylinder head termometer
 
-# engine_temp = func {
-# 	heat = getprop("/engines/engine/cht-degf");
-# 	if ( heat != nil )
-# 	{
-# 	# find abs val of temperature
-# 	env_temp = getprop("/environment/temperature-degc");
-# 	env_temp = env_temp + 273; #to Kelvin
-# 	# cool factor
-# 	damper_position = getprop("/an2/systems/dampers/air-damper");
-# 	damper_position = damper_position + 0.3;
-# 	damper_position = damper_position * 0.77;
-# 	
-# 	}
-# }
-# 
-# engine_temp();
-
-# Livres
+# Livereas
 change_livreas = func
 {
 selector = getprop("/an2/livreas/selector");
@@ -388,7 +520,11 @@ if( selector != nil )
 starter_help = func
 {
 help_win = screen.window.new( nil, -100, 8, 10 );
-
+if( getprop("/sim/panel/visibility") == 0 )
+	{
+	help_win.write("Please, read Docs/an2.html for engine start procedure", 0.0, 1.0, 1.0 );
+	return;
+	}
 sw_win = screen.window.new( 380, 430, 1, 10 );
 sel_win = screen.window.new( 680, 430, 1, 10 );
 magn_win = screen.window.new( 430, 450, 1, 10 );
@@ -417,3 +553,178 @@ batt_win.write("<- Main battery switch", 0.0, 1.0, 1.0 );
 line_1_win.write("<-   Line 1 switches   ->", 0.0, 1.0, 1.0 );
 line_2_win.write("<-   Line 2 switches   ->", 0.0, 1.0, 1.0 );
 }
+
+# Mixture handler
+# Altitude mixture table
+#
+# Normal condition, t=15'C
+# H(m)	P(InHg)	Mixture
+# 0	29.92	0.86
+# 500	28.2	0.785
+# 1000	26.54	0.75
+# 1500	24.95	0.70
+# 2000	23.53	0.666
+# 2500	22.12	0.61
+# 3000	20.76	0.60
+
+
+p1 = 29.92;	m1 = 0.86;
+p2 = 28.2;	m2 = 0.785;
+p3 = 26.54;	m3 = 0.75;
+p4 = 24.95;	m4 = 0.7;
+p5 = 23.53;	m5 = 0.666;
+p6 = 22.12;	m6 = 0.61;
+p7 = 20.76;	m7 = 0.6;
+
+mixt_handler = func {
+settimer(mixt_handler, 0.5);
+mixt = getprop("/an2/controls/switches/mixture");
+	if(mixt != nil)
+	{
+	if( mixt == 1.1 ) # 0.0-1.0 - work band of mixture handle, 1.1 - automatic control
+		{
+		# here interpolation table of altitude mixture corrector
+		mixt = m1;
+		p = getprop("/environment/pressure-inhg");
+		if( p == nil) {return;}
+		if( p < p7) { mixt = m7; p = 100.0; }
+		if( p < p6) { mixt = m7 + (m6-m7)*(p-p7)/(p6-p7); p = 100.0;}
+		if( p < p5) { mixt = m6 + (m5-m6)*(p-p6)/(p5-p6); p = 100.0;}
+		if( p < p4) { mixt = m5 + (m4-m5)*(p-p5)/(p4-p5); p = 100.0;}
+		if( p < p3) { mixt = m4 + (m3-m4)*(p-p4)/(p3-p4); p = 100.0;}
+		if( p < p2) { mixt = m3 + (m2-m3)*(p-p3)/(p2-p3); p = 100.0;}
+		if( p < p1) { mixt = m2 + (m1-m2)*(p-p2)/(p1-p2); p = 100.0;}
+		}
+#print(mixt);
+	setprop("/controls/engines/engine/mixture", mixt);
+	}
+}
+
+mixt_handler();
+
+# Handler for mixture adjust
+mixt_control_busy = 0;
+mixt_control_period = 5.0; # s
+mixt_control_max = 1.1;
+mixt_control_min = 0.3;
+mixt_control = func {
+if( arg[0] == 1 ) # pitch up
+{
+	if ( mixt_control_busy == 1 ) { return; }
+	pos = getprop("/an2/controls/switches/mixture");
+	if( pos == nil ) { return; }
+	mixt_control_busy = 1;
+	interpolate( "/an2/controls/switches/mixture", mixt_control_max, ( mixt_control_max - pos ) * mixt_control_period );
+	return;
+}
+if( arg[0] == -1 ) # pitch down
+{
+	if ( mixt_control_busy == 1 ) { return; }
+	pos = getprop("/an2/controls/switches/mixture");
+	if( pos == nil ) { return; }
+	mixt_control_busy = 1;
+	interpolate( "/an2/controls/switches/mixture", mixt_control_min, (pos - mixt_control_min)  * mixt_control_period );
+	return;
+}
+if( arg[0] == 0 ) # stop interpolate
+{
+	mixt_control_busy = 0;
+	pos = getprop("/an2/controls/switches/mixture");
+	if( pos == nil ) { return; }
+	interpolate( "/an2/controls/switches/mixture", pos, 0 );
+}	
+}
+
+
+
+# Propeller pitch automatic control device (R9SM for AN-2)
+# limits
+pitch_low_limit = 0.35;
+rpm_low_limit = 400;
+rpm_hi_limit = 1595;
+# feedback parameter
+feedback_loop_gain = 0.0005;
+
+
+prop_handler = func {
+  settimer(prop_handler, 0);
+  pos = getprop("/an2/controls/switches/prop_handle");
+  if( pos == nil ) { return; }
+  prop_rpm = getprop("/engines/engine/thruster/rpm");
+  if( prop_rpm == nil ) { return; }
+  pitch_pos = getprop("/controls/engines/engine/propeller-pitch");
+  if( pitch_pos == nil ) { return; }
+  if ( prop_rpm < rpm_low_limit ) { delta = 0; }
+  else {
+  delta = pitch_pos - ( pos * rpm_hi_limit - prop_rpm ) * feedback_loop_gain;
+  if ( delta < pitch_low_limit ) { delta = pitch_low_limit; }
+  }
+  setprop("/controls/engines/engine/propeller-pitch", delta);
+}
+
+# Handler for pitch control
+propeller_pitch_control_busy = 0;
+propeller_pitch_control_period = 10.0; # s
+propeller_pitch_control_max = 1.0;
+propeller_pitch_control_min = 0.3;
+propeller_pitch_control = func {
+if( arg[0] == 1 ) # pitch up
+	{
+	if ( propeller_pitch_control_busy == 1 ) { return; }
+	pos = getprop("/an2/controls/switches/prop_handle");
+	if( pos == nil ) { return; }
+	propeller_pitch_control_busy = 1;
+	interpolate( "/an2/controls/switches/prop_handle", propeller_pitch_control_max, ( propeller_pitch_control_max - pos ) * propeller_pitch_control_period );
+	return;
+	}
+if( arg[0] == -1 ) # pitch down
+	{
+	if ( propeller_pitch_control_busy == 1 ) { return; }
+	pos = getprop("/an2/controls/switches/prop_handle");
+	if( pos == nil ) { return; }
+	propeller_pitch_control_busy = 1;
+	interpolate( "/an2/controls/switches/prop_handle", propeller_pitch_control_min, (pos - propeller_pitch_control_min)  * propeller_pitch_control_period );
+	return;
+	}
+if( arg[0] == 0 ) # stop interpolate
+	{
+	propeller_pitch_control_busy = 0;
+	pos = getprop("/an2/controls/switches/prop_handle");
+	if( pos == nil ) { return; }
+	interpolate( "/an2/controls/switches/prop_handle", pos, 0 );
+	}	
+}
+prop_handler();
+
+slats_extend = 16.0;# deg
+slats_retract = 15.0;# deg
+
+slats_handler = func {
+settimer(slats_handler, 0);
+	pos = getprop("/fdm/jsbsim/aero/alpha-deg");
+	if( pos == nil ) { return; }
+	if( pos > slats_extend ) 
+		{
+		interpolate( "/an2/systems/slats/position", 1.0, 0.1 );
+		setprop( "/controls/flight/speedbrakes", 1.0 );
+		return;
+		}
+	if( pos < slats_retract ) 
+		{
+		interpolate( "/an2/systems/slats/position", 0.0, 0.1 );
+		setprop( "/controls/flight/speedbrakes", 0.0 );
+		return;
+		}
+}
+
+slats_handler();
+
+# Pilot view selector
+view_toggle = func {
+if ( getprop("/sim/current-view/view-number") != 0 ) { return; }
+pos = getprop("/sim/current-view/x-offset-m");
+if ( pos == nil ) { return; }
+interpolate("/sim/current-view/x-offset-m", -pos, 0.5 );
+}
+
+

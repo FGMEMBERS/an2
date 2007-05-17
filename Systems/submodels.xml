@@ -43,7 +43,7 @@
 <PropertyList>
 
   <submodel>
-	  <!--Not implemented cause submodel opaque problem-->
+	  <!--Not implemented cause submodel opaque bug-->
     <name>Exhaust</name>
     <model>Models/Geometry/puff.xml</model>
     <trigger>/an2/submodels/exhaust</trigger>

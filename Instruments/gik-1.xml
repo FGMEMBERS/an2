@@ -69,20 +69,19 @@ Yurik V. Nikiforoff, aug 2006
 			    <type>x-shift</type>
 			    <offset>2</offset>	
 		    </transformation>
+
 		    <transformation>
 			    <type>rotation</type>
 			    <scale>-1</scale>
 		<property>/an2/instrumentation/gik/indicated-heading-deg</property>
-			    <offset>90</offset>	
+			    <offset>0.0</offset>	
 		    </transformation>
 
 		    <transformation>
 			    <type>rotation</type>
-			    <!--<scale>180</scale>-->
 			    <property>/instrumentation/adf/rotation-deg</property>
-			    <offset>1.5</offset>	
+			    <offset>0.0</offset>	
 		    </transformation>
-		    
 		    <transformation>
 			    <type>x-shift</type>
 			    <offset>16</offset>	
@@ -119,14 +118,14 @@ Yurik V. Nikiforoff, aug 2006
 			    <type>rotation</type>
 			    <scale>-1</scale>
 		<property>/an2/instrumentation/gik/indicated-heading-deg</property>
-			    <offset>90</offset>	
+			    <offset>0.0</offset>	
 		    </transformation>
 		    
 		    <transformation>
 			    <type>rotation</type>
 			    <!--<scale>180</scale>-->
 			    <property>/instrumentation/adf/rotation-deg</property>
-			    <offset>1.5</offset>	
+			    <offset>0.0</offset>	
 		    </transformation>
 		    
 		    <transformation>
