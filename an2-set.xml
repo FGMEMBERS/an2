@@ -158,7 +158,9 @@
 	 <serviceable>true</serviceable>
 	 <path>Aircraft/an2/Systems/submodels.xml</path>
  </submodels>
-
+ <tutorials>
+   <tutorial include="Tutorials/startup_tutorial.xml"/>
+ </tutorials>
 </sim>
 <consumables>
 	 <fuel>
@@ -197,6 +199,9 @@
 			 <true-heading-deg>0.0</true-heading-deg>
 			 <indicated-heading-deg>0.0</indicated-heading-deg>
 		 </gpk-48>
+                 <starter>
+                   <spin type="double">0.0</spin>
+                 </starter>
 	 </instrumentation>
 	 <controls>
 		 <door-pos-norm>0</door-pos-norm>

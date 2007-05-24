@@ -697,8 +697,11 @@
   </offsets>
 </model>
 
+<!--Tutorial marker-->
 
-
+<model>
+  <path>Models/Aircraft/marker.xml</path>
+</model>
 <!-- +++++++++++++++++++++ Hot spot panels +++++++++++++++++++++++++++ -->
 <!--Middle panel-->
 <panel>

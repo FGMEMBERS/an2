@@ -53,14 +53,14 @@
      <z>   0.00 </z>
    </location>
    <location name="EYEPOINT" unit="IN">
-     <x>  150.00 </x>
+     <x> 0.00 </x>
      <y> 0.00 </y>
-     <z>  45.00 </z>
+     <z> 0.00 </z>
    </location>
    <location name="VRP" unit="IN">
-     <x>160.0</x>
+     <x>162.0</x>
      <y>0.0</y>
-     <z>30.0</z>
+     <z>35.2</z>
    </location>
  </metrics>
 
@@ -102,7 +102,6 @@
    <location unit="IN">
      <x> 103.5 </x>
      <y>  -78.74 </y>
-     <!--<z>-89</z>-->
      <z>-88.8</z>
    </location>
    <static_friction>  0.80 </static_friction>
@@ -135,12 +134,13 @@
    <location unit="IN">
      <x> 433.07 </x>
      <y>   0.00 </y>
-     <z>-32.0</z>
+     <z>-27.5</z>
    </location>
    <static_friction>  0.80 </static_friction>
    <dynamic_friction> 0.50 </dynamic_friction>
    <rolling_friction> 0.02 </rolling_friction>
-   <spring_coeff unit="LBS/FT">      12127.50 </spring_coeff>
+   <!--<spring_coeff unit="LBS/FT">      12127.50 </spring_coeff>-->
+   <spring_coeff unit="LBS/FT">      7000.50 </spring_coeff>
    <damping_coeff unit="LBS/FT/SEC">  1000.00 </damping_coeff>
    <max_steer unit="DEG"> -10.00 </max_steer>
    <brake_group>NONE</brake_group>
