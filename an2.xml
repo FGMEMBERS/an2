@@ -243,6 +243,7 @@
         <min> -1 </min>
         <max>  1 </max>
       </clipto>
+      <output>fcs/elevator-pos-norm</output>
    </summer>
 
    <aerosurface_scale name="Elevator Control">
@@ -274,6 +275,14 @@
       </range>
       <output>fcs/left-aileron-pos-rad</output>
    </aerosurface_scale>
+   <aerosurface_scale name="Left Aileron Control norm">
+      <input>fcs/roll-trim-sum</input>
+      <range>
+        <min> -1 </min>
+        <max>  1 </max>
+      </range>
+      <output>fcs/left-aileron-pos-norm</output>
+   </aerosurface_scale>
 
    <aerosurface_scale name="Right Aileron Control">
       <input>fcs/roll-trim-sum</input>
@@ -282,6 +291,14 @@
         <max>  0.35 </max>
       </range>
       <output>fcs/right-aileron-pos-rad</output>
+   </aerosurface_scale>
+   <aerosurface_scale name="Right Aileron Control norm">
+      <input>fcs/roll-trim-sum</input>
+      <range>
+        <min> -1 </min>
+        <max>  1 </max>
+      </range>
+      <output>fcs/right-aileron-pos-norm</output>
    </aerosurface_scale>
 
   </channel>
@@ -303,6 +320,15 @@
         <max>  0.35 </max>
       </range>
       <output>fcs/rudder-pos-rad</output>
+   </aerosurface_scale>
+
+   <aerosurface_scale name="Rudder Sum">
+      <input>fcs/rudder-command-sum</input>
+      <range>
+        <min> -1 </min>
+        <max>  1 </max>
+      </range>
+      <output>fcs/rudder-pos-norm</output>
    </aerosurface_scale>
 
   </channel>

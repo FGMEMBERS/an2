@@ -1009,7 +1009,7 @@
 	<object-name>obj71</object-name>
 	<condition>
 		<less-than>
-			<property>/engines/engine/rpm</property>
+			<property>engines/engine/rpm</property>
 			<value>600</value>
 		</less-than>
 	</condition>
@@ -1020,7 +1020,7 @@
 	<object-name>obj83</object-name>
 	<condition>
 		<greater-than>
-			<property>/engines/engine/rpm</property>
+			<property>engines/engine/rpm</property>
 			<value>600</value>
 		</greater-than>
 	</condition>
@@ -1032,7 +1032,7 @@
 	
 	<type>spin</type>
 	<object-name>obj71</object-name>
-	<property>/engines/engine/rpm</property>
+	<property>engines/engine/rpm</property>
 	
 	<center>
 		<x-m>0</x-m>
@@ -1050,7 +1050,7 @@
 	
 	<type>spin</type>
 	<object-name>obj70</object-name>
-	<property>/engines/engine/rpm</property>
+	<property>engines/engine/rpm</property>
 	
 	<center>
 		<x-m>0</x-m>
@@ -1068,7 +1068,7 @@
 	
 	<type>spin</type>
 	<object-name>obj83</object-name>
-	<property>/engines/engine/rpm</property>
+	<property>engines/engine/rpm</property>
 	<factor>0.005</factor>
 	<center>
 		<x-m>0</x-m>
@@ -1095,7 +1095,7 @@
 <animation>
 	<type>rotate</type>
 	<object-name>rudder</object-name>
-	<property>/controls/flight/rudder</property>
+	<property>surface-positions/rudder-pos-norm</property>
 	<factor>-28</factor>
 	<axis>
 		<x1-m>5.52</x1-m>
@@ -1113,7 +1113,7 @@
 <animation>
 	<type>rotate</type>
 	<object-name>rear_wheel</object-name>
-	<property>/controls/flight/rudder</property>
+	<property>surface-positions/rudder-pos-norm</property>
 	<factor>-28</factor>
 	<axis>
 		<x1-m>4.60</x1-m>
@@ -1133,7 +1133,7 @@
 	<object-name>obj75</object-name>
 	<object-name>elev_trim_left</object-name>
 	<object-name>elev_trim_right</object-name>
-	<property>/controls/flight/elevator</property>
+	<property>surface-positions/elevator-pos-norm</property>
 	<interpolation>
 		<entry><ind>	-1</ind><dep>	-42</dep></entry>
 		<entry><ind>	0</ind><dep>	0</dep></entry>
@@ -1156,7 +1156,7 @@
 <animation>
 	<type>rotate</type>
 	<object-name>obj79</object-name>
-	<property>/controls/flight/aileron</property>
+	<property>surface-positions/left-aileron-pos-norm</property>
 	<interpolation>
 		<entry><ind>	-1</ind><dep>	30</dep></entry>
 		<entry><ind>	0</ind><dep>	0</dep></entry>
@@ -1178,7 +1178,7 @@
 <animation>
 	<type>rotate</type>
 	<object-name>obj76</object-name>
-	<property>/controls/flight/aileron</property>
+	<property>surface-positions/right-aileron-pos-norm</property>
 	<interpolation>
 		<entry><ind>	-1</ind><dep>	14</dep></entry>
 		<entry><ind>	0</ind><dep>	0</dep></entry>
@@ -1202,7 +1202,7 @@
 <animation>
 	<type>rotate</type>
 	<object-name>obj81</object-name>
-	<property>/surface-positions/flap-pos-norm</property>
+	<property>surface-positions/flap-pos-norm</property>
 	<factor>39</factor>
 	<center>
 		<x-m>-1.35</x-m>
@@ -1219,7 +1219,7 @@
 <animation>
 	<type>translate</type>
 	<object-name>obj81</object-name>
-	<property>/surface-positions/flap-pos-norm</property>
+	<property>surface-positions/flap-pos-norm</property>
 	<factor>0.3</factor>
 	<axis>
 		<x>1</x>
@@ -1234,7 +1234,7 @@
 <animation>
 	<type>rotate</type>
 	<object-name>obj77</object-name>
-	<property>/surface-positions/flap-pos-norm</property>
+	<property>surface-positions/flap-pos-norm</property>
 	<factor>39</factor>
 	<center>
 		<x-m>-1.35</x-m>
@@ -1251,7 +1251,7 @@
 <animation>
 	<type>translate</type>
 	<object-name>obj77</object-name>
-	<property>/surface-positions/flap-pos-norm</property>
+	<property>surface-positions/flap-pos-norm</property>
 	<factor>0.2</factor>
 	<axis>
 		<x>1</x>
@@ -1264,7 +1264,7 @@
 <animation>
 	<type>rotate</type>
 	<object-name>obj80</object-name>
-	<property>/surface-positions/flap-pos-norm</property>
+	<property>surface-positions/flap-pos-norm</property>
 	<factor>39</factor>
 	<center>
 		<x-m>-1.55</x-m>
@@ -1281,7 +1281,7 @@
 <animation>
 	<type>translate</type>
 	<object-name>obj80</object-name>
-	<property>/surface-positions/flap-pos-norm</property>
+	<property>surface-positions/flap-pos-norm</property>
 	<factor>0.1</factor>
 	<axis>
 		<x>1</x>
@@ -1295,7 +1295,7 @@
 <animation>
 	<type>rotate</type>
 	<object-name>obj78</object-name>
-	<property>/surface-positions/flap-pos-norm</property>
+	<property>surface-positions/flap-pos-norm</property>
 	<factor>39</factor>
 	<center>
 		<x-m>-1.55</x-m>
@@ -1312,7 +1312,7 @@
 <animation>
 	<type>translate</type>
 	<object-name>obj78</object-name>
-	<property>/surface-positions/flap-pos-norm</property>
+	<property>surface-positions/flap-pos-norm</property>
 	<factor>0.1</factor>
 	<axis>
 		<x>1</x>
@@ -1326,7 +1326,7 @@
 	<type>translate</type>
 	<object-name>obj57</object-name>
         <object-name>obj58</object-name>
-        <property>/surface-positions/speedbrake-pos-norm</property>
+        <property>surface-positions/speedbrake-pos-norm</property>
         <factor>0.1</factor>
 	<axis>
 		<x>0.0</x>
@@ -1400,10 +1400,10 @@
 <animation>
 	<type>spin</type>
 	<object-name>obj73</object-name>
-	<property>/velocities/airspeed-kt</property>
+	<property>velocities/airspeed-kt</property>
 	<factor>-21.22</factor>
 	<condition>
-		<property>/gear/gear/compression-norm</property>
+		<property>gear/gear/compression-norm</property>
 	</condition>
 	<center>
 		<x-m>-3.43</x-m>
@@ -1476,10 +1476,10 @@
 <animation>
 	<type>spin</type>
 	<object-name>obj72</object-name>	
-	<property>/velocities/airspeed-kt</property>
+	<property>velocities/airspeed-kt</property>
 	<factor>-21.22</factor>
 	<condition>
-		<property>/gear/gear[1]/compression-norm</property>
+		<property>gear/gear[1]/compression-norm</property>
 	</condition>
 	<center>
 		<x-m>-3.43</x-m>
@@ -1499,10 +1499,10 @@
 	<type>spin</type>
 	<object-name>obj66</object-name>
 	<!--<object-name>rear-rect</object-name>-->
-	<property>/velocities/airspeed-kt</property>
+	<property>velocities/airspeed-kt</property>
 	<factor>-12.5</factor>
 	<condition>
-		<property>/gear/gear[2]/compression-norm</property>
+		<property>gear/gear[2]/compression-norm</property>
 	</condition>
 	<center>
 		<x-m>5.01</x-m>
@@ -1544,7 +1544,7 @@
 		<red>1.0</red>
 		<green>0.2</green>
 		<blue>0.0</blue>
-		<factor-prop>/controls/switches/nav-light</factor-prop>
+		<factor-prop>controls/switches/nav-light</factor-prop>
 	</emission>
 </animation>
 <animation>
@@ -1554,7 +1554,7 @@
 		<red>0.0</red>
 		<green>1.0</green>
 		<blue>0.0</blue>
-		<factor-prop>/controls/switches/nav-light</factor-prop>
+		<factor-prop>controls/switches/nav-light</factor-prop>
 	</emission>
 </animation>
 <animation>
@@ -1564,7 +1564,7 @@
 		<red>1.0</red>
 		<green>1.0</green>
 		<blue>0.8</blue>
-		<factor-prop>/controls/switches/nav-light</factor-prop>
+		<factor-prop>controls/switches/nav-light</factor-prop>
 	</emission>
 </animation>
 <animation>
@@ -1574,7 +1574,7 @@
 		<red>1.0</red>
 		<green>1.0</green>
 		<blue>0.8</blue>
-		<factor-prop>/controls/switches/landing-light</factor-prop>
+		<factor-prop>controls/switches/landing-light</factor-prop>
 	</emission>
 </animation>
 <animation>
@@ -1584,7 +1584,7 @@
 		<red>1.0</red>
 		<green>1.0</green>
 		<blue>0.8</blue>
-		<factor-prop>/controls/switches/taxi-light</factor-prop>
+		<factor-prop>controls/switches/taxi-light</factor-prop>
 	</emission>
 </animation>
 
@@ -1641,7 +1641,7 @@
   <object-name>sht_l</object-name>
   <object-name>handl_sht_l</object-name>
   <object-name>lock_l</object-name>
-  <property>/controls/flight/elevator</property>
+  <property>controls/flight/elevator</property>
   <factor>-16</factor>
   <center>
     <x-m>-4.0</x-m>
@@ -1658,7 +1658,7 @@
   <type>rotate</type>
   <object-name>sht_l</object-name>
   <object-name>handl_sht_l</object-name>
-  <property>/controls/flight/aileron</property>
+  <property>controls/flight/aileron</property>
   <factor>-50</factor>
   <center>
     <x-m>-3.96</x-m>
@@ -1678,7 +1678,7 @@
   <object-name>sht_r</object-name>
   <object-name>handl_sht_r</object-name>
   <object-name>lock_r</object-name>
-  <property>/controls/flight/elevator</property>
+  <property>controls/flight/elevator</property>
   <factor>-16</factor>
   <center>
     <x-m>-4.0</x-m>
@@ -1695,7 +1695,7 @@
   <type>rotate</type>
   <object-name>sht_r</object-name>
   <object-name>handl_sht_r</object-name>
-  <property>/controls/flight/aileron</property>
+  <property>controls/flight/aileron</property>
   <factor>-50</factor>
   <center>
     <x-m>-3.96</x-m>
