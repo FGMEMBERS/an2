@@ -209,7 +209,7 @@
                   	<yadro_switch archive="y" type="bool">0</yadro_switch>
                         <light_1_switch archive="y" type="bool">0</light_1_switch>
                         <light_2_switch archive="y" type="bool">0</light_2_switch>
-			<adf-selector  archive="y">1</adf-selector>>
+			<adf-selector  archive="y">1</adf-selector>
 			<fuel_selector  archive="y">0</fuel_selector>
 			<aileron-trim archive="y">0</aileron-trim>
 			<elevator-trim  archive="y">0</elevator-trim>
