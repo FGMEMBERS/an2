@@ -154,7 +154,7 @@ Yurik V. Nikiforoff, aug 2006
 				<property>/systems/electrical/amps</property>
 				<scale>0.6</scale>
 				<offset>-103</offset>
-			</transformation>-->-->
+			</transformation>-->
 			
 			<transformation>
 				<type>x-shift</type>
