@@ -1,16 +1,7 @@
 ############################################################################
 #    Copyright 								   #
 #									   #
-#    (C) 2005 by Anton Nikolaev aka Xomer - original model for 		   #
-#	MS Flight Simulator, sounds, visual model and textures.		   #
-#     	xomer@yandex.ru							   #
-#									   #
-#	Model published under GPL with his permission. 			   #
-#									   #
-#	Original model you can get there: 				   #
-#	http://www.avsim.ru/files.phtml?action=download&id=3333		   #
-#									   #
-#    (C) 2007 by Yurik V. Nikiforoff - port for FGFS, 2d & 3d panels, FDM, #
+#    (C) 2010 by Yurik V. Nikiforoff - port for FGFS, 2d & 3d panels, FDM, #
 #	instruments, animations, systems and over.		 	   #
 #    	yurik@megasignal.com						   #
 #                                                                          #

@@ -3,16 +3,8 @@
 ############################################################################
 #    Copyright 								   #
 #									   #
-#    (C) 2005 by Anton Nikolaev aka Xomer - original model for 		   #
-#	MS Flight Simulator, sounds, visual model and textures.		   #
-#     	xomer@yandex.ru							   #
 #									   #
-#	Model published under GPL with his permission. 			   #
-#									   #
-#	Original model you can get there: 				   #
-#	http://www.avsim.ru/files.phtml?action=download&id=3333		   #
-#									   #
-#    (C) 2007 by Yurik V. Nikiforoff - port for FGFS, 2d & 3d panels, FDM, #
+#    (C) 2010 by Yurik V. Nikiforoff - port for FGFS, 2d & 3d panels, FDM, #
 #	instruments, animations, systems and over.		 	   #
 #    	yurik@megasignal.com						   #
 #                                                                          #
@@ -35,13 +27,15 @@
 <PropertyList>
 
  <sim>
-	 <description>Legendary Russian AN-2</description>
-	 <author>Yurik V. Nikiforoff aka Yurik_nsk - port to FlightGear</author>
-         <author>Anton Nikolaev aka Xomer - original model for MSFS</author>
+	 <description>Legendary Russian AN-2 v2.0</description>
+	 <author>Yurik V. Nikiforoff aka Yurik_nsk</author>
+	 <author>Yemelianov A.V. aka Dust (www.airwar.ru/other/3m.html) - new 3D model</author>
 	 <status>early-production</status>
 <help>
-<title>An-2</title>
+<title>An-2 v2.0</title>
 <line>________________________Procedures_________________________</line>
+<line>Autostart: press "s" button </line>
+<line>Simple AP on/off: F11 </line>
 <line>Preferred Takeoff: nominal, manifold pressure 900 mmHg, rotate at 110 km/h </line>
 <line>Extremal takeoff: flaps to 20', full throttle up to 5 min</line>
 <line>Climbout: no flaps, pressure 900 mmHg, 140 km/h</line>
@@ -57,17 +51,9 @@
   <flight-model>jsb</flight-model>
   <aero>an2</aero>
   <startup>
-    <splash-texture>Aircraft/an2/splash.rgb</splash-texture>
+    <splash-texture>Aircraft/an2/splash.png</splash-texture>
   </startup>
 
-
-
-  <!-- Use a 2D instrument panel -->
-  <panel>
-   <path>Aircraft/an2/Panels/ruspanel.xml</path>
-   <visibility archive="y">false</visibility>
-  </panel>
-  
   <flaps>
 	  <setting>0.0</setting>
 	  <setting>0.25</setting>
@@ -82,85 +68,48 @@
   <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
   
   <view>
+   <name>Captain View</name>
     <!-- set true if you want 3d cockpit -->
    <internal archive="y">true</internal>
+   <!--Captain view-->
    <config>
-  <x-offset-m archive="y">-0.55</x-offset-m>
-<!--<x-offset-m archive="y">0.0</x-offset-m>-->
-     <y-offset-m archive="y">0.5</y-offset-m>
-     <z-offset-m archive="y">-1.6</z-offset-m>
+     <x-offset-m archive="y">-0.45</x-offset-m>
+     <y-offset-m archive="y">0.9</y-offset-m>
+     <z-offset-m archive="y">-0.9</z-offset-m>
+     <pitch-offset-deg type="double">-15.0</pitch-offset-deg>
    </config>
   </view>
+  <view n="101">
+	  <name>Copilot View</name>
+	  <type>lookfrom</type>
+	  <internal type="bool">true</internal>
+	  <config>
+		  <from-model type="bool">true</from-model>
+		  <x-offset-m type="double" archive="y">0.45</x-offset-m>
+		  <y-offset-m type="double" archive="y">0.9</y-offset-m>
+		  <z-offset-m type="double" archive="y">-0.9</z-offset-m>
+		  <pitch-offset-deg type="double">-15.0</pitch-offset-deg>
+		  <from-model-idx type="int">0</from-model-idx>
+		  <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+		  <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+		  <default-pitch-deg type="double">0</default-pitch-deg>
+		  <default-heading-deg type="double">0</default-heading-deg>
+		  <front-direction-deg type="double">0</front-direction-deg>
+		  <front-left-direction-deg type="double">45</front-left-direction-deg>
+		  <left-direction-deg type="double">90</left-direction-deg>
+		  <back-left-direction-deg type="double">135</back-left-direction-deg>
+		  <back-direction-deg type="double">180</back-direction-deg>
+		  <back-right-direction-deg type="double">225</back-right-direction-deg>
+		  <right-direction-deg type="double">270</right-direction-deg>
+		  <front-right-direction-deg type="double">315</front-right-direction-deg>
+		  <dynamic-view type="bool">true</dynamic-view>
+	  </config>
+  </view>
+
   <sound>
    <path archive="y">Aircraft/an2/Systems/an2-sound.xml</path>
   </sound>
- <!--Light source subsystem-->
-  <!-- experimental, work only for patched sim -->
-  <light>
-	  <light-source>
-		  <name>Landing</name>	
-		  <switch-prop>/controls/switches/landing-light</switch-prop>
-		  <!--Position-->
-		  <center-x>-3.0</center-x>
-		  <center-y>0.0</center-y>
-		  <center-z>-1.0</center-z>
-		  <!--Direction-->
-		  <axis-x>-1.0</axis-x>
-		  <axis-y>0.0</axis-y>
-		  <axis-z>-0.1</axis-z>
-		  <!--Frustum parameters-->
-		  <cutoff>20.0</cutoff>
-		  <exponent>10.0</exponent>
-		  <!--Attenuation parameters-->
-		  <constant>0.3</constant>
-		  <linear>0.0</linear>
-		  <quadratic>0.000003</quadratic>
-		  <!--Coordinates-->
-		  <longitude-deg-prop>/position/longitude-deg</longitude-deg-prop>
-		  <latitude-deg-prop>/position/latitude-deg</latitude-deg-prop>
-		  <elevation-ft-prop>/position/altitude-ft</elevation-ft-prop>
-		  <!--Orientation-->
-		  <roll-deg-prop>/orientation/roll-deg</roll-deg-prop>
-		  <pitch-deg-prop>/orientation/pitch-deg</pitch-deg-prop>
-		  <heading-deg-prop>/orientation/heading-deg</heading-deg-prop>	       
-	  </light-source>
-	  <light-source>
-		  <name>Taxi light</name>	
-		  <switch-prop>/controls/switches/taxi-light</switch-prop>
-		  <!--Position-->
-		  <center-x>-2.0</center-x>
-		  <center-y>0.0</center-y>
-		  <center-z>-5</center-z>
-		  <!--Direction-->
-		  <axis-x>-1.0</axis-x>
-		  <axis-y>0.0</axis-y>
-		  <axis-z>-0.1</axis-z>
-		  <!--Frustum parameters-->
-		  <cutoff>180.0</cutoff>
-		  <exponent>10.0</exponent>
-		  <!--Attenuation parameters-->
-		  <constant>0.5</constant>
-		  <linear>0.0</linear>
-		  <quadratic>0.000005</quadratic>
-		  <!--Coordinates-->
-		  <longitude-deg-prop>/position/longitude-deg</longitude-deg-prop>
-		  <latitude-deg-prop>/position/latitude-deg</latitude-deg-prop>
-		  <elevation-ft-prop>/position/altitude-ft</elevation-ft-prop>
-		  <!--Orientation-->
-		  <roll-deg-prop>/orientation/roll-deg</roll-deg-prop>
-		  <pitch-deg-prop>/orientation/pitch-deg</pitch-deg-prop>
-		  <heading-deg-prop>/orientation/heading-deg</heading-deg-prop>	       
-	  </light-source>
-  </light>
-  
- <!--Exhaust model-->
- <submodels>
-	 <serviceable>true</serviceable>
-	 <path>Aircraft/an2/Systems/submodels.xml</path>
- </submodels>
- <tutorials>
-   <tutorial include="Tutorials/startup_tutorial.xml"/>
- </tutorials>
+
 </sim>
 <consumables>
 	 <fuel>
@@ -184,9 +133,13 @@
 	 </engines>
  </controls>
  <an2>
+	 <x>2.2</x>
+	 <y>-0.5</y>
+	 <z>0.5</z>
+
 	 <instrumentation>
 		 <fuel-select>
-			 <position archive="y"> 0 </position>
+			 <position archive="y" type="double"> 0 </position>
 		 </fuel-select>
 		 <gik >
 			 <offset>150</offset>
@@ -199,121 +152,195 @@
 			 <true-heading-deg>0.0</true-heading-deg>
 			 <indicated-heading-deg>0.0</indicated-heading-deg>
 		 </gpk-48>
-                 <starter>
-                   <spin type="double">0.0</spin>
-                 </starter>
+		 <starter>
+			 <spin type="double">0.0</spin>
+		 </starter>
+		 <sbess>
+			 <indicated-fuel-l>0</indicated-fuel-l>
+		 </sbess>
 	 </instrumentation>
 	 <controls>
 		 <door-pos-norm>0</door-pos-norm>
-		<switches>
-                  	<yadro_switch archive="y" type="bool">0</yadro_switch>
-                        <light_1_switch archive="y" type="bool">0</light_1_switch>
-                        <light_2_switch archive="y" type="bool">0</light_2_switch>
-			<adf-selector  archive="y">1</adf-selector>
-			<fuel_selector  archive="y">0</fuel_selector>
-			<aileron-trim archive="y">0</aileron-trim>
-			<elevator-trim  archive="y">0</elevator-trim>
-			<rudder-trim  archive="y">0</rudder-trim>
-			<air  archive="y">0</air>
-			<oil  archive="y">0</oil>
-                        <mixture archive="y" type="double">1.1</mixture>
-                        <prop_handle archive="y" type="double">1.0</prop_handle>
-	 	</switches>
-                <light>
-                  <!--UV light intensivity-->
-                  <uv-bright archive="y" type="double">0.8</uv-bright>
-                  <!--External instrument light-->
-                  <ext-red archive="y" type="double">0.0</ext-red>
-                  <ext-green archive="y" type="double">0.0</ext-green>
-                  <ext-blue archive="y" type="double">0.0</ext-blue>
-
-                  <ext-red-standby archive="y" type="double">0.1</ext-red-standby>
-                  <ext-green-standby archive="y" type="double">0.1</ext-green-standby>
-                  <ext-blue-standby archive="y" type="double">0.6</ext-blue-standby>
-
-                  <!--Internal instrument light-->
-                  <int-red archive="y" type="double">0.0</int-red>
-                  <int-green archive="y" type="double">0.0</int-green>
-                  <int-blue archive="y" type="double">0.0</int-blue>
-                  
-                  <int-red-standby archive="y" type="double">0.7</int-red-standby>
-                  <int-green-standby archive="y" type="double">0.6</int-green-standby>
-                  <int-blue-standby archive="y" type="double">0.5</int-blue-standby>
-
-                </light>
+		 <switches>
+			 <yadro_switch archive="y" type="bool">0</yadro_switch>
+			 <light_1_switch archive="y" type="bool">0</light_1_switch>
+			 <light_2_switch archive="y" type="bool">0</light_2_switch>
+			 <adf-selector  archive="y">1</adf-selector>
+			 <adf-selector-sw  archive="y">-50.0</adf-selector-sw>
+			 <fuel_selector  archive="y">0</fuel_selector>
+			 <aileron-trim archive="y">0</aileron-trim>
+			 <elevator-trim  archive="y">0</elevator-trim>
+			 <rudder-trim  archive="y">0</rudder-trim>
+			 <air  archive="y">0</air>
+			 <oil  archive="y">0</oil>
+			 <mixture archive="y" type="double">1.1</mixture>
+			 <prop_handle archive="y" type="double">1.0</prop_handle>
+		 </switches>
+		 <light>
+			 <!--UV light intensivity-->
+			 <uv-bright archive="y" type="double">0.0</uv-bright>
+			 <!--External instrument light-->
+			 <ext-red archive="y" type="double">0.0</ext-red>
+			 <ext-green archive="y" type="double">0.0</ext-green>
+			 <ext-blue archive="y" type="double">0.0</ext-blue>
+			 
+			 <ext-red-standby archive="y" type="double">0.1</ext-red-standby>
+			 <ext-green-standby archive="y" type="double">0.1</ext-green-standby>
+			 <ext-blue-standby archive="y" type="double">0.6</ext-blue-standby>
+			 
+			 <!--Internal instrument light-->
+			 <int-red archive="y" type="double">0.0</int-red>
+			 <int-green archive="y" type="double">0.0</int-green>
+			 <int-blue archive="y" type="double">0.0</int-blue>
+			 
+			 <int-red-standby archive="y" type="double">0.7</int-red-standby>
+			 <int-green-standby archive="y" type="double">0.6</int-green-standby>
+			 <int-blue-standby archive="y" type="double">0.5</int-blue-standby>
+			 
+		 </light>
 	 </controls>
 	 <systems>
 		 <dampers>
 			 <oil-damper  archive="y">0</oil-damper>
 			 <air-damper  archive="y">0</air-damper>
 		 </dampers>
-                 <slats>
-                   <position  archive="y">0.0</position>
-                 </slats>
-
+		 <slats>
+			 <position  archive="y">0.0</position>
+		 </slats>
+		 
 	 </systems>
-	 <livreas>
-		 <selector>4</selector>
-		 <fuselage type="string"  archive="y">afl90_fuse_1_t.rgb</fuselage>
-		 <wings type="string"  archive="y">afl90_wings_1_t.rgb</wings>
-	 </livreas>
-	 <faults>
-		 <electrical>
-			 <po-500  archive="y">0</po-500>
-		 </electrical>
-	 </faults>
-	<submodels>
-		<exhaust  archive="y">false</exhaust>
- 	</submodels>
-        <textures>
-          	<low-res archive="y" type="bool">true</low-res>
-        </textures>
+	 <mod-views>
+		 <mod type="bool">0</mod>
+		 <mod-view>
+			 <x-offset-m archive="y">-0.45</x-offset-m>
+			 <y-offset-m archive="y">0.9</y-offset-m>
+			 <z-offset-m archive="y">-0.9</z-offset-m>
+			 <field-of-view archive="y">27.0</field-of-view>
+			 <heading-offset-deg type="double">-1.5</heading-offset-deg>
+			 <pitch-offset-deg type="double">-28.0</pitch-offset-deg>
+			 <roll-offset-deg type="double">0.0</roll-offset-deg>
+		 </mod-view>
+		 <mod-view>
+			 <x-offset-m archive="y">0.45</x-offset-m>
+			 <y-offset-m archive="y">0.9</y-offset-m>
+			 <z-offset-m archive="y">-0.9</z-offset-m>
+			 <field-of-view archive="y">29.0</field-of-view>
+			 <heading-offset-deg type="double">4.0</heading-offset-deg>
+			 <pitch-offset-deg type="double">-25.0</pitch-offset-deg>
+			 <roll-offset-deg type="double">0.0</roll-offset-deg>
+		 </mod-view>
+	 </mod-views>
+
  </an2>
+
  <input>
     <keyboard>
+<!--    <key n="357">
+		    <name>up</name>
+		    <binding n="0">
+			    <command>property-adjust</command>
+			    <property>/an2/z</property>
+			    <step>0.001</step>
+		    </binding>
+	    </key>
+	    <key n="359">
+		    <name>down</name>
+		    <binding n="0">
+			    <command>property-adjust</command>
+			    <property>/an2/z</property>
+			    <step>-0.001</step>
+		    </binding>
+	    </key>
+	    
+	    <key n="356">
+		    <name>left</name>
+		    <binding n="0">
+			    <command>property-adjust</command>
+			    <property>/an2/y</property>
+			    <step>-0.001</step>
+		    </binding>
+	    </key>
+	    <key n="358">
+		    <name>right</name>
+		    <binding n="0">
+			    <command>property-adjust</command>
+			    <property>/an2/y</property>
+			    <step>0.001</step>
+		    </binding>
+	    </key>
+	    
+	    <key n="360">
+		    <name>fwd</name>
+		    <binding n="0">
+			    <command>property-adjust</command>
+			    <property>/an2/x</property>
+			    <step>-0.001</step>
+		    </binding>
+	    </key>
+	    <key n="361">
+		    <name>backwd</name>
+		    <binding n="0">
+			    <command>property-adjust</command>
+			    <property>/an2/x</property>
+			    <step>0.001</step>
+		    </binding>
+	    </key>-->
+
 		 <!--Unbind spacebar & print help about starter procedure-->
-	 <key n="32">
-			 <name>spacebar</name>
-			 <desc>Show help about starter</desc>
-			 <binding n="0">
+		 <!--View shortcuts-->
+	 <key n="96">
+			 <name>~</name>
+			 <desc>Custom view modifier</desc>
+			 <binding>
 				 <command>nasal</command>
-				 <script>an2.starter_help()</script>
+				 <script>view.modView(1)</script>
+			 </binding>
+			 <mod-up>
+				 <binding>
+					 <command>nasal</command>
+					 <script>view.modView(0)</script>
+				 </binding>
+			 </mod-up>
+	 </key>
+		 
+	 <key n="49">
+			 <name>1</name>
+			 <desc>Captain view</desc>
+			 <binding>
+				 <command>nasal</command>
+				 <script>view.forceView(0);</script>
+			 </binding>
+	 </key>
+	 
+	 <key n="50">
+			 <name>2</name>
+			 <desc>Copilot view</desc>
+			 <binding>
+				 <command>nasal</command>
+				 <script>view.forceView(1);</script>
 			 </binding>
 	 </key>
 
-	<key n="68">
-	 	<name>D</name>
-		<desc>Toggle door</desc>
-		<binding n="0">
-			 <command>nasal</command>
-			 <script>an2.toggle_door()</script>
-		</binding>
-	</key>
-	<key n="121">
-		<name>y</name>
-		<desc>Change livreas</desc>
-		<binding n="0">
-			<command>nasal</command>
-			<script>an2.change_livreas()</script>
-		</binding>
-	</key>
-	<key n="100">
-		<name>d</name>
-		<desc>aileron trim right</desc>
+		 
+	 <key n="115">
+			 <name>s</name>
+			 <desc>Auto Startup</desc>
+			 <binding n="0">
+				 <command>nasal</command>
+				 <script>an2.autostart()</script>
+			 </binding>
+	 </key>
+
+
+	<key n="267">
+		<name>F11</name>
+		<desc>Simply AP</desc>
 		<binding n="0">
 			<command>nasal</command>
-			<script>controls.aileronTrim(1)</script>
+			<script>an2.simply_ap()</script>
 		</binding>
 	</key>
-	<key n="97">
-		<name>a</name>
-		<desc>aileron trim left</desc>
-		<binding n="0">
-			<command>nasal</command>
-			<script>controls.aileronTrim(-1)</script>
-		</binding>
-	</key>
-        <key n="103">
+<!--        <key n="103">
           <name>g</name>
           <desc>toggle cabin view</desc>
           <binding n="0">
@@ -327,35 +354,56 @@
           <binding n="0">
             <command>property-assign</command>
             <property>/sim/current-view/x-offset-m</property>
-            <value>-0.55</value>
+            <value>-0.45</value>
           </binding>
-        </key>
+        </key>-->
+        
    </keyboard>		
 </input>
 
 <!-- Nasal files/scripts -->
+
 <nasal>
+	<an2>
+		<file>Aircraft/an2/Nasal/an2.nas</file>
+	</an2>
 	<electrical>
-		<file>Aircraft/an2/Systems/electrical.nas</file>
+		<file>Aircraft/an2/Nasal/electrical.nas</file>
 	</electrical>
 	
 	<fuel>
-		<file>Aircraft/an2/Systems/fuel.nas</file>
+		<file>Aircraft/an2/Nasal/fuel.nas</file>
 	</fuel>
        <controls>
-          <file>Aircraft/an2/Systems/controls.nas</file>
+	       <file>Aircraft/an2/Nasal/controls.nas</file>
         </controls>
+	<help>
+		<file>Aircraft/an2/Nasal/help.nas</file>
+	</help>
+	<view>
+		<file>Aircraft/an2/Nasal/view.nas</file>
+	</view>
 
-	<an2>
-		<file>Aircraft/an2/Systems/an2.nas</file>
-	</an2>
+
 </nasal>
+
+
 
 <!--Start with caged attitude indicator-->
 <instrumentation>
   <attitude-indicator>
     <caged-flag>1</caged-flag>
   </attitude-indicator>
+  <marker-beacon>
+	  <audio-btn>false</audio-btn>
+	  <volume>0</volume>
+  </marker-beacon>
 </instrumentation>
+
+<!-- <engines>
+  <engine>
+   <rpm type="double">700</rpm>
+  </engine>
+ </engines>-->
 
 </PropertyList>
