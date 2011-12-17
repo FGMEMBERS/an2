@@ -1,0 +1,466 @@
+<?xml version="1.0"?>
+
+<!--
+Yurik V. Nikiforoff, aug 2006
+-->
+
+<PropertyList>
+
+<name>Avia clock</name>
+ 
+   <w-base>256</w-base>
+   <h-base>256</h-base>
+   
+<layers>
+    <layer>
+	<name>base</name>
+	<texture>                           
+    	    <path>Aircraft/an2/Instruments/Textures/achs-2_1.rgb</path>
+	    <x1>0.0</x1>
+	    <y1>0.0</y1>
+	    <x2>1.0</x2>
+	    <y2>1.0</y2>
+	</texture>
+	<w>256</w>
+	<h>256</h>
+    </layer>
+    <layer>
+	    <name> uv light </name>
+	    <condition>
+		    <property>/an2/controls/switches/uv_light</property>
+	    </condition> 
+	    <emissive>true</emissive>
+	    <texture>                           
+		    <path>Aircraft/an2/Instruments/Textures/achs-2_uv.rgb</path>
+		    <x1>0.0</x1>
+		    <y1>0.0</y1>
+		    <x2>1.0</x2>
+		    <y2>1.0</y2>
+	    </texture>
+	    <w>195</w>
+	    <h>195</h>
+    </layer>  
+    <!-- Clock -->
+    <layer>
+	<name>hour needle</name>
+	<texture>                           
+    	    <path>Aircraft/an2/Instruments/Textures/achs-2_2.rgb</path>
+	    <x1>0.0</x1>
+	    <y1>0.85</y1>
+	    <x2>1.0</x2>
+	    <y2>1.0</y2>
+	</texture>
+	<w>128</w>
+	<h>16</h>
+	<transformations>	    
+	    <transformation>
+		<type>rotation</type>
+		<scale>0.5</scale>
+		<property>/instrumentation/clock/indicated-min</property>
+	    </transformation>
+	    <transformation>
+		<type>rotation</type>
+		<scale>30</scale>
+		<property>/instrumentation/clock/local-hour</property>
+		<offset>-90</offset>		
+	    </transformation>
+	    <transformation>
+		<type>x-shift</type>
+		<offset>56</offset>		
+	    </transformation>
+	</transformations>
+	
+    </layer>
+    <layer>
+	    <name>hour needle with uv light</name>
+	    <condition>
+		    <property>/an2/controls/switches/uv_light</property>
+	    </condition> 
+	    <emissive>true</emissive>
+	    <texture>                           
+		    <path>Aircraft/an2/Instruments/Textures/achs-2_2.rgb</path>
+		    <x1>0.0</x1>
+		    <y1>0.85</y1>
+		    <x2>1.0</x2>
+		    <y2>1.0</y2>
+	    </texture>
+	    <w>128</w>
+	    <h>16</h>
+	    <transformations>	    
+		    <transformation>
+			    <type>rotation</type>
+			    <scale>0.5</scale>
+			    <property>/instrumentation/clock/indicated-min</property>
+		    </transformation>
+		    <transformation>
+			    <type>rotation</type>
+			    <scale>30</scale>
+			    <property>/instrumentation/clock/local-hour</property>
+			    <offset>-90</offset>		
+		    </transformation>
+		    <transformation>
+			    <type>x-shift</type>
+			    <offset>56</offset>		
+		    </transformation>
+	    </transformations>
+	    
+    </layer>
+    
+    <layer>
+	<name>min needle</name>
+	<texture>                           
+    	    <path>Aircraft/an2/Instruments/Textures/achs-2_2.rgb</path>
+	    <x1>0.0</x1>
+	    <y1>0.60</y1>
+	    <x2>1.0</x2>
+	    <y2>0.75</y2>
+	</texture>
+	<w>128</w>
+	<h>16</h>
+	<transformations>
+	    <transformation>
+		<type>rotation</type>
+		<scale>0.1</scale>
+		<property>/instrumentation/clock/indicated-sec</property>
+		<offset>-90</offset>	
+	    </transformation>
+	    <transformation>
+		<type>x-shift</type>
+		<offset>58</offset>		
+	    </transformation>
+	</transformations>
+	
+    </layer>
+    <layer>
+	    <name>min needle with uv light</name>
+	    <condition>
+		    <property>/an2/controls/switches/uv_light</property>
+	    </condition> 
+	    <emissive>true</emissive>
+	    <texture>                           
+		    <path>Aircraft/an2/Instruments/Textures/achs-2_2.rgb</path>
+		    <x1>0.0</x1>
+		    <y1>0.60</y1>
+		    <x2>1.0</x2>
+		    <y2>0.75</y2>
+	    </texture>
+	    <w>128</w>
+	    <h>16</h>
+	    <transformations>
+		    <transformation>
+			    <type>rotation</type>
+			    <scale>0.1</scale>
+			    <property>/instrumentation/clock/indicated-sec</property>
+			    <offset>-90</offset>	
+		    </transformation>
+		    <transformation>
+			    <type>x-shift</type>
+			    <offset>58</offset>		
+		    </transformation>
+	    </transformations>
+	    
+    </layer>
+
+    <layer>
+	<name>sec needle</name>
+	<texture>                           
+    	    <path>Aircraft/an2/Instruments/Textures/achs-2_2.rgb</path>
+	    <x1>0.0</x1>
+	    <y1>0.75</y1>
+	    <x2>1.0</x2>
+	    <y2>0.87</y2>
+	</texture>
+	<w>128</w>
+	<h>16</h>
+	<transformations>	    
+	    <transformation>
+		<type>rotation</type>
+		<scale>6</scale>
+		<property>/instrumentation/clock/indicated-sec</property>
+		<offset>-90</offset>		
+	    </transformation>
+	    <transformation>
+		<type>x-shift</type>
+		<offset>28</offset>		
+	    </transformation>
+	</transformations>
+    </layer>
+    
+    <layer>
+	    <name>sec needle with uv light</name>
+	    <condition>
+		    <property>/an2/controls/switches/uv_light</property>
+	    </condition> 
+	    <emissive>true</emissive>
+	    <texture>                           
+		    <path>Aircraft/an2/Instruments/Textures/achs-2_2.rgb</path>
+		    <x1>0.0</x1>
+		    <y1>0.75</y1>
+		    <x2>1.0</x2>
+		    <y2>0.87</y2>
+	    </texture>
+	    <w>128</w>
+	    <h>16</h>
+	    <transformations>	    
+		    <transformation>
+			    <type>rotation</type>
+			    <scale>6</scale>
+			    <property>/instrumentation/clock/indicated-sec</property>
+			    <offset>-90</offset>		
+		    </transformation>
+		    <transformation>
+			    <type>x-shift</type>
+			    <offset>28</offset>		
+		    </transformation>
+	    </transformations>
+    </layer>
+    <!-- Fly timer-->
+    <layer>
+	<name>Fly timer min needle</name>
+	<texture>                           
+    	    <path>Aircraft/an2/Instruments/Textures/achs-2_2.rgb</path>
+	    <x1>0.0</x1>
+	    <y1>0.6</y1>
+	    <x2>1.0</x2>
+	    <y2>0.75</y2>
+	</texture>
+	<w>64</w>
+	<h>8</h>
+	<transformations>
+	    <transformation>
+		<type>y-shift</type>
+		<offset>46</offset>		
+	    </transformation>
+	    <transformation>
+		<type>rotation</type>
+		<offset>-90</offset>		
+	    </transformation>
+<!--
+	    <transformation>
+		<type>rotation</type>
+		<scale>0.1</scale>
+		<property>/instrumentation/clock/indicated-sec</property>
+	    </transformation>
+-->
+	    <transformation>
+		<type>x-shift</type>
+		<offset>28</offset>		
+	    </transformation>
+
+	</transformations>
+    </layer>
+    <layer>
+	    <name>Fly timer min needle with uv light</name>
+	    <condition>
+		    <property>/an2/controls/switches/uv_light</property>
+	    </condition> 
+	    <emissive>true</emissive>
+	    <texture>                           
+		    <path>Aircraft/an2/Instruments/Textures/achs-2_2.rgb</path>
+		    <x1>0.0</x1>
+		    <y1>0.6</y1>
+		    <x2>1.0</x2>
+		    <y2>0.75</y2>
+	    </texture>
+	    <w>64</w>
+	    <h>8</h>
+	    <transformations>
+		    <transformation>
+			    <type>y-shift</type>
+			    <offset>46</offset>		
+		    </transformation>
+		    <transformation>
+			    <type>rotation</type>
+			    <offset>-90</offset>		
+		    </transformation>
+		    <!--
+			<transformation>
+				<type>rotation</type>
+				<scale>0.1</scale>
+				<property>/instrumentation/clock/indicated-sec</property>
+			</transformation>
+			-->
+			<transformation>
+				<type>x-shift</type>
+				<offset>28</offset>		
+			</transformation>
+			
+		</transformations>
+	</layer>
+
+    <layer>
+	<name>Fly timer hour needle</name>
+	<texture>                           
+    	    <path>Aircraft/an2/Instruments/Textures/achs-2_2.rgb</path>
+	    <x1>0.0</x1>
+	    <y1>0.85</y1>
+	    <x2>1.0</x2>
+	    <y2>1.0</y2>
+	</texture>
+	<w>64</w>
+	<h>8</h>
+	<transformations>
+	    <transformation>
+		<type>y-shift</type>
+		<offset>46</offset>		
+	    </transformation>
+	    <transformation>
+		<type>rotation</type>
+		<offset>-90</offset>		
+	    </transformation>
+
+<!--
+	    <transformation>
+		<type>rotation</type>
+		<scale>0.5</scale>
+		<property>/instrumentation/clock/indicated-min</property>
+	    </transformation>
+	    <transformation>
+		<type>rotation</type>
+		<scale>30</scale>
+		<property>/instrumentation/clock/indicated-hour</property>		
+	    </transformation>
+-->
+	    <transformation>	    
+		<type>x-shift</type>
+		<offset>28</offset>		
+	    </transformation>
+	</transformations>
+	
+    </layer>
+    
+    <layer>
+	    <name>Fly timer hour needle with uv light</name>
+	    <condition>
+		    <property>/an2/controls/switches/uv_light</property>
+	    </condition> 
+	    <emissive>true</emissive>
+	    <texture>                           
+		    <path>Aircraft/an2/Instruments/Textures/achs-2_2.rgb</path>
+		    <x1>0.0</x1>
+		    <y1>0.85</y1>
+		    <x2>1.0</x2>
+		    <y2>1.0</y2>
+	    </texture>
+	    <w>64</w>
+	    <h>8</h>
+	    <transformations>
+		    <transformation>
+			    <type>y-shift</type>
+			    <offset>46</offset>		
+		    </transformation>
+		    <transformation>
+			    <type>rotation</type>
+			    <offset>-90</offset>		
+		    </transformation>
+		    
+		    <!--
+			<transformation>
+				<type>rotation</type>
+				<scale>0.5</scale>
+				<property>/instrumentation/clock/indicated-min</property>
+			</transformation>
+			<transformation>
+				<type>rotation</type>
+				<scale>30</scale>
+				<property>/instrumentation/clock/indicated-hour</property>		
+			</transformation>
+			-->
+			<transformation>	    
+				<type>x-shift</type>
+				<offset>28</offset>		
+			</transformation>
+		</transformations>
+		
+    </layer>
+    
+    
+    <!-- Sekundomer -->
+    <layer>
+	<name>Sekundomer needle</name>
+	<texture>                           
+    	    <path>Aircraft/an2/Instruments/Textures/achs-2_2.rgb</path>
+	    <x1>0.0</x1>
+	    <y1>0.6</y1>
+	    <x2>1.0</x2>
+	    <y2>0.75</y2>
+	</texture>
+	<w>64</w>
+	<h>8</h>
+	<transformations>
+	    <transformation>
+		<type>y-shift</type>
+		<offset>-46</offset>		
+	    </transformation>
+	    <transformation>
+		<type>rotation</type>
+		<offset>-90</offset>		
+	    </transformation>
+<!--
+	    <transformation>
+		<type>rotation</type>
+		<scale>0.1</scale>
+		<property>/instrumentation/clock/indicated-sec</property>
+	    </transformation>
+-->
+
+	    <transformation>
+		<type>x-shift</type>
+		<offset>28</offset>		
+	    </transformation>
+
+	</transformations>
+    </layer>
+    <layer>
+	    <name>Sekundomer needle with uv light</name>
+	    <condition>
+		    <property>/an2/controls/switches/uv_light</property>
+	    </condition> 
+	    <emissive>true</emissive>
+	    <texture>                           
+		    <path>Aircraft/an2/Instruments/Textures/achs-2_2.rgb</path>
+		    <x1>0.0</x1>
+		    <y1>0.6</y1>
+		    <x2>1.0</x2>
+		    <y2>0.75</y2>
+	    </texture>
+	    <w>64</w>
+	    <h>8</h>
+	    <transformations>
+		    <transformation>
+			    <type>y-shift</type>
+			    <offset>-46</offset>		
+		    </transformation>
+		    <transformation>
+			    <type>rotation</type>
+			    <offset>-90</offset>		
+		    </transformation>
+		    <!--
+			<transformation>
+				<type>rotation</type>
+				<scale>0.1</scale>
+				<property>/instrumentation/clock/indicated-sec</property>
+			</transformation>
+			-->
+			
+			<transformation>
+				<type>x-shift</type>
+				<offset>28</offset>		
+			</transformation>
+			
+		</transformations>
+	</layer>
+
+
+</layers>
+</PropertyList>
+
+
+<!--
+	    <transformation>
+		<type>rotation</type>
+		<scale>180</scale>
+		<property>/controls/flight/aileron</property>
+		<offset>-90</offset>	
+	    </transformation>
+-->

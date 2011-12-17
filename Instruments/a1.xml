@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+
+<!--
+Gauge for AN-2 model
+Ampermeter A-100
+UV light
+Yurik V. Nikiforoff, aug 2006
+-->
+
+<PropertyList>
+
+ <name>Ampermeter A-100</name>
+ 
+   <w-base>256</w-base>
+   <h-base>256</h-base>
+   
+<layers>
+    <layer>
+         <name>face</name>
+	 <texture>   
+    	    <path>Aircraft/an2/Instruments/Textures/a1_1.rgb</path>
+            <x1>0.0</x1>
+	    <y1>0.0</y1>
+    	    <x2>1.0</x2>
+    	    <y2>1.0</y2>
+        </texture>
+	<w>256</w>
+        <h>256</h>
+    </layer>
+    <layer>
+	    <name>face with uv light</name>
+	    <condition>
+		    <property>/an2/controls/switches/uv_light</property>
+	    </condition> 
+	    <emissive>true</emissive>
+	    <texture>   
+		    <path>Aircraft/an2/Instruments/Textures/a1_1_uv.rgb</path>
+		    <x1>0.0</x1>
+		    <y1>0.0</y1>
+		    <x2>1.0</x2>
+		    <y2>1.0</y2>
+	    </texture>
+	    <w>215</w>
+	    <h>215</h>
+	    <transformations>
+			<transformation>
+				<type>x-shift</type>
+				<offset>0</offset>
+			</transformation>
+			<transformation>
+				<type>y-shift</type>
+				<offset>20</offset>
+			</transformation>
+		</transformations>
+  
+    </layer>
+    <layer>
+	<name>needle</name>
+	<texture>
+    	    <path>Aircraft/an2/Instruments/Textures/a1_2.rgb</path>
+	    <x1>0.0</x1>
+	    <y1>1.0</y1>
+	    <x2>1.0</x2>
+	    <y2>0.0</y2>
+	</texture>
+        <w>16</w>
+	<h>128</h>
+	<transformations>
+	    <transformation>
+    		<type>rotation</type>
+                <property>/an2/instrumentation/a-1/indicated-amps</property>
+    		<scale>0.6</scale>
+	    </transformation>
+
+	    <transformation>
+              <type>rotation</type>
+              <offset>-103</offset>
+	    </transformation>
+	    <transformation>
+		<type>y-shift</type>
+		<offset>25</offset>
+	    </transformation>
+	</transformations>
+    </layer> 
+    <layer>
+	    <name>needle with uv light</name>
+	    <condition>
+		    <property>/an2/controls/switches/uv_light</property>
+	    </condition>
+	    <emissive>true</emissive>
+	    <texture>
+		    <path>Aircraft/an2/Instruments/Textures/a1_2_uv.rgb</path>
+		    <x1>0.0</x1>
+		    <y1>1.0</y1>
+		    <x2>1.0</x2>
+		    <y2>0.0</y2>
+	    </texture>
+	    <w>16</w>
+	    <h>128</h>
+	    <transformations>
+              <transformation>
+                <type>rotation</type>
+                <property>/an2/instrumentation/a-1/indicated-amps</property>
+                <scale>0.6</scale>
+              </transformation>
+              
+              <transformation>
+                <type>rotation</type>
+                <offset>-103</offset>
+              </transformation>
+              <transformation>
+                <type>y-shift</type>
+                <offset>25</offset>
+              </transformation>
+	    </transformations>
+    </layer> 
+
+    
+    <layer>
+         <name>Black ring</name>
+	 <texture>   
+    	    <path>Aircraft/an2/Instruments/Textures/a1_3.rgb</path>
+            <x1>0.0</x1>
+	    <y1>0.0</y1>
+    	    <x2>1.0</x2>
+    	    <y2>1.0</y2>
+        </texture>
+	<w>64</w>
+        <h>64</h>
+    </layer>
+</layers>
+</PropertyList>

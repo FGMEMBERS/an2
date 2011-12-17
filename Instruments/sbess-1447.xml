@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+
+<!--
+Gauge for AN-2 model
+Fuel meter
+Fuel density (gasoline): about 0.73 kg/l
+Gallon US: 3.785 l
+Yurik V. Nikiforoff, aug 2006
+-->
+
+<PropertyList>
+
+ <name>Fuel meter SBESS-1447</name>
+ 
+   <w-base>256</w-base>
+   <h-base>256</h-base>
+   
+<layers>
+    <layer>
+         <name>face</name>
+	 <texture>   
+    	    <path>Aircraft/an2/Instruments/Textures/sbess-1447_1.rgb</path>
+            <x1>0.0</x1>
+	    <y1>0.0</y1>
+    	    <x2>1.0</x2>
+    	    <y2>1.0</y2>
+        </texture>
+	<w>256</w>
+        <h>256</h>
+    </layer>
+    <layer>
+	    <name>face with uv light</name>
+	    <condition>
+		    <property>/an2/controls/switches/uv_light</property>
+	    </condition> 
+	    <emissive>true</emissive>
+	    <texture>   
+		    <path>Aircraft/an2/Instruments/Textures/sbess-1447_1_uv.rgb</path>
+		    <x1>0.0</x1>
+		    <y1>0.0</y1>
+		    <x2>1.0</x2>
+		    <y2>1.0</y2>
+	    </texture>
+	    <w>200</w>
+	    <h>200</h>
+	    <transformations>
+		    <transformation>
+			    <type>x-shift</type>
+			    <offset>-3</offset>
+		    </transformation>
+		    <transformation>
+			    <type>y-shift</type>
+			    <offset>18</offset>
+		    </transformation>		    
+	    </transformations>
+    </layer>
+
+    <layer>
+	<name>needle</name>
+	<texture>
+    	    <path>Aircraft/an2/Instruments/Textures/sbess-1447_2.rgb</path>
+	    <x1>0.0</x1>
+	    <y1>0.0</y1>
+	    <x2>1.0</x2>
+	    <y2>1.0</y2>
+	</texture>
+        <w>100</w>
+	<h>20</h>
+	<transformations>
+		<transformation>
+			<type>y-shift</type>
+			<offset>-30</offset>
+		</transformation>
+
+	    <transformation>
+		<type>rotation</type>
+		<offset>-13</offset>	
+	    </transformation>
+	    <transformation>
+		    <type>rotation</type>
+		    <property>/an2/instrumentation/sbess/indicated-fuel-l</property>
+			<interpolation>
+				<entry><ind>	0</ind><dep>	0</dep></entry>
+				<entry><ind>	100</ind><dep>	28</dep></entry>
+				<entry><ind>	200</ind><dep>	42</dep></entry>
+				<entry><ind>	300</ind><dep>	57</dep></entry>
+				<entry><ind>	400</ind><dep>	73</dep></entry>
+				<entry><ind>	500</ind><dep>	90</dep></entry>
+				<entry><ind>	600</ind><dep>	108</dep></entry>
+				<entry><ind>	700</ind><dep>	124</dep></entry>
+				<entry><ind>	800</ind><dep>	140</dep></entry>
+				<entry><ind>	900</ind><dep>	160</dep></entry>
+				<entry><ind>	1000</ind><dep>	176</dep></entry>
+				<entry><ind>	1400</ind><dep>	210</dep></entry>
+			</interpolation>		
+		</transformation>
+	    <transformation>
+		<type>x-shift</type>
+		<offset>-40</offset>
+	    </transformation>
+	    <transformation>
+		<type>y-shift</type>
+		<offset>-4</offset>
+	    </transformation>
+	</transformations>
+    </layer> 
+    <layer>
+	    <name>needle with uv light</name>
+	    <condition>
+		    <property>/an2/controls/switches/uv_light</property>
+	    </condition> 
+	    <emissive>true</emissive>
+	    <texture>
+		    <path>Aircraft/an2/Instruments/Textures/sbess-1447_2_uv.rgb</path>
+		    <x1>0.0</x1>
+		    <y1>0.0</y1>
+		    <x2>1.0</x2>
+		    <y2>1.0</y2>
+	    </texture>
+	    <w>100</w>
+	    <h>20</h>
+	    <transformations>
+		    <transformation>
+			    <type>y-shift</type>
+			    <offset>-30</offset>
+		    </transformation>
+		    
+		    <transformation>
+			    <type>rotation</type>
+			    <offset>-13</offset>	
+		    </transformation>
+		    <transformation>
+			    <type>rotation</type>
+			    <property>/an2/instrumentation/sbess/indicated-fuel-l</property>
+			    <!--<scale>3.785</scale>-->
+			    <interpolation>
+				    <entry><ind>	0</ind><dep>	0</dep></entry>
+				    <entry><ind>	100</ind><dep>	28</dep></entry>
+				    <entry><ind>	200</ind><dep>	42</dep></entry>
+				    <entry><ind>	300</ind><dep>	57</dep></entry>
+				    <entry><ind>	400</ind><dep>	73</dep></entry>
+				    <entry><ind>	500</ind><dep>	90</dep></entry>
+				    <entry><ind>	600</ind><dep>	108</dep></entry>
+				    <entry><ind>	700</ind><dep>	124</dep></entry>
+				    <entry><ind>	800</ind><dep>	140</dep></entry>
+				    <entry><ind>	900</ind><dep>	160</dep></entry>
+				    <entry><ind>	1000</ind><dep>	176</dep></entry>
+				    <entry><ind>	1400</ind><dep>	210</dep></entry>
+			    </interpolation>		
+		    </transformation>
+		    <!--
+			<transformation>
+				<type>rotation</type>
+				<property>/systems/electrical/amps</property>
+				<scale>0.6</scale>
+				<offset>-103</offset>
+			</transformation>-->
+			
+			<transformation>
+				<type>x-shift</type>
+				<offset>-40</offset>
+			</transformation>
+			<transformation>
+				<type>y-shift</type>
+				<offset>-4</offset>
+			</transformation>
+		</transformations>
+	</layer> 
+
+    <layer>
+         <name>Brown ring</name>
+	 <texture>   
+    	    <path>Aircraft/an2/Instruments/Textures/sbess-1447_3.rgb</path>
+            <x1>0.0</x1>
+	    <y1>0.0</y1>
+    	    <x2>1.0</x2>
+    	    <y2>1.0</y2>
+        </texture>
+	<w>75</w>
+        <h>75</h>
+	<transformations>
+		<transformation>
+			<type>x-shift</type>
+			<offset>-0.5</offset>
+		</transformation>
+		<transformation>
+			<type>y-shift</type>
+			<offset>-29</offset>
+		</transformation>
+
+	</transformations>
+    </layer>
+</layers>
+</PropertyList>

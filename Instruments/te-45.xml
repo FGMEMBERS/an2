@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+
+<!--
+Gauge for AN-2 model
+Tachometer
+Yurik V. Nikiforoff, aug 2006
+-->
+<!--
+Attention! Scale of rpm reduced by -8% (0.92) 
+cause I can't enlarge diameter of propeller to proper value. Starter don't have enough power - JSBSim trouble. 
+
+After fix bug, tachometer will returned to normal scale.-->
+
+<PropertyList>
+
+ <name>Tachometer TE-45</name>
+ 
+   <w-base>256</w-base>
+   <h-base>256</h-base>
+   
+<layers>
+    <layer>
+         <name>face</name>
+	 <texture>   
+    	    <path>Aircraft/an2/Instruments/Textures/te-45_1.rgb</path>
+            <x1>0.0</x1>
+	    <y1>0.0</y1>
+    	    <x2>1.0</x2>
+    	    <y2>1.0</y2>
+        </texture>
+	<w>256</w>
+        <h>256</h>
+    </layer>
+    <layer>
+	    <name>face with uv light</name>
+	    <condition>
+		    <property>/an2/controls/switches/uv_light</property>
+	    </condition> 
+	    <emissive>true</emissive>
+	    <texture>   
+		    <path>Aircraft/an2/Instruments/Textures/te-45_1_uv.rgb</path>
+		    <x1>0.0</x1>
+		    <y1>0.0</y1>
+		    <x2>1.0</x2>
+		    <y2>1.0</y2>
+	    </texture>
+	    <w>210</w>
+	    <h>210</h>
+    </layer>
+    <layer>
+	    <name>Short needle</name>
+	    <texture>
+		    <path>Aircraft/an2/Instruments/Textures/te-45_2.rgb</path>
+		    <x1>0.0</x1>
+		    <y1>0.0</y1>
+		    <x2>0.5</x2>
+		    <y2>1.0</y2>
+	    </texture>
+	    <w>32</w>
+	    <h>128</h>
+	    <transformations>
+		    <transformation>
+			    <type>rotation</type>
+			    <!--<scale>0.036</scale>-->
+			    <scale>0.036</scale>
+			    <property>/engines/engine/rpm</property>
+			    <offset>0</offset>	
+		    </transformation>
+		    
+		    <transformation>
+			    <type>x-shift</type>
+			    <offset>2</offset>
+		    </transformation>
+		    <transformation>
+			    <type>y-shift</type>
+			    <offset>15</offset>
+		    </transformation>
+	    </transformations>
+    </layer> 
+    
+    <layer>
+	    <name>Short needle with uv light</name>
+	    <condition>
+		    <property>/an2/controls/switches/uv_light</property>
+	    </condition> 
+	    <emissive>true</emissive>
+	    <texture>
+		    <path>Aircraft/an2/Instruments/Textures/te-45_2_uv.rgb</path>
+		    <x1>0.0</x1>
+		    <y1>0.0</y1>
+		    <x2>0.5</x2>
+		    <y2>1.0</y2>
+	    </texture>
+	    <w>32</w>
+	    <h>128</h>
+	    <transformations>
+		    <transformation>
+			    <type>rotation</type>
+			    <!--<scale>0.036</scale>-->
+			    <scale>0.036</scale>
+			    <property>/engines/engine/rpm</property>
+			    <offset>0</offset>	
+		    </transformation>
+		    
+		    <transformation>
+			    <type>x-shift</type>
+			    <offset>2</offset>
+		    </transformation>
+		    <transformation>
+			    <type>y-shift</type>
+			    <offset>15</offset>
+		    </transformation>
+	    </transformations>
+    </layer> 
+    
+    <layer>
+	    <name>Long needle</name>
+	    <texture>
+		    <path>Aircraft/an2/Instruments/Textures/te-45_2.rgb</path>
+		    <x1>0.5</x1>
+		    <y1>0.0</y1>
+		    <x2>1.0</x2>
+		    <y2>1.0</y2>
+	    </texture>
+	    <w>32</w>
+	    <h>128</h>
+	    <transformations>
+		    <transformation>
+			    <type>rotation</type>
+			    <!--<scale>0.36</scale>-->
+			    <scale>0.36</scale>
+			    <property>/engines/engine/rpm</property>
+			    <offset>0</offset>	
+		    </transformation>
+		    
+			<transformation>
+				<type>x-shift</type>
+				<offset>-1</offset>
+			</transformation>
+			<transformation>
+				<type>y-shift</type>
+				<offset>15</offset>
+			</transformation>
+		</transformations>
+    </layer> 
+    
+    <layer>
+	    <name>Long needle with uv light</name>
+	    <condition>
+		    <property>/an2/controls/switches/uv_light</property>
+	    </condition> 
+	    <emissive>true</emissive>
+	    <texture>
+		    <path>Aircraft/an2/Instruments/Textures/te-45_2_uv.rgb</path>
+		    <x1>0.5</x1>
+		    <y1>0.0</y1>
+		    <x2>1.0</x2>
+		    <y2>1.0</y2>
+	    </texture>
+	    <w>32</w>
+	    <h>128</h>
+	    <transformations>
+		    <transformation>
+			    <type>rotation</type>
+			    <!--<scale>0.36</scale>-->
+			    <scale>0.36</scale>
+			    <property>/engines/engine/rpm</property>
+			    <offset>0</offset>	
+		    </transformation>
+		    
+		    <transformation>
+			    <type>x-shift</type>
+			    <offset>-1</offset>
+		    </transformation>
+		    <transformation>
+			    <type>y-shift</type>
+			    <offset>15</offset>
+		    </transformation>
+	    </transformations>
+    </layer> 
+
+</layers>
+</PropertyList>

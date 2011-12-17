@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+
+<!--
+Yurik V. Nikiforoff, nov 2006
+-->
+
+<PropertyList>
+
+ <name>Mixture handle</name>
+ 
+   <w-base>256</w-base>
+   <h-base>256</h-base>
+   
+<layers>
+
+    <layer>
+	<name>Mixture handle</name>
+	<texture>                           
+    	    <path>Aircraft/an2/Instruments/Textures/blue_handl.rgb</path>
+	    <x1>0.0</x1>
+	    <y1>0.0</y1>
+	    <x2>1.0</x2>
+	    <y2>1.0</y2>
+	</texture>
+	<w>64</w>
+	<h>64</h>
+	<transformations>
+
+	    <transformation>
+		<type>y-shift</type>
+		<scale>-90</scale>
+		<property>/an2/controls/switches/mixture</property>
+		<offset>20</offset>		
+	    </transformation>
+	    
+	</transformations>
+    </layer>
+
+</layers>
+
+<actions>
+
+<!-- Adjust to up -->
+    <action>
+        <name>go up</name>
+	<button>0</button>
+        <x>-30</x>
+	<y>-110</y>
+	<w>60</w>
+	<h>60</h>
+	<binding>
+	    <command>property-adjust</command>
+            <property>/an2/controls/switches/mixture</property>
+    	    <step>0.05</step>
+            <max>1.1</max>
+	</binding>
+    </action>
+
+
+    <!-- Adjust to down -->
+    <action>
+        <name>go down</name>
+	<button>0</button>
+        <x>-30</x>
+	<y>-10</y>
+	<w>60</w>
+	<h>60</h>
+	<binding>
+	    <command>property-adjust</command>
+            <property>/an2/controls/switches/mixture</property>
+            <step>-0.05</step>
+            <min>0.0</min>
+	</binding>
+    </action>
+
+
+
+</actions>
+
+</PropertyList>

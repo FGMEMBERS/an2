@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+
+<!--
+PT-154 gauge, from www.protu-154.com
+Modified for FG by Yurik V. Nikiforoff
+
+1 m = 3.28 ft
+1 ft = 0.3048 m
+-->
+
+<PropertyList>
+
+ <name>Variometer VAR-30</name>
+ 
+   <w-base>256</w-base>
+   <h-base>256</h-base>
+   
+<layers>
+    <layer>
+     <name>face</name>
+     <texture>   
+     <path>Aircraft/an2/Instruments/Textures/var-30_bck.rgb</path>
+     <x1>0.0</x1>
+     <y1>0.0</y1>
+     <x2>1.0</x2>
+     <y2>1.0</y2>
+     </texture>
+     <w>256</w>
+     <h>256</h>
+    </layer>
+
+    <layer>
+    <name>needle</name>
+    <texture>
+    <path>Aircraft/an2/Instruments/Textures/var-30_needle.rgb</path>
+    <x1>0.0</x1>
+    <x2>1.0</x2>
+    <y1>0.0</y1>
+    <y2>1.0</y2>
+    </texture>
+    <w>110</w>
+    <h>12</h>
+<transformations>
+    <transformation>
+    <type>rotation</type>
+    <property>/instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
+    <min>-5904.0</min>
+    <max>5904.0</max>
+    <scale>0.031</scale>
+
+    <offset>180</offset>
+    </transformation>
+    <transformation>
+<!--    
+    <type>x-shift</type>
+    <offset>39</offset>
+    </transformation>
+    <transformation>
+    
+    <type>y-shift</type>
+    <offset>-40</offset>
+    </transformation>
+-->
+    <type>x-shift</type>
+    <offset>49</offset>
+    </transformation>
+    <transformation>
+    
+    <type>y-shift</type>
+    <offset>-2</offset>
+    </transformation>
+
+   </transformations>
+    </layer> 
+
+<!-- 
+  <layer>
+   <name>shield</name>
+   <texture>
+    <path>Aircraft/an2/Instruments/Textures/var-30_ups.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.0</y1>
+    <x2>1.0</x2>
+    <y2>1.0</y2>
+   </texture>
+  <w>256</w>
+  <h>256</h>
+  </layer>
+-->
+</layers>
+
+
+</PropertyList>

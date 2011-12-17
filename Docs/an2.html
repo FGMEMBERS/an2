@@ -1,0 +1,160 @@
+<strong>Introduction<div align="center"></div></strong>
+   
+<p>    This is model of legendary Russian AN-2. First fly was 1947 and some aircrafts in use up to nowadays.</p><p>
+     Original model for MS Flight Simulator was written 2005 by Anton Nikolaev. His model become bestseller of russian simmers community. This model for FlightGear published under GPL with author permission.</p>
+<p>     This version 0.2 of model. It's have 3D cockpit and many improvements of systems, animations etc. Photo of real AN-2 you can see<A href="an2_original_panel.html"> here.</A></p>
+   
+ <p>   Model for FlightGear use 3D data, converted from MSFS by original technics. Textures and sounds has take "as is", without proceed. Port to FGFS, 2D panel, 3D cockpit, original instruments, FDM, systems and over made by Yurik V. Nikiforoff, may 2006 - apr 2007.</p>
+   <p> There are 8 livreas for model.</p>
+    <strong>2D cockpit</strong>
+    <br>
+<p><IMG src="panel.jpg" width="768" height="573" border="0">
+    <br>
+    
+    
+    <strong>
+    3D cockpit (avialable for version 2.0)<br><IMG border="0" height="768" width="1024" src="3dcockpit.jpg"><br></strong>
+    <br>
+</p>
+<div align="center"><strong>Switches and instruments:</strong><br></div>
+<p>
+    1. Attitude indicator AGK-47 B.<br>
+2. Magnetic (gyroinduction) compass GIK-1 with ADF indication.<br>
+3. Gyrocompass GPK-48.<br>
+4. Airspeed indicator US-450.<br>
+5. Altimeter UVO.<br>
+6. Variometer VAR-10.<br>
+7. Radio altimeter RV-UM.<br>
+8. Warning altitude selector of RV-UM.<br>
+9. Fuel selector. Left, right, both tank or cutoff fuel.<br>
+10. Fuel level indicator SBESS-1447.<br>
+11. Intake air termometer. Heating of intake air not implemented yet, so gauge show outboard temperature.<br>
+12. Engine EMI-3K gauge. Fuel pressure meter, oil pressure and oil temperature indicator.<br>
+13. Cylinder head termometer TCT-2.<br>
+14. Tachometer TE-45.<br>
+15. Manifold pressure meter MV-16u<br>
+16. Ampermeter A-1. It measure main generator current.<br>
+17. Volt-ampermeter VA-3. It measure voltage and current of battery.<br>
+18. Position of oil cooler damper.<br>
+19. Position of engine air damper. This gauge absent on real plane, pilot ought to control air dampers position visually.<br>
+20. Flaps position gauge.<br>
+21. ACHS-2 air clock. Extended scale of flight timers not implemented cause small size of gauge.<br>
+22. Outboard termometer TUE-48.<br>
+23. Magneto switch PM-1.<br>
+24. Main starter switch.<br>
+25. Starter selector: spinup - start.<br>
+26. GIK-1 compass fast adjust button.<br>
+27. Pilot cabin window heat switch. Not implemented yet.<br>
+28. Fuel meter selector: left - both - right fuel tank level.<br>
+29. Audio alarm switch - min fuel level and min altitude. Not implemented yet.<br>
+30. Min altitude lamp - RV-UM altimeter.<br>
+31. Left and right fuel tank min level lamp. Work only if fuel meter SBESS-1447 is serviceable. Min level is 50 l of fuel.<br>
+32. Charge battery lamp. Off if generator charge battery.<br>
+     33. PO-500 alternator failure lamp. Failure system not implemented, so it not work in 2d. In 3d cockpit, blue lamp indicated extending of automatic slats.
+    <br>
+34. Marker beacon lamp.<br>
+35. Rudder trimmer neutral position lamp. There are hotspots on trimmer lamps for set trimmer to neutral.<br>
+36. Elevator trimmer neutral position lamp.<br>
+37. Aileron trimmer neutral position lamp.<br>
+38. Elevator trimmer switch.<br>
+39. Flaps button.<br>
+40. Rudder trimmer switch.<br>
+41. Aileron trimmer switch.<br>
+42. Oil cooler damper switch.<br>
+43. Cylinder head damper switch.<br>
+44. Nav lights switch.<br>
+45. Taxi light switch. Work only on patched sim.<br>
+46. Landing light switch. Work only on patched sim.<br>
+47. Main generator switch.<br>
+48. Main battery switch.<br>
+49. GIK-1 alternator switch.<br>
+50. AGK-47B alternator switch.<br>
+51. Fuel meter SBESS-1447 switch.<br>
+52. EMI-3K gauge switch.<br>
+53. Flaps gauge switch.<br>
+54. Termometers TUE-48 switch.<br>
+55. Airspeed indicator heat switch.<br>
+56. Panel UV light switch.<br>
+57. COM radio switch.<br>
+58. ADF radio switch.<br>
+59. Marker beacon switch.<br>
+60. Radio altimeter RV-UM main switch.<br>
+     61. Throttle handle. Not operate from mouse.
+    <br>
+     62. Propeller pitch handle.
+    <br>
+63. Standby/operate selector for ADF.
+    <br>
+    64. PO-500 alternator switch.
+    <br>
+     65. Automatic altitude mixture corrector handle. In real aircraft, this handle should stay in rear position for automatic correction. Shift handle by front will be lean mixture.
+    <br>
+     66. Intake heating handle. System not implemented yet.
+    <br>
+     67. Stop engine handle. System not implemented yet.
+    <br>
+    68. ADF bearing indicator for second pilot.
+    <br>
+    69. ADF sound switch.
+    <br>
+    70. ADF volume control.
+    <br>
+    71. Lamp for main ("osnovnoj") ADF channel.
+    <br>
+    72. Lamp for standby ("rezervnyj") ADF channel.
+    <br>
+     73. Frequency control for main ADF channel. There are hotspots above and below frequency digits.
+    <br>
+     74. Frequency control for standby ADF channel. There are hotspots above and below frequency digits.
+   <br>
+    75. S-meter for ADF. It's not real signal power, cause sim not count ADF range.
+    <br>
+    76. Rezerved, no-op.
+    <br>
+    77. Rezerved, no-op.
+    <br>
+     78. External panel lighting. Experimental. You can adjust color and brightness of panel lighting by set (manually, by setprop() or from xml file ) property "/an2/controls/light/ext-red-stanby", "/an2/controls/light/ext-green-standby", "/an2/controls/light/ext-blue-standby". All of color value should be 0.0-1.0.
+    <br>
+    79. Internal instrument lighting. Experimental. Operate like external lighting. Name of property - "/an2/controls/light/int-red-standby" etc.
+    <br>
+     80. Short wave radio "Yadro" ("Kernel") switch. Rezerved. "Yadro" control panel stay in bottom part of second pilot panel. Not implemented in sim.</p>
+<IMG src="engine_start.jpg" width="640" height="483" border="0">
+    <p><strong>Engine start procedure</strong></p>
+    <p>Before start, turn on main battery switch (pos. 48), set magneto selector (23) to (1+2) position, set fuel tank selector (9) to up position, and turn throttle to idle.For start engine, turn on starter switch (24), spin inertial starter by turn starter selector (25) to left position,hold until spinup - see to ampermeter (17), listen sound of gyro. After spinup, turn starter selector to right and hold until engine started. Turn off starter switch (24).</p>
+    <strong>Radio and navigation procedure<br><br></strong>
+     <p>Turn on generator (47). Turn on PO-500 alternator (64). Turn on all switches pos.29, 49-60 , except panel lighting (56). Turn on radio altimeter and set warning to desired altitude (8). </p>
+<p>    Tune ADF radio by settings digit of frequency, work and stand-by channel (pos. 73, 74). There are hotspots under and above digit wheels. Select desired channel by switch pos. 63. Green lamp (71,72) will be indicate work channel. Turn switch 69 and listen Morze code of ADF beacon, set volume by handle 70.
+</p><p>    Adjust gyroinductional compass to mag meridian by press button 26 until GIK heading indicator (pos.2) has stop rotation. Set index (white needle) to desired heading (heading of runway or route) by press button in the left bottom corner of GIK instruments.</p>
+     <p>Adjust gyrocompass GPK (pos.3) by operate his button. For adjust, GPK should be in caged state (see red label under digit ribbon). Press to center of GPK button for select cage. After red label will appear, adjust heading of GPK by press to left and right border of GPK button. When heading stay right, click to center of button for un-cage instrument.</p>
+    <p>Cause GPK has not longitudal correction, it's not intended for long route. GPK should be used for short time and distance - pattern, approach etc, like real aircraft.</p>
+    <p>Un-cage attitude indicator AGK pos.1 by click on his right button. Caged flag will disappear, and needles of instrument stay in work position. You can adjust horizont level by click to left button of AGK, but only when instrument stay in cage state, like GPK.</p>
+    <strong> <br>Flight procedure</strong>
+    <p>
+    For right control of engine, you should operate not only throttle. Propeller pitch - is very important parameter too. Please, configure you joystick or keyboard for operate propeller pitch. You can operate of pitch handle by press mouse to hotspot, but it's very inconveniently.
+</p>
+    <p>For take-off, pitch handle (pos. 62) must be in front position, and manifold pressure (pos. 15) should be 900-1000 mm.Hg. Time for max power (1000 mmHg, 2200 rpm) - up to 5 min. </p>
+	<p>For right engine control, operate manifold pressure by throttle handle, and rpm - by pitch handle. Model has pitch automatic control subsystem, so it's work like real aircraft... I hope:)</p>
+	<p>Optimal climbing speed - 140 km/h. For right flight control digit, please read Flight Manual. I can't put it into model pack, but there is nice web version <A href="http://www.agplane.nl/manuals/antonovan2/index.html"> here.</A>
+</p>
+<strong>Performance issue</strong>
+<p>For best FPS, not use UV-lighting (pos. 56), if you have not enough power of video system. Use experimental lighting (pos. 78, 79) instead.</p><p>If you have power video board, you can set up high resolution of 3d cockpit textures. Set /an2/textures/low-res to "false" by edit an2-set.xml file. </p>
+<strong>2D panel issue</strong>
+<p>There is clipping error for some 2D instruments for version 0.9.10. For avoid ugly appearance, I comment GPK for 2D panel. If you use devel version of FlightGear, you may uncomment it (strings 491-498 in Panels/ruspanel.xml) and GPK will stay on his place.
+</p><strong><div align="center">
+    An-2 keys
+</div></strong><br>
+<ul>	a - aileron trimmer left.</ul>
+<ul>	d - aileron trimmer right.</ul>
+<ul>	D - open/close door..</ul>
+<ul>	y - change livreas.</ul> 
+<ul>	g - toggle cockpit view - captain or second pilot.</ul> 
+<ul>	G - return to captain view.</ul> 
+
+<p>
+    <br>
+        <br>
+    All of model parts licensed under GPL.<br>I hope, this model will useful for you.</p>
+<p><em>Yurik V. Nikiforoff,<br>
+your humble author</em><br>yurik@megasignal.com</p>
+
+<div align="center"><strong>Novosibirsk, apr 2007</strong></div>

@@ -1,0 +1,273 @@
+<?xml version="1.0"?>
+
+<!--
+Gauge for AN-2 model
+Head temperature meter
+Yurik V. Nikiforoff, aug 2006
+-->
+
+<PropertyList>
+
+ <name>Head temp meter</name>
+ 
+   <w-base>256</w-base>
+   <h-base>256</h-base>
+   
+<layers>
+    <layer>
+         <name>face</name>
+	 <texture>   
+    	    <path>Aircraft/an2/Instruments/Textures/tct-2_2.rgb</path>
+            <x1>0.0</x1>
+	    <y1>0.0</y1>
+    	    <x2>1.0</x2>
+    	    <y2>1.0</y2>
+        </texture>
+	<w>256</w>
+        <h>256</h>
+    </layer>
+    <layer>
+	    <name>face with uv light</name>
+	    <condition>
+		    <property>/an2/controls/switches/uv_light</property>
+	    </condition> 
+	    <emissive>true</emissive>
+	    <texture>   
+		    <path>Aircraft/an2/Instruments/Textures/tct-2_2_uv.rgb</path>
+		    <x1>0.0</x1>
+		    <y1>0.0</y1>
+		    <x2>1.0</x2>
+		    <y2>1.0</y2>
+	    </texture>
+	    <w>167</w>
+	    <h>167</h>
+	    <transformations>
+		    <transformation>
+			    <type>x-shift</type>
+			    <offset>-1.5</offset>
+		    </transformation>
+		    <transformation>
+			    <type>y-shift</type>
+			    <offset>20</offset>
+		    </transformation>
+	    </transformations>
+    </layer>
+
+    <layer>
+	<name>needle 1</name>
+	<texture>
+    	    <path>Aircraft/an2/Instruments/Textures/tct-2_3.rgb</path>
+	    <x1>0.0</x1>
+	    <y1>0.0</y1>
+	    <x2>1.0</x2>
+	    <y2>1.0</y2>
+	</texture>
+        <w>16</w>
+	<h>64</h>
+	<transformations>
+		<transformation>
+			<type>x-shift</type>
+			<offset>60</offset>
+		</transformation>
+		<transformation>
+			<type>y-shift</type>
+			<offset>0</offset>
+		</transformation>
+
+		<transformation>
+			<type>rotation</type>
+			<offset>-152</offset>	
+		</transformation>
+		
+		
+		<transformation>
+			<condition>
+			<property>/an2/instrumentation/tue-48/serviceable</property>
+			</condition> 
+			<type>rotation</type>
+			<property>/engines/engine/cht-degf</property>
+			<scale>0.2</scale>
+			<min>0.0</min>
+			<max>700.0</max>
+		</transformation>
+
+	    <transformation>
+		<type>x-shift</type>
+		<offset>3</offset>
+	    </transformation>
+	    <transformation>
+		<type>y-shift</type>
+		<offset>22</offset>
+	    </transformation>
+	</transformations>
+    </layer> 
+
+    <layer>
+	    <name>needle 2</name>
+	    <texture>
+		    <path>Aircraft/an2/Instruments/Textures/tct-2_3.rgb</path>
+		    <x1>0.0</x1>
+		    <y1>0.0</y1>
+		    <x2>1.0</x2>
+		    <y2>1.0</y2>
+	    </texture>
+	    <w>16</w>
+	    <h>64</h>
+	    <transformations>
+		    <transformation>
+			    <type>x-shift</type>
+			    <offset>-60</offset>
+		    </transformation>
+		    <transformation>
+			    <type>y-shift</type>
+			    <offset>0</offset>
+		    </transformation>
+		    
+		    <transformation>
+			    <type>rotation</type>
+			    <offset>152</offset>	
+		    </transformation>
+		    
+		    
+		    <transformation>
+			    <condition>
+			    <property>/an2/instrumentation/tue-48/serviceable</property>
+			    </condition> 
+			    <type>rotation</type>
+				<property>/engines/engine/cht-degf</property>
+			<scale>-0.2</scale>
+			<min>0.0</min>
+			<max>700.0</max>
+		    </transformation>
+		    
+		    <transformation>
+			    <type>x-shift</type>
+			    <offset>3</offset>
+		    </transformation>
+		    <transformation>
+			    <type>y-shift</type>
+			    <offset>22</offset>
+		    </transformation>
+	    </transformations>
+    </layer> 
+    
+    <layer>
+	    <name>needle 1 with uv light</name>
+	    <condition>
+		    <property>/an2/controls/switches/uv_light</property>
+	    </condition> 
+	    <emissive>true</emissive>
+	    <texture>
+		    <path>Aircraft/an2/Instruments/Textures/tct-2_3_uv.rgb</path>
+		    <x1>0.0</x1>
+		    <y1>0.0</y1>
+		    <x2>1.0</x2>
+		    <y2>1.0</y2>
+	    </texture>
+	    <w>16</w>
+	    <h>64</h>
+	    <transformations>
+		    <transformation>
+			    <type>x-shift</type>
+			    <offset>60</offset>
+		    </transformation>
+		    <transformation>
+			    <type>y-shift</type>
+			    <offset>0</offset>
+		    </transformation>
+		    
+		    <transformation>
+			    <type>rotation</type>
+			    <offset>-152</offset>	
+		    </transformation>
+		    
+		    
+		    <transformation>
+			    <condition>
+			<property>/an2/instrumentation/tue-48/serviceable</property>
+			    </condition> 
+			    <type>rotation</type>
+			    <property>/engines/engine/cht-degf</property>
+			    <scale>0.2</scale>
+			    <min>0.0</min>
+			    <max>700.0</max>
+		    </transformation>
+		    
+		    <transformation>
+			    <type>x-shift</type>
+			    <offset>3</offset>
+		    </transformation>
+		    <transformation>
+			    <type>y-shift</type>
+			    <offset>22</offset>
+		    </transformation>
+	    </transformations>
+    </layer> 
+    
+    <layer>
+	    <name>needle 2 with uv light</name>
+	    <condition>
+		    <property>/an2/controls/switches/uv_light</property>
+	    </condition> 
+	    <emissive>true</emissive>
+	    <texture>
+		    <path>Aircraft/an2/Instruments/Textures/tct-2_3_uv.rgb</path>
+		    <x1>0.0</x1>
+		    <y1>0.0</y1>
+		    <x2>1.0</x2>
+		    <y2>1.0</y2>
+	    </texture>
+	    <w>16</w>
+	    <h>64</h>
+	    <transformations>
+		    <transformation>
+			    <type>x-shift</type>
+			    <offset>-60</offset>
+		    </transformation>
+		    <transformation>
+			    <type>y-shift</type>
+			    <offset>0</offset>
+		    </transformation>
+		    
+		    <transformation>
+			    <type>rotation</type>
+			    <offset>152</offset>	
+		    </transformation>
+		    
+		    
+		    <transformation>
+			    <condition>
+			    <property>/an2/instrumentation/tue-48/serviceable</property>
+			    </condition> 
+			    <type>rotation</type>
+			    <property>/engines/engine/cht-degf</property>
+			    <scale>-0.2</scale>
+			    <min>0.0</min>
+			    <max>700.0</max>
+		    </transformation>
+		    
+		    <transformation>
+			    <type>x-shift</type>
+			    <offset>3</offset>
+		    </transformation>
+		    <transformation>
+			    <type>y-shift</type>
+			    <offset>22</offset>
+		    </transformation>
+				    </transformations>
+    </layer> 
+    
+    <layer>
+         <name>Black cover</name>
+	 <texture>   
+    	    <path>Aircraft/an2/Instruments/Textures/tct-2_1.rgb</path>
+            <x1>0.0</x1>
+	    <y1>0.0</y1>
+    	    <x2>1.0</x2>
+    	    <y2>1.0</y2>
+        </texture>
+	<w>256</w>
+        <h>256</h>
+    </layer>
+</layers>
+</PropertyList>

@@ -1,0 +1,297 @@
+<?xml version="1.0"?>
+<!--
+Yurik V. Nikiforoff, aug 2006
+-->
+<PropertyList>
+<name>GIK</name>
+   <w-base>256</w-base>
+   <h-base>256</h-base>
+<layers>
+    <layer>
+	<name>compass</name>
+	<texture>                           
+    	    <path>Aircraft/an2/Instruments/Textures/gik-1_2.rgb</path>
+	    <x1>0.0</x1>
+	    <y1>0.0</y1>
+	    <x2>1.0</x2>
+	    <y2>1.0</y2>
+	</texture>
+	<w>186</w>
+	<h>186</h>
+	<transformations>
+		<transformation>
+			<type>rotation</type>
+			<scale>-1</scale>
+		<property>/an2/instrumentation/gik/indicated-heading-deg</property>
+			<offset>90</offset>	
+		</transformation>
+	</transformations>
+    </layer>
+
+    <layer>
+	    <name>compass with uv light</name>
+	    <emissive>true</emissive>
+	    <condition>
+		    <property>/an2/controls/switches/uv_light</property>
+	    </condition> 
+	    <texture>                           
+		    <path>Aircraft/an2/Instruments/Textures/gik-1_2_uv.rgb</path>
+		    <x1>0.0</x1>
+		    <y1>0.0</y1>
+		    <x2>1.0</x2>
+		    <y2>1.0</y2>
+	    </texture>
+	    <w>178</w>
+	    <h>178</h>
+	    <transformations>
+		    <transformation>
+			    <type>rotation</type>
+			    <scale>-1</scale>
+		<property>/an2/instrumentation/gik/indicated-heading-deg</property>
+			    <offset>90</offset>	
+		    </transformation>
+	    </transformations>
+    </layer>
+    
+    <layer>
+	    <name>needle 1</name>
+	    <texture>                           
+		    <path>Aircraft/an2/Instruments/Textures/gik-1_3.rgb</path>
+		    <x1>0.0</x1>
+		    <y1>0.0</y1>
+		    <x2>0.6</x2>
+		    <y2>1.0</y2>
+	    </texture>
+	    <w>64</w>
+	    <h>160</h>
+	    <transformations>
+		    <transformation>
+			    <type>x-shift</type>
+			    <offset>2</offset>	
+		    </transformation>
+
+		    <transformation>
+			    <type>rotation</type>
+			    <scale>-1</scale>
+		<property>/an2/instrumentation/gik/indicated-heading-deg</property>
+			    <offset>0.0</offset>	
+		    </transformation>
+
+		    <transformation>
+			    <type>rotation</type>
+			    <property>/instrumentation/adf/rotation-deg</property>
+			    <offset>0.0</offset>	
+		    </transformation>
+		    <transformation>
+			    <type>x-shift</type>
+			    <offset>16</offset>	
+		    </transformation>
+		    <transformation>
+			    <type>y-shift</type>
+			    <offset>23</offset>	
+		    </transformation>
+
+	    </transformations>
+    </layer>
+    
+    <layer>
+	    <name>needle 1 with uv light</name>
+	    <condition>
+		    <property>/an2/controls/switches/uv_light</property>
+	    </condition> 
+	    <emissive>true</emissive>
+	    <texture>                           
+		    <path>Aircraft/an2/Instruments/Textures/gik-1_3_uv_arrow.rgb</path>
+		    <x1>0.0</x1>
+		    <y1>0.0</y1>
+		    <x2>0.6</x2>
+		    <y2>1.0</y2>
+	    </texture>
+	    <w>64</w>
+	    <h>160</h>
+	    <transformations>
+		    <transformation>
+			    <type>x-shift</type>
+			    <offset>2</offset>	
+		    </transformation>
+		    <transformation>
+			    <type>rotation</type>
+			    <scale>-1</scale>
+		<property>/an2/instrumentation/gik/indicated-heading-deg</property>
+			    <offset>0.0</offset>	
+		    </transformation>
+		    
+		    <transformation>
+			    <type>rotation</type>
+			    <!--<scale>180</scale>-->
+			    <property>/instrumentation/adf/rotation-deg</property>
+			    <offset>0.0</offset>	
+		    </transformation>
+		    
+		    <transformation>
+			    <type>x-shift</type>
+			    <offset>19</offset>	
+		    </transformation>
+		    <transformation>
+			    <type>y-shift</type>
+			    <offset>23</offset>	
+		    </transformation>
+		    
+	    </transformations>
+    </layer>
+    
+    <layer>
+	    <name>needle 2</name>
+	    <texture>                           
+		    <path>Aircraft/an2/Instruments/Textures/gik-1_3.rgb</path>
+		    <x1>0.6</x1>
+		    <y1>0.0</y1>
+		    <x2>1.0</x2>
+		    <y2>1.0</y2>
+	    </texture>
+	    <w>55</w>
+	    <h>160</h>
+	    <transformations>
+		    <transformation>
+			    <type>x-shift</type>
+			    <offset>1</offset>	
+		    </transformation>
+		    
+		    <transformation>
+			    <type>rotation</type>
+			   <property>/instrumentation/adf/indicated-bearing-deg</property>
+			    <offset>0</offset>	
+		    </transformation>
+		    <transformation>
+			    <type>x-shift</type>
+			    <offset>19</offset>	
+		    </transformation>
+		    <transformation>
+			    <type>y-shift</type>
+			    <offset>0</offset>	
+		    </transformation>
+		    
+	    </transformations>
+    </layer>
+    <layer>
+	    <name>needle 2 with uv light</name>
+	    <condition>
+		    <property>/an2/controls/switches/uv_light</property>
+	    </condition> 
+	    <emissive>true</emissive>
+	    <texture>                           
+		    <path>Aircraft/an2/Instruments/Textures/gik-1_3_uv_arrow.rgb</path>
+		    <x1>0.6</x1>
+		    <y1>0.0</y1>
+		    <x2>1.0</x2>
+		    <y2>1.0</y2>
+	    </texture>
+	    <w>55</w>
+	    <h>160</h>
+	    <transformations>
+		    <transformation>
+			    <type>x-shift</type>
+			    <offset>1</offset>	
+		    </transformation>
+		    
+		    <transformation>
+			    <type>rotation</type>
+			    <property>/instrumentation/adf/indicated-bearing-deg</property>
+			    <offset>0</offset>	
+		    </transformation>
+		    <transformation>
+			    <type>x-shift</type>
+			    <offset>19</offset>	
+		    </transformation>
+		    <transformation>
+			    <type>y-shift</type>
+			    <offset>0</offset>	
+		    </transformation>
+		    
+	    </transformations>
+    </layer>
+    
+    <layer>
+	<name>ring</name>
+	<texture>                           
+    	    <path>Aircraft/an2/Instruments/Textures/gik-1_1.rgb</path>
+	    <x1>0.0</x1>
+	    <y1>0.0</y1>
+	    <x2>1.0</x2>
+	    <y2>1.0</y2>
+	</texture>
+	<w>256</w>
+	<h>256</h>
+	<transformations>
+		<transformation>
+			<type>x-shift</type>
+			<offset>5</offset>	
+		</transformation>
+		<transformation>
+			<type>y-shift</type>
+			<offset>-6</offset>	
+		</transformation>
+	</transformations>
+    </layer>
+    
+    <layer>
+	    <name>uv markers</name>
+	    <condition>
+		    <property>/an2/controls/switches/uv_light</property>
+	    </condition> 
+	    <emissive>true</emissive>
+	    <texture>                           
+		    <path>Aircraft/an2/Instruments/Textures/gik-1_3_uv.rgb</path>
+		    <x1>0.0</x1>
+		    <y1>0.0</y1>
+		    <x2>1.0</x2>
+		    <y2>1.0</y2>
+	    </texture>
+	    <w>218</w>
+	    <h>218</h>
+	    <transformations>
+		    <transformation>
+			    <type>x-shift</type>
+			    <offset>0.5</offset>	
+		    </transformation>
+		    <transformation>
+			    <type>y-shift</type>
+			    <offset>0</offset>	
+		    </transformation>
+	    </transformations>
+    </layer>
+
+
+</layers>
+<actions>
+	<!-- Heading -->
+	<action>
+		<name>inc heading</name>
+		<button>0</button>
+		<x>-113</x>
+		<y>-125</y>
+		<w>40</w>
+		<h>40</h>
+		<binding>
+			<command>property-adjust</command>
+			<property>/instrumentation/adf/rotation-deg</property>
+			<step>-1</step>
+		</binding>
+	</action>
+	<action>
+		<name>Dec heading</name>
+		<button>1</button>
+		<x>-113</x>
+		<y>-125</y>
+		<w>40</w>
+		<h>40</h>
+		<binding>
+			<command>property-adjust</command>
+			<property>/instrumentation/adf/rotation-deg</property>
+			<step>1</step>
+		</binding>
+	</action>
+
+</actions>
+
+</PropertyList>

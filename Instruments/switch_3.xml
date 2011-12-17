@@ -1,0 +1,224 @@
+<?xml version="1.0"?>
+
+<!--
+Yurik V. Nikiforoff, sep 2006
+-->
+
+<PropertyList>
+
+ <name>switch 3</name>
+ 
+   <w-base>64</w-base>
+   <h-base>64</h-base>
+   
+<layers>
+    <layer>
+		<name>switch pos 1</name>
+		<condition>
+			<not>
+				<property>/an2/controls/switches/taxi_light_switch</property>
+			</not>
+		</condition>                        
+		<texture>                           
+			<path>Aircraft/an2/Instruments/Textures/switch_2_1.rgb</path>
+			<x1>0.0</x1>
+			<y1>0.0</y1>
+			<x2>1.0</x2>
+			<y2>1.0</y2>
+		</texture>
+		<w>32</w>
+		<h>32</h>
+		<transformations>
+			<transformation>
+				<type>rotation</type>
+				<offset>90</offset>
+			</transformation>
+			<transformation>
+				<type>x-shift</type>
+				<offset>6</offset>
+			</transformation>
+			<transformation>
+				<type>y-shift</type>
+				<offset>-9</offset>
+			</transformation>
+		</transformations>
+	</layer>
+	<layer>
+		<name>switch pos 1 with uv light</name>
+		<condition>
+			<property>/an2/controls/switches/uv_light</property>
+			<not>
+			<property>/an2/controls/switches/taxi_light_switch</property>
+			</not>
+		</condition>
+		<emissive>true</emissive>
+		<texture>                           
+			<path>Aircraft/an2/Instruments/Textures/uv_spot.rgb</path>
+			<x1>0.0</x1>
+			<y1>0.0</y1>
+			<x2>1.0</x2>
+			<y2>1.0</y2>
+		</texture>
+		<w>5</w>
+		<h>5</h>
+		<transformations>
+			<transformation>
+				<type>x-shift</type>
+				<offset>-21</offset>
+			</transformation>
+			<transformation>
+				<type>y-shift</type>
+				<offset>0</offset>
+			</transformation>
+		</transformations>
+	</layer>
+	
+	<layer>
+		<name>switch pos 2</name>
+<!--		<condition>
+		</condition>                        -->
+		<texture>                           
+			<path>Aircraft/an2/Instruments/Textures/switch_2_2.rgb</path>
+			<x1>0.0</x1>
+			<y1>0.0</y1>
+			<x2>1.0</x2>
+			<y2>1.0</y2>
+		</texture>
+		<w>20</w>
+		<h>20</h>
+	<transformations>
+		<transformation>
+			<type>x-shift</type>
+			<offset>-4</offset>
+		</transformation>
+	</transformations>
+</layer>
+<layer>
+	<name>switch pos 2 with uv light</name>
+	
+	<!--		<condition>
+	</condition>                        -->
+	<condition>
+		<property>/an2/controls/switches/uv_light</property>
+<!--		<property>/an2/controls/switches/taxi_light_switch</property>-->
+	</condition> 
+	<emissive>true</emissive>
+	<texture>                           
+		<path>Aircraft/an2/Instruments/Textures/uv_spot.rgb</path>
+		<x1>0.0</x1>
+		<y1>0.0</y1>
+		<x2>1.0</x2>
+		<y2>1.0</y2>
+	</texture>
+	<w>5</w>
+	<h>5</h>
+	<transformations>
+		<transformation>
+			<type>x-shift</type>
+			<offset>-4</offset>
+		</transformation>
+	</transformations>
+</layer>
+	
+<layer>
+		<name>switch pos 3</name>
+		<condition>
+			<property>/an2/controls/switches/taxi_light_switch</property>
+		</condition> 
+		<texture>                           
+			<path>Aircraft/an2/Instruments/Textures/switch_2_3.rgb</path>
+			<x1>0.0</x1>
+			<y1>0.0</y1>
+			<x2>1.0</x2>
+			<y2>1.0</y2>
+		</texture>
+		<w>32</w>
+		<h>32</h>
+		<transformations>
+			<transformation>
+				<type>rotation</type>
+				<offset>90</offset>
+			</transformation>
+			<transformation>
+				<type>x-shift</type>
+				<offset>6</offset>
+			</transformation>
+			<transformation>
+				<type>y-shift</type>
+				<offset>3</offset>
+			</transformation>
+		</transformations>
+	</layer>
+	
+	
+	
+	<layer>
+		<name>switch pos 3 with uv light</name>
+		<condition>
+			<property>/an2/controls/switches/uv_light</property>
+			<property>/an2/controls/switches/taxi_light_switch</property>
+		</condition> 
+		<emissive>true</emissive>
+		<texture>                           
+			<path>Aircraft/an2/Instruments/Textures/uv_spot.rgb</path>
+			<x1>0.0</x1>
+			<y1>0.0</y1>
+			<x2>1.0</x2>
+			<y2>1.0</y2>
+		</texture>
+		<w>5</w>
+		<h>5</h>
+		<transformations>
+			<transformation>
+				<type>x-shift</type>
+				<offset>15</offset>
+			</transformation>
+			<transformation>
+				<type>y-shift</type>
+				<offset>0</offset>
+			</transformation>
+		</transformations>
+	</layer>
+	
+	
+	
+	
+	
+	
+	
+	
+</layers>
+
+<!--Set switch-->
+<actions>
+	<action>
+		<name>switch on</name>
+		<button>0</button>
+		<x>-3</x>
+		<y>-10</y>
+		<w>20</w>
+		<h>20</h>
+		<binding>
+			<command>property-assign</command>
+			<property>/an2/controls/switches/taxi_light_switch</property>
+			<value>1</value>
+		</binding>
+	</action>
+	<!--Reset switch-->
+	<action>
+		<name>switch off</name>
+		<button>0</button>
+		<x>-23</x>
+		<y>-10</y>
+		<w>20</w>
+		<h>20</h>
+		<binding>
+			<command>property-assign</command>
+			<property>/an2/controls/switches/taxi_light_switch</property>
+			<value>0</value>
+		</binding>
+	</action>
+</actions>
+
+
+</PropertyList>
