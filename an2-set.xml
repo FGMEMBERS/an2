@@ -31,6 +31,31 @@
 	 <author>Yurik V. Nikiforoff aka Yurik_nsk</author>
 	 <author>Yemelianov A.V. aka Dust (www.airwar.ru/other/3m.html) - new 3D model</author>
 	 <status>early-production</status>
+         <rating>
+           <FDM type="int">1</FDM>
+           <systems type="int">2</systems>
+           <cockpit type="int">4</cockpit>
+           <model type="int">3</model>
+         </rating>
+         <tags>
+           <tag>transport</tag>
+           <tag>bush-plane</tag>
+           <tag>antonov</tag>
+           <tag>1930s</tag>
+           <tag>1940s</tag>
+           <tag>1950s</tag>
+           <tag>1960s</tag>
+           <tag>1970s</tag>
+           <tag>biplane</tag>
+           <tag>fixed-gear</tag>
+           <tag>tail-dragger</tag>
+           <tag>propeller</tag>
+           <tag>piston</tag>
+           <tag>radial</tag>
+           <tag>single-engine</tag>
+           <tag>supercharged</tag>
+           <tag>variable-pitch</tag>
+         </tags>
 <help>
 <title>An-2 v2.0</title>
 <line>________________________Procedures_________________________</line>
