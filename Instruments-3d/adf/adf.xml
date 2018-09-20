@@ -60,7 +60,7 @@
    <object-name>marker_uv</object-name>
    <object-name>txt_uv</object-name>
    <condition>
-   	<property>/an2/controls/switches/uv_light</property>
+   	<property>an2/controls/switches/uv_light</property>
    </condition>
 </animation>
 

@@ -167,7 +167,7 @@
 		</binding>
 		<binding>
 			<command>property-adjust</command>
-			<property>/fdm/jsbsim/propulsion/engine[0]/oil-damper</property>
+			<property>fdm/jsbsim/propulsion/engine[0]/oil-damper</property>
 			<step>0.01</step>
 			<min>0.0</min>
 			<max>1.0</max>
@@ -199,7 +199,7 @@ interpolate("an2/controls/switches/oil_switch", 30.0, 0.1 );
 		</binding>
 		<binding>
 			<command>property-adjust</command>
-			<property>/fdm/jsbsim/propulsion/engine[0]/oil-damper</property>
+			<property>fdm/jsbsim/propulsion/engine[0]/oil-damper</property>
 			<step>-0.01</step>
 			<min>0.0</min>
 			<max>1.0</max>
@@ -230,7 +230,7 @@ interpolate("an2/controls/switches/oil_switch", 0.0, 0.1 );
 		</binding>
 		<binding>
 			<command>property-adjust</command>
-			<property>/fdm/jsbsim/propulsion/engine[0]/air-damper</property>
+			<property>fdm/jsbsim/propulsion/engine[0]/air-damper</property>
 			<step>0.01</step>
 			<min>0.0</min>
 			<max>1.0</max>
@@ -262,7 +262,7 @@ interpolate("an2/controls/switches/oil_switch", 0.0, 0.1 );
 		</binding>
 		<binding>
 			<command>property-adjust</command>
-			<property>/fdm/jsbsim/propulsion/engine[0]/air-damper</property>
+			<property>fdm/jsbsim/propulsion/engine[0]/air-damper</property>
 			<step>-0.01</step>
 			<min>0.0</min>
 			<max>1.0</max>
