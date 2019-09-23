@@ -134,7 +134,7 @@
     <type>rotate</type>
     <object-name>needle_r</object-name>
     <object-name>needle_r_uv</object-name>
-    <property>/fdm/jsbsim/propulsion/engine[0]/cht-degc</property>
+    <property>fdm/jsbsim/propulsion/engine[0]/cht-degc</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep> -2.0 </dep></entry>
       <entry><ind> 300.0 </ind><dep> -115.0</dep></entry>
@@ -154,7 +154,7 @@
   <type>rotate</type>
   <object-name>needle_l</object-name>
   <object-name>needle_l_uv</object-name>
-  <property>/fdm/jsbsim/propulsion/engine[0]/cht-degc</property>
+  <property>fdm/jsbsim/propulsion/engine[0]/cht-degc</property>
   <interpolation>
     <entry><ind> 0.0 </ind><dep> 0.0 </dep></entry>
     <entry><ind> 300.0 </ind><dep> 105.0</dep></entry>
